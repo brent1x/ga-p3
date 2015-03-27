@@ -1,2 +1,3 @@
-# ga-p3
-General Assembly Project #3
+# General Assembly Project #3
+
+Testing Slack / Github integration
