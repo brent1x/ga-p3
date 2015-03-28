@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20150328221604) do
 
   create_table "cue_restaurants", force: :cascade do |t|
     t.integer  "restaurant_id"
-    t.integer  "queued_id"
+    t.integer  "cue_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end

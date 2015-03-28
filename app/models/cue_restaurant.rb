@@ -1,4 +1,4 @@
 class CueRestaurant < ActiveRecord::Base
-  belongs_to :cues
-  belongs_to :restaurants
+  belongs_to :cue
+  belongs_to :restaurant
 end
