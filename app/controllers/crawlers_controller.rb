@@ -1,0 +1,2 @@
+class CrawlersController < ApplicationController
+end

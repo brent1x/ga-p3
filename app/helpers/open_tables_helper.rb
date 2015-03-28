@@ -1,0 +1,2 @@
+module OpenTablesHelper
+end

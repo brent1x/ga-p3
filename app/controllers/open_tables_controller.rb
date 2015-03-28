@@ -1,0 +1,2 @@
+class OpenTablesController < ApplicationController
+end
