@@ -33,7 +33,7 @@ gem 'mechanize', '~> 2.7.3'
 gem 'faraday_middleware'
 # Use Unicorn as the app server
 # gem 'unicorn'
-
+gem 'sidekiq'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

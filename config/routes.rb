@@ -1,12 +1,9 @@
 Rails.application.routes.draw do
 
-  get 'users/login'
-
-  get 'users/signup'
-
-  get 'users/account'
-
   root 'users#login'
+
+  resources :queues
+
   get 'login', to: "users#login", as: 'login'
   post 'login', to: "users#attempt_login"
 
@@ -15,9 +12,10 @@ Rails.application.routes.draw do
 
   delete 'logout', to: "users#logout", as: "logout"
 
-  get 'about', to: "site#about", as: 'about'
-  get 'menu', to: "site#menu", as: 'menu'
+  get 'about', to: "sites#about", as: 'about'
+  get 'menu', to: "sites#menu", as: 'menu'
 
-  get 'home'
+  get 'home', to: "users#home", as: 'home'
+  get 'account', to: "users#account", as: 'account'
 
 end
