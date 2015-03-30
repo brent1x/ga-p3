@@ -1,2 +1,30 @@
-<h1>Users#account</h1>
-<p>Find me in app/views/users/account.html.erb</p>
+<div id="crimson">
+  <div class="overlow-hidden">
+
+
+    <div class="container text-center text-white">
+      <div >
+        <img class="logo-image-sm" src="<%= asset_path('rezqlogo.png') %>" alt="">
+      </div>
+      <h2 class="border-line">Your Profile</h2>
+      <div class="text-left">
+        <h4>First Name:</h4>
+        <p class="smaller"> <%=session[:first_name]%></p>
+        <h4>Last Name:</h4>
+        <p class="smaller"> <%=session[:last_name]%></p>
+        <h4>Email:</h4>
+        <p class="smaller"> <%=session[:email]%></p>
+        <h4>Phone:</h4>
+        <p class="smaller"> <%=session[:phone_number]%></p>
+        <h4>Notification Preferences:</h4>
+        <p class="selected-item">Text</p>
+        <button class="not-selected-item">Edit Profile</button>
+        <button class="not-selected-item pull-right">Delete Profile</button>
+      </div>
+      <div class="end-line">
+      
+    </div>
+    <p> some content</p>
+    </div> 
+  </div>
+</div>
