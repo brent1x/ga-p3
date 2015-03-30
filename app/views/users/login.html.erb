@@ -10,3 +10,11 @@ Form: Submit
 [Signup Link]
 
 [About Link]
+
+
+<%= simple_form_for @user, :url => attempt_login_path do |f| %>
+  <%= f.input :email %>
+  <%= f.input :password %>
+  <%= f.button :submit %>
+<% end %>
+
