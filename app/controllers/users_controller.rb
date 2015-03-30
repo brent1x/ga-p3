@@ -50,6 +50,13 @@ class UsersController < ApplicationController
     end	
   end	
 
+  def logout
+    session[:user_id] = nil
+    session[:username] = nil
+    flash[:notice] = "You are now logged out."
+    redirect_to login_path
+  end
+
 private 
 def user_params
 params.require(:user).permit(:first_name,:last_name,:email,:phone_number,:password)
