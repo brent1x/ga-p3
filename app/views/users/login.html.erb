@@ -1,2 +1,8 @@
 <h1>Users#login</h1>
 <p>Find me in app/views/users/login.html.erb</p>
+
+<%= simple_form_for @user, :url => attempt_login_path do |f| %>
+  <%= f.input :email %>
+  <%= f.input :password %>
+  <%= f.button :submit %>
+<% end %>

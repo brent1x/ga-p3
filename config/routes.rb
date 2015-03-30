@@ -1,62 +1,20 @@
 Rails.application.routes.draw do
-  get 'users/login'
+  root 'users#login'
 
-  get 'users/signup'
+  get 'login', to: "users#login", as: 'login'
+  post 'login', to: "users#attempt_login", as: 'attempt_login'
 
-  get 'users/account'
+  get 'signup', to: "users#signup", as: 'signup'
+  post 'signup', to: "users#create", as: 'create'
 
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
+  delete 'logout', to: "users#logout", as: "logout"
 
-  # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  get 'about', to: "sites#about", as: 'about'
+  get 'menu', to: "sites#menu", as: 'menu'
 
-  # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
+  get 'home', to: "users#home", as: 'home'
+  get 'account', to: "users#account", as: 'account'
 
-  # Example of named route that can be invoked with purchase_url(id: product.id)
-  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
-
-  # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
-
-  # Example resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
-
-  # Example resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
-
-  # Example resource route with more complex sub-resources:
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', on: :collection
-  #     end
-  #   end
-
-  # Example resource route with concerns:
-  #   concern :toggleable do
-  #     post 'toggle'
-  #   end
-  #   resources :posts, concerns: :toggleable
-  #   resources :photos, concerns: :toggleable
-
-  # Example resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
+  get 'add', to: "sites#add", as: 'add'
+  post 'add', to: "sites#add", as: 'add_restuarant'
 end
