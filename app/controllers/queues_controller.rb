@@ -15,7 +15,7 @@ class QueuesController < ApplicationController
     @cue = Cue.create cue_params
     if @cue.save
       user.cues << @cue
-      redirect_to queues_path(session[:user_id])
+      redirect_to queues_path(session[:user_id]), flash: {success: "New queue a˚dded."}
     else
       render :new
     end
@@ -48,6 +48,6 @@ class QueuesController < ApplicationController
 
 private
   def cue_params
-    params.require(:cue).permit(:id)
+    params.require(:cue).permit(:user_id, :name, :restaurants, :start_date, :end_date, :start_time, :end_time)
   end
 end
