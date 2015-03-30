@@ -13,4 +13,14 @@ class SitesController < ApplicationController
     redirect_to menu_path
   end
 
+  #get the add restuarant page
+  def add
+    @restaurant = Restaurant.new
+  end
+
+  #add a restaurant to the rest. database
+  def add_restaurant
+
+  end
+
 end

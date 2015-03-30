@@ -1,5 +1,4 @@
-class OpenTableClient < ActiveRecord::Base
-	module OpenTable
+  module OpenTable
   class Error < StandardError ; end
  
   module Request
@@ -54,4 +53,4 @@ class OpenTableClient < ActiveRecord::Base
   end
   
 	end
-end
+
