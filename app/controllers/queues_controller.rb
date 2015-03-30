@@ -15,7 +15,7 @@ class QueuesController < ApplicationController
     @cue = Cue.create cue_params
     if @cue.save
       user.cues << @cue
-      redirect_to queues_path(session[:user_id]), flash: {success: "New queue a˚dded."}
+      redirect_to queues_path(session[:user_id]), flash: {success: "New queue added."}
     else
       render :new
     end
