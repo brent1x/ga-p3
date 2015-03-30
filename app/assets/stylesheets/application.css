@@ -13,3 +13,154 @@
  *= require_tree .
  *= require_self
  */
+body{
+  font-family: Helvetica;
+  background-color: crimson;
+  
+}
+#crimson{
+  background-color: crimson;
+  height: 100%;
+  width: 100%;
+}
+.smaller{
+  font-weight: 200;
+}
+label{
+  display: none;
+}
+::-webkit-input-placeholder {
+   color: white;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: white;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: white;  
+}
+
+:-ms-input-placeholder {  
+   color: white;  
+}
+#food-background{
+  background: url("/assets/food1.jpg") 50% 50% no-repeat;
+  background-size: cover;
+  height: 800px;
+}
+#food-background2{
+  background: url("/assets/food2.jpg") 50% 50% no-repeat;
+  background-size: cover;
+  height: 100%;
+}
+.overflow-hidden{
+  overflow: none;
+}
+.logo-image{
+  height: 175px;
+  margin-top: 100px;
+  margin-bottom: 80px; 
+}
+.logo-image-sm{
+  height: 100px;
+  margin-top: 50px;
+  margin-bottom: 20px; 
+}
+#user_email, #user_password, #user_first_name, #user_last_name, #user_phone_number, .btn{
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(0,0,0,.37);
+  border: 2px solid;
+  border-color: rgba(255,255,255,.85);
+  width: 320px;
+  height:60px;
+  color: white;
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 20px;
+  font-weight: 200;
+}
+a {
+  color:white;
+}
+a:hover{
+ color: gray;
+ text-decoration: none;
+}
+
+.btn{
+  width: 160px;
+  margin-left: 0px !important;
+}
+
+
+.navbar{
+  position: fixed;
+  background-color: rgba(0,0,0,0);
+  border: none;
+}
+.navbar-defult{
+  border-color: rgba(0,0,0,0);
+}
+.collapsed:hover{
+  background-color: red;
+}
+.navbar-toggle {
+  border: none;
+}
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover{
+  background-color: rgba(0,0,0,0);
+}
+.icon-bar{
+  background-color: white !important;
+}
+.text-white{
+  color: white;
+}
+.border-line{
+  border-bottom: 2px solid;
+  padding-bottom: 30px;
+  margin-bottom: 20px;
+}
+.selected-item{
+  background-color: white;
+  color: crimson;
+  width: 45%;
+  height: 50px;
+  text-align: center;
+  padding-top: 14px;
+  font-size: 22px;
+  font-weight: 200;
+}
+.not-selected-item{
+  width: 45%;
+  height: 50px;
+  padding-top: 10px;
+  text-align: center;
+  font-size: 22px;
+  background-color: rgba(0,0,0,0);
+  border: 2px white solid;
+  font-weight: 200;
+}
+.not-selected-item:hover{
+  background-color: white;
+  border: crimson;
+  color: crimson;
+
+}
+.end-line{
+  border-top: 2px solid white;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.expand-width{
+  width: 100%;
+}
+.party-padding{
+  padding-top: 25px;
+}
+
+
+

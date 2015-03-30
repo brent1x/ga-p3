@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   root 'users#login'
 
   resources :queues
@@ -20,6 +21,8 @@ Rails.application.routes.draw do
 
   get 'add', to: "sites#add", as: 'add'
   post 'add', to: "sites#add", as: 'add_restuarant'
+
+
 
 ###################### RAKE ROUTES PASTED BELOW ######################
 #                                                                    #
@@ -45,4 +48,6 @@ Rails.application.routes.draw do
 #                                                                    #
 ######################################################################
 
+
 end
+

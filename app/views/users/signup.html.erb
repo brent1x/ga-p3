@@ -1,17 +1,22 @@
-<h1>Users#signup</h1>
-<p>Find me in app/views/users/signup.html.erb</p>
 
-— SIGNUP FORM —
-
+<div id="food-background2">
+<div class="container">
+  <div class="text-center">
+    <div >
+      <img class="logo-image" src="<%= asset_path('rezqlogo.png') %>" alt="">
+    </div>
+      <div>
 <%= simple_form_for @user, :url => create_path do |f| %>
-  <%= f.input :first_name %>
-  <%= f.input :last_name %>
-  <%= f.input :email %>
-  <%= f.input :phone_number %>
-  <%= f.input :password %>
-  <%= f.button :submit %>
+  <%= f.input :first_name, placeholder: 'First Name' %>
+  <%= f.input :last_name,placeholder: 'Last Name' %>
+  <%= f.input :email, placeholder: 'Email' %>
+  <%= f.input :phone_number, placeholder: 'Phone Number' %>
+  <%= f.input :password, placeholder: 'Password' %>
+  <%= f.button :submit, "Sign Up" %>
 <% end %>
+</div>
+</div>
+</div>
+</div>
 
-[Login Link]
 
-[About Link]

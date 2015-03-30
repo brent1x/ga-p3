@@ -1,9 +1,11 @@
 class QueuesController < ApplicationController
+
   before_action :confirm_logged_in
 
   def index
     @user = User.find session[:user_id]
     @cues = Cue.all
+
   end
 
   def new
@@ -21,6 +23,7 @@ class QueuesController < ApplicationController
       render :new
     end
   end
+
 
   def destroy
     @cue.destroy
