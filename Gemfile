@@ -35,6 +35,9 @@ gem 'twilio-ruby', '~> 3.12'
 # Use Unicorn as the app server
 # gem 'unicorn'
 gem 'sidekiq'
+gem 'redis-rails'
+gem 'sinatra', require: false
+gem 'slim'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -50,3 +53,4 @@ group :development, :test do
   gem 'spring'
 end
 
+ruby "2.0.0"
