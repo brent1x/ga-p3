@@ -1,9 +1,9 @@
 class CrawlersController < ApplicationController
 
 def crawl
-  # VARIABLES WE NEED TO PASS INTO THE URI, WILL COME FROM SELECTORS ON QUEUE VIEW + CONTROLLER
-  dates = ["2015-04-04"]
+  # VARIABLES WE NEED TO PASS INTO THE URI, WILL COME FROM SELECTORS ON QUEUE VIEWS
   restaurants = ["bourbon-steak-san-francisco"]
+  dates = ["2015-04-04"]
   times = ["2122"]
   covers = ["2"]
 

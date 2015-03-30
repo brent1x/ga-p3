@@ -1,19 +1,8 @@
 <h1>Users#signup</h1>
 <p>Find me in app/views/users/signup.html.erb</p>
 
-
 — SIGNUP FORM —
 
-Form: First Name
-Form: Last Name
-Form: Phone #
-Form: Email
-Form: Password
-Form: Submit
-
-[Login Link]
-
-[About Link]
 <%= simple_form_for @user, :url => create_path do |f| %>
   <%= f.input :first_name %>
   <%= f.input :last_name %>
@@ -23,3 +12,6 @@ Form: Submit
   <%= f.button :submit %>
 <% end %>
 
+[Login Link]
+
+[About Link]
