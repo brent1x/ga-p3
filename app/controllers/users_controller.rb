@@ -13,7 +13,6 @@ class UsersController < ApplicationController
 
   def home
   	@user = User.find(session[:user_id])
-
     @cue = @user.cues
     @cues = Cue.all
 

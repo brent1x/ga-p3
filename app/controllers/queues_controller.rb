@@ -9,7 +9,7 @@ class QueuesController < ApplicationController
 
   def new
     @cue = Cue.new
-    @rest = Restaurant.new
+    # @rest = Restaurant.new
   end
 
   def create
