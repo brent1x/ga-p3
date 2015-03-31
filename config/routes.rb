@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   get 'add', to: "sites#add", as: 'add'
   post 'add', to: "sites#add_restaurant", as: 'add_restaurant'
 
-
+  get 'test', to: "crawlers#run", as:'run' 
 
 ###################### RAKE ROUTES PASTED BELOW ######################
 #                                                                    #
