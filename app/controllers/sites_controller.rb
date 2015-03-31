@@ -23,13 +23,21 @@ class SitesController < ApplicationController
   #add a restaurant to the rest. database
   def add_restaurant
   restaurant_info = Open.find_restaurant params[:restaurant][:name], params[:restaurant][:city], params[:restaurant][:state]
-    if restaurant_info
+  @restaurant = Restaurant.create restaurant_params
+    if @restaurant.save
       message = Crawler.url_check  restaurant_info
       message
+
     else
     flash[:notice] = "Restaurant not found" 
     end
-    redirect_to add_path
+    # redirect_to add_path
+    redirect_to home_path
+  end
+private
+  def restaurant_params
+
+    params.require(:restaurant).permit(:name, :city, :state)
   end
 
 
