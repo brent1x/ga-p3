@@ -7,15 +7,16 @@
       </div>
       <h2 class="border-line">Add a Restaurant to your Queue.</h2>
 
-      <%= form_for @cue do |f|%>
-      <%= f.label :name  %>
-      <%= f.input :name  %>
-      <%= f.label :start_date  %>
-      <%= f.input :start_date  %>
-      <%= f.label :start_time  %>
-      <%= f.input :start_time  %>
-      <%= f.label :end_time  %>
-      <%= f.input :end_time  %>
-      <%= f.submit %>
+      <%= simple_form_for @cue, :url => queues_path do |f|%>
+
+
+        <%= f.input :restaurants  %> 
+
+        <%= f.input :start_date  %>
+
+        <%= f.input :start_time  %>
+
+        <%= f.input :end_time  %>
+        <%= f.submit %>
       <% end %>
 
