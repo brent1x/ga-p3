@@ -20,7 +20,15 @@ class SitesController < ApplicationController
 
   #add a restaurant to the rest. database
   def add_restaurant
-
+  restaurant_info = Open.find_restaurant params[:restaurant][:name], params[:restaurant][:city], params[:restaurant][:state]
+    if restaurant_info
+      Crawler.url_check  restaurant_info
+    else
+    flash[:notice] = "Restaurant not found" 
+    end
+    redirect_to add_path
   end
 
+
 end
+#www.opentable.com/bourbon-steak-san-francisco?DateTime=2015-04-06%2122&Covers=2
