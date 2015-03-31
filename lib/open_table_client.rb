@@ -1,5 +1,4 @@
-module OpenTablesHelper
-
+  module OpenTable
   class Error < StandardError ; end
  
   module Request
@@ -53,4 +52,5 @@ module OpenTablesHelper
     end
   end
   
-end
+	end
+

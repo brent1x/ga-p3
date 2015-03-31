@@ -9,14 +9,12 @@
 
       <%= simple_form_for @cue, :url => queues_path do |f|%>
 
+       <%= f.input :rests %> 
 
-        <%= f.input :restaurants  %> 
+       <%= f.input :start_date  %>
 
-        <%= f.input :start_date  %>
+       <%= f.input :start_time  %>
 
-        <%= f.input :start_time  %>
-
-        <%= f.input :end_time  %>
-        <%= f.submit %>
-      <% end %>
-
+       <%= f.input :end_time  %>
+       <%= f.submit %>
+     <% end %>

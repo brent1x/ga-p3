@@ -38,6 +38,7 @@ gem 'sidekiq'
 gem 'redis-rails'
 gem 'sinatra', require: false
 gem 'slim'
+gem 'whenever', '~> 0.9.4'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

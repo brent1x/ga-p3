@@ -1,7 +1,5 @@
 class CrawlersController < ApplicationController
 
-
-
   def create
     # STARTER CODE FOR SIDEKIQ
     # @crawler = Crawler.new
