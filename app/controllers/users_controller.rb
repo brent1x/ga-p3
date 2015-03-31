@@ -16,20 +16,18 @@ class UsersController < ApplicationController
   end
 
   def create
-  	binding.pry
    @user = User.new user_params
     if @user.save
       	redirect_to login_path
     else
       	render :signup
     end
-    binding.pry
+
   end
 
   def attempt_login
-  	binding.pry
+
   	if User.check_if_user_exists params[:user][:email]
-  		binding.pry
   		@user = User.find_user params[:user][:email]
   		if @user.check_password params[:user][:password]
   		session[:user_id] = @user.id
@@ -39,17 +37,15 @@ class UsersController < ApplicationController
   			flash[:notice] = "Welcome #{session[:first_name]}"
   			redirect_to home_path
   		else
-  			binding.pry
   			flash[:notice] = "Incorrect Password"
         	redirect_to login_path	
   		end	
   	else
-  		binding.pry
       flash[:notice] = "Username not found"
       redirect_to login_path
     end	
   end	
-
+  
   def logout
     session[:user_id] = nil
     session[:username] = nil

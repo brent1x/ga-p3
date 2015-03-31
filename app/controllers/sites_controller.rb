@@ -22,7 +22,8 @@ class SitesController < ApplicationController
   def add_restaurant
   restaurant_info = Open.find_restaurant params[:restaurant][:name], params[:restaurant][:city], params[:restaurant][:state]
     if restaurant_info
-      Crawler.url_check  restaurant_info
+      message = Crawler.url_check  restaurant_info
+      message
     else
     flash[:notice] = "Restaurant not found" 
     end

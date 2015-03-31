@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   post 'add', to: "sites#add_restaurant", as: 'add_restaurant'
 
 
+
 ###################### RAKE ROUTES PASTED BELOW ######################
 #                                                                    #
 #      Prefix Verb   URI Pattern                Controller#Action    #

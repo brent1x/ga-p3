@@ -1,2 +1,2 @@
-# class Text < ActiveRecord::Base
+# class Twilio < ActiveRecord::Base
 # end
