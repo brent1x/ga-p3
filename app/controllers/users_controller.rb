@@ -34,7 +34,11 @@ class UsersController < ApplicationController
         session[:first_name] = @user.first_name
         session[:last_name] = @user.last_name
         flash[:notice] = "Welcome, #{session[:first_name]}."
+        if Cue.exists?(user_id:@user.id)
+          redirect_to new_cue_path
+        else
         redirect_to home_path
+        end
       else
         flash[:notice] = "Incorrect password."
         redirect_to login_path
