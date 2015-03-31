@@ -1,7 +1,11 @@
 class QueuesController < ApplicationController
 
+  # before_action :confirm_logged_in
+
   def index
-    @cue = Cue.all
+    @user = User.find session[:user_id]
+    @cues = Cue.all
+
   end
 
   def new
@@ -9,41 +13,49 @@ class QueuesController < ApplicationController
   end
 
   def create
-    @cue = Cue.create(cue_params)
+    user = User.find session[:user_id]
+    @cue = Cue.create cue_params
     if @cue.save
-      redirect_to home_path
+      @cue.restaurants << @restaurant
+      user.cues << @cue
+      redirect_to queues_path(session[:user_id]), flash: {success: "New queue added."}
     else
       render :new
     end
   end
 
-  def show
-    @cue = Cue.find(params[:id])
-  end
-
-  def edit
-    @cue = Cue.find(params[:id])
-  end
-
-  def update
-    @cue = Cue.find(params[:id])
-    @cue.update_attributes(cue_params)
-    if @cue.save
-      redirect_to home_path
-    else
-      render :edit
-    end
-  end
 
   def destroy
-    @cue = Cue.find(params[:id])
     @cue.destroy
-    redirect_to home_path
+    redirect_to queues_path(session[:user_id])
   end
+
+  ########## REMOVING EDIT & SHOW CAPABILITIES – USER CAN ONLY ADD OR DESTROY CUES ##########
+
+  # def show
+  #   @cue = Cue.find(params[:id])
+  # end
+
+  # def edit
+  #   @cue = Cue.find(params[:id])
+  # end
+
+  # def update
+  #   @cue = Cue.find(params[:id])
+  #   @cue.update_attributes(cue_params)
+  #   if @cue.save
+  #     redirect_to home_path
+  #   else
+  #     render :edit
+  #   end
+  # end
 
 private
   def cue_params
-    ### UPDATE
-    params.require(:cue).permit(:name)
+    params.require(:cue).permit(:user_id, :restaurants, :start_date, :end_date, :start_time, :end_time)
+  end
+
+  def restaurant_params
+    params.require(:restaurant).permit(:id)
   end
 end

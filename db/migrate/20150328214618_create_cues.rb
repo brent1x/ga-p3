@@ -3,7 +3,7 @@ class CreateCues < ActiveRecord::Migration
     create_table :cues do |t|
       t.integer :user_id
       t.string :name
-      t.string :restaurants, array: true
+      t.string :restaurants
       t.date :start_date
       t.date :end_date
       t.time :start_time
