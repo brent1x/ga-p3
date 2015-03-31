@@ -20,9 +20,8 @@ Rails.application.routes.draw do
   get 'account', to: "users#account", as: 'account'
 
   get 'add', to: "sites#add", as: 'add'
-  post 'add', to: "sites#add", as: 'add_restuarant'
+  post 'add', to: "sites#add_restaurant", as: 'add_restaurant'
 
-  
 
 
 ###################### RAKE ROUTES PASTED BELOW ######################
@@ -48,4 +47,7 @@ Rails.application.routes.draw do
 #     account GET    /account(.:format)         users#account        #
 #                                                                    #
 ######################################################################
+
+
 end
+

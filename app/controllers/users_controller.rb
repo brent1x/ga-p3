@@ -13,11 +13,11 @@ class UsersController < ApplicationController
 
   def home
   	@user = User.find(session[:user_id])
-    if Cue.find[:user_id] === 0 
-      redirect_to new_queue_path
-    else
-      redirect_to home_path
-    end 
+
+    @cue = @user.cues
+    @cues = Cue.all
+
+
   end
 
   def create
@@ -40,7 +40,11 @@ class UsersController < ApplicationController
 		session[:first_name] = @user.first_name
 		session[:last_name] = @user.last_name
   			flash[:notice] = "Welcome #{session[:first_name]}"
-  			redirect_to home_path
+        if @user.cues.empty?
+          redirect_to new_queue_path
+        else
+  			   redirect_to home_path
+        end
   		else
 
   			flash[:notice] = "Incorrect Password"

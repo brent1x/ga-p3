@@ -1,11 +1,10 @@
 class QueuesController < ApplicationController
 
-  # before_action :confirm_logged_in
+  before_action :confirm_logged_in
 
   def index
     @user = User.find session[:user_id]
     @cues = Cue.all
-
   end
 
   def new
@@ -17,7 +16,6 @@ class QueuesController < ApplicationController
     user = User.find session[:user_id]
     @cue = Cue.create cue_params
     if @cue.save
-      @cue.rests << params[:cue][:rests]
       user.cues << @cue
       # redirect_to queues_path(session[:user_id]), flash: {success: "New queue added."}
       redirect_to home_path
@@ -26,13 +24,18 @@ class QueuesController < ApplicationController
     end
   end
 
-
   def destroy
+    @user = User.find session[:user_id]
+    @cue = Cue.find(params[:id])
     @cue.destroy
-    redirect_to queues_path(session[:user_id])
+    if @user.cues.empty?
+          redirect_to new_queue_path
+        else
+           redirect_to home_path
+    end
   end
 
-  ########## REMOVING EDIT & SHOW CAPABILITIES – USER CAN ONLY ADD OR DESTROY CUES ##########
+  ########## REMOVING EDIT & SHOW CAPABILITIES – USER CAN ONLY ADD OR DESTROY CUES ##########
 
   # def show
   #   @cue = Cue.find(params[:id])
@@ -60,4 +63,4 @@ private
   def restaurant_params
     params.require(:restaurant).permit(:id)
   end
-end
+ end 
