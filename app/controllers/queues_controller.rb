@@ -1,11 +1,9 @@
 class QueuesController < ApplicationController
-
   before_action :confirm_logged_in
 
   def index
     @user = User.find session[:user_id]
     @cues = Cue.all
-
   end
 
   def new
@@ -52,7 +50,7 @@ class QueuesController < ApplicationController
 
 private
   def cue_params
-    params.require(:cue).permit(:user_id, :name, :restaurants, :start_date, :end_date, :start_time, :end_time)
+    params.require(:cue).permit(:user_id, :restaurants, :start_date, :end_date, :start_time, :end_time)
   end
 
   def restaurant_params
