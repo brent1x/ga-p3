@@ -22,7 +22,6 @@ class QueuesController < ApplicationController
     end
   end
 
-
   def destroy
     @cue.destroy
     redirect_to queues_path(session[:user_id])
