@@ -47,15 +47,15 @@ class UsersController < ApplicationController
   		else
 
   			flash[:notice] = "Incorrect Password"
-        	redirect_to login_path	
-  		end	
+        	redirect_to login_path
+  		end
   	else
 
       flash[:notice] = "Username not found"
       redirect_to login_path
-    end	
-  end	
-  
+    end
+  end
+
   def logout
     session[:user_id] = nil
     session[:username] = nil
@@ -63,7 +63,7 @@ class UsersController < ApplicationController
     redirect_to login_path
   end
 
-private 
+private
 def user_params
 params.require(:user).permit(:first_name,:last_name,:email,:phone_number,:password)
 end
