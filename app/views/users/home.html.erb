@@ -1,37 +1,42 @@
 <div id="crimson">
   <div class="overlow-hidden">
-
-
     <div class="container text-center text-white">
       <div >
         <img class="logo-image-sm" src="<%= asset_path('rezqlogo.png') %>" alt="">
       </div>
       <h2 class="border-line">Your Queue</h2>
       <div class="text-left">
-      <div class="row">
+      <% @cues.each do |x| %>
 
-      <!-- For loop for Q goes here -->
-      <div class="col-xs-6">
-        <!-- Restaurant date -->
-        <h4>4/1/15</h4>
-        <!-- restaurant name -->
-        <h3>Res Q</h3>
-        <!-- q time -->
-        <h4>7:00pm - 9:00pm</h4>
+      <% if x.user_id == session[:user_id] %>
+        <div class="row">
+          <!-- For loop for Q goes here -->
+          <div class="col-xs-6">
+            <!-- Restaurant date -->
+            <h4><%= x.start_date %></h4>
+            <!-- restaurant name -->
+            <h3><%= x.rests %></h3>
+            <!-- q time -->
+            <h4><%= x.start_time %> - <%= x.end_time %></h4>
+          </div>
+          <div class="col-xs-6 text-right">
+            <span class="not-selected-item "><%= link_to "Delete", queue_path(x.id), method:"Delete", data:{ confirm: "Are you sure you want to delete #{x.rests}?"} %></span>
+            
+            <h4 class="party-padding">Party Size: 4</h4>
+          </div>
+          
+        </div>
+        <% end %>
+        <% end %>
       </div>
-      <div class="col-xs-6 text-right">
-        <button class="not-selected-item ">Delete</button>
-        <h4 class="party-padding">Party Size: 4</h4>
-      </div>
-      </div>
+
 
       <!-- End Loop -->
       <div class="end-line"></div>
-      <p>
-        <button class="not-selected-item text-center expand-width">Add Restaurant to Queue
-        </button>
-        
-        </p>
+      <p class="not-selected-item text-center expand-width">
+        <%= link_to "Add Restaurant to Queue", new_queue_path %>
+
+      </p>
     </div> 
   </div>
 </div>
