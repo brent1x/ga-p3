@@ -13,17 +13,20 @@ class UsersController < ApplicationController
 
   def home
   	@user = User.find(session[:user_id])
+    if Cue.find[:user_id] === 0 
+      redirect_to new_queue_path
+    else
+      redirect_to home_path
+    end 
   end
 
   def create
-
    @user = User.new user_params
     if @user.save
       	redirect_to login_path
     else
       	render :signup
     end
-
   end
 
   def attempt_login
