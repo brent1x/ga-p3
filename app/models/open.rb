@@ -9,13 +9,16 @@ return false if resp["total_entries"] == 0
 	puts resp["restaurants"][0]["name"]
 	puts resp["restaurants"][0]["city"]
 	puts resp["restaurants"][0]["area"]
-@restaurant_info = {
-	restaurant_name: resp["restaurants"][0]["name"],
-	restaurant_city: resp["restaurants"][0]["city"],
-	restaurant_area: resp["restaurants"][0]["area"],
-	restaurant_urls: ["http://www.opentable.com/#{(resp["restaurants"][0]["name"].split - resp["restaurants"][0]["city"].split).join(" ").downcase.parameterize }-#{resp["restaurants"][0]["city"].downcase.parameterize}?DateTime=#{tomorrow}%2122&Covers=2",
-"http://www.opentable.com/#{(resp["restaurants"][0]["name"].split - resp["restaurants"][0]["city"].split).join(" ").downcase.parameterize }?DateTime=#{tomorrow}%2122&Covers=2"]
-} 
+@restaurant_info = []
+resp["restaurants"].each do |restaurant|
+	@restaurant_info.push({
+		restaurant_name: restaurant["name"],
+		restaurant_city: restaurant["city"],
+		restaurant_state: restaurant["state"],
+		restaurant_urls: ["http://www.opentable.com/#{(resp["restaurants"][0]["name"].split - resp["restaurants"][0]["city"].split).join(" ").downcase.parameterize }-#{resp["restaurants"][0]["city"].downcase.parameterize}?DateTime=#{tomorrow}%2122&Covers=2",
+	"http://www.opentable.com/#{(resp["restaurants"][0]["name"].split - resp["restaurants"][0]["city"].split).join(" ").downcase.parameterize }?DateTime=#{tomorrow}%2122&Covers=2"]
+})
+end
 @restaurant_info
 end
 

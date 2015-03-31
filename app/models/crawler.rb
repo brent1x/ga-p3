@@ -6,32 +6,26 @@ require 'json'
 
 def self.url_check restaurant_info
 	binding.pry
-
-dates = ["2015-03-30"]
-	restaurant_info[:restaurant_urls].each do |el_url|
-# my_hash = {};
-	begin
-		url = el_url
-		binding.pry
-		doc = Nokogiri::HTML(open(url))
-		rescue OpenURI::HTTPError => e
-  		if e.message == '404 Not Found'
-  			binding.pry
-  			puts "not found"
-		end
-	else	
-		binding.pry
-		 	@restaurant = Restaurant.new(name: restaurant_info[:restaurant_name], city:restaurant_info[:restaurant_city],state: restaurant_info[:restaurant_state], url: [el_url])
-			if  @restaurant.save 
-				puts "saved successfully"
-				return true
-			else
-				puts "not found"
-		
+	restaurant_info.each do |restaurant|
+		restaurant[:restaurant_urls].each do |el_url|
+		begin
+			url = el_url
+			doc = Nokogiri::HTML(open(url))
+			rescue OpenURI::HTTPError => e
+	  		if e.message == '404 Not Found'
+	  			puts "not found"
 			end
-	end
-	
-	end
-	return false
+		else	
+			 	@restaurant = Restaurant.new(name: restaurant[:restaurant_name], city:restaurant[:restaurant_city], state: restaurant[:restaurant_state], url: el_url)
+				if  @restaurant.save 
+					puts "saved successfully"
+				else
+					puts "not found"
+			
+				end
+		end
+		
+		end
+end
 end
 end
