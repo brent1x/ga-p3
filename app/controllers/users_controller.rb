@@ -16,12 +16,13 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new user_params
+   @user = User.new user_params
     if @user.save
       redirect_to login_path
     else
       render :signup
     end
+
   end
 
   def attempt_login
@@ -44,6 +45,27 @@ class UsersController < ApplicationController
     end
   end
 
+  def attempt_login
+
+  	if User.check_if_user_exists params[:user][:email]
+  		@user = User.find_user params[:user][:email]
+  		if @user.check_password params[:user][:password]
+  		session[:user_id] = @user.id
+		session[:email] = @user.email
+		session[:first_name] = @user.first_name
+		session[:last_name] = @user.last_name
+  			flash[:notice] = "Welcome #{session[:first_name]}"
+  			redirect_to home_path
+  		else
+  			flash[:notice] = "Incorrect Password"
+        	redirect_to login_path	
+  		end	
+  	else
+      flash[:notice] = "Username not found"
+      redirect_to login_path
+    end	
+  end	
+  
   def logout
     session[:user_id] = nil
     session[:username] = nil
