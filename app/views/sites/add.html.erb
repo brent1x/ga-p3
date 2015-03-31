@@ -32,7 +32,23 @@
         </button>
         
         </p>
+
+
     </div> 
   </div>
 </div>
 
+
+
+
+
+
+
+
+
+<%= simple_form_for @restaurant, :url => add_restaurant_path do |f| %>
+  <%= f.input :name %>
+  <%= f.input :city %>
+  <%= f.input :state %>
+  <%= f.button :submit %>
+<% end %>

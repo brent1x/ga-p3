@@ -1,4 +1,5 @@
 class QueuesController < ApplicationController
+
   before_action :confirm_logged_in
 
   def index
@@ -27,7 +28,7 @@ class QueuesController < ApplicationController
     redirect_to queues_path(session[:user_id])
   end
 
-  ########## REMOVING EDIT & SHOW CAPABILITIES – USER CAN ONLY ADD OR DESTROY CUES ##########
+  ########## REMOVING EDIT & SHOW CAPABILITIES – USER CAN ONLY ADD OR DESTROY CUES ##########
 
   # def show
   #   @cue = Cue.find(params[:id])
@@ -55,4 +56,4 @@ private
   def restaurant_params
     params.require(:restaurant).permit(:id)
   end
-end
+ end 
