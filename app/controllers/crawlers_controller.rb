@@ -27,9 +27,6 @@ class CrawlersController < ApplicationController
   # end
 
   def run
-    # Crawler.get_rest
-
-    # cue_restaurants = CueRestaurant.all
     Crawler.crawler_check
     redirect_to login_path
   end
