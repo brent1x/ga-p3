@@ -22,7 +22,7 @@ class QueuesController < ApplicationController
     user = User.find session[:user_id]
     @cue = Cue.create cue_params
     user.cues << @cue
-    binding.pry
+
     user = User.find session[:user_id]
     rest_params = {}
     rest_params["restaurant_id"] = Restaurant.find_by(name: cue_params["rests"]).id
@@ -33,10 +33,10 @@ class QueuesController < ApplicationController
     rest_params["start_time"] = cue_params["start_time(4i)"] + ":" + cue_params["start_time(5i)"] + ":00"
     rest_params["end_time"] = cue_params["end_time(4i)"] + ":" + cue_params["end_time(5i)"] + ":00"
     rest_params["covers"] = cue_params["covers"]
-    binding.pry
+
     @cue_res = CueRestaurant.new rest_params
     if @cue_res.save
-      binding.pry
+
       puts "Saved successfully"
       Crawler.crawler_check
       redirect_to home_path
