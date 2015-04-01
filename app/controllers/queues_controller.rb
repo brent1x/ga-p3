@@ -10,6 +10,12 @@ class QueuesController < ApplicationController
   def new
     @cue = Cue.new
     # @rest = Restaurant.new
+    @restaurant = Restaurant.all
+    @dropdown_arr = []
+    @restaurant.each do |f|
+      @dropdown_arr.push(f.name)
+    end
+
   end
 
   def create

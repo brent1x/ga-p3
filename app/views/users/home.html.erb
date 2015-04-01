@@ -20,7 +20,7 @@
             <h4><%= x.start_time %> - <%= x.end_time %></h4>
           </div>
           <div class="col-xs-6 text-right">
-            <span class="not-selected-item "><%= link_to "Delete", queue_path(x.id), method:"Delete", data:{ confirm: "Are you sure you want to delete #{x.rests}?"} %></span>
+            <span class="not-selected-item delete-width"><%= link_to "Delete", queue_path(x.id), method:"Delete", data:{ confirm: "Are you sure you want to delete #{x.rests}?"} %></span>
             
             <h4 class="party-padding">Party Size: 4</h4>
           </div>
