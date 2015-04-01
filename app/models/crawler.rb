@@ -57,7 +57,7 @@ class Crawler < ActiveRecord::Base
 			doc = Nokogiri::HTML(open(url))
 			y = doc.css("a.dtp-button.button").text.split(" PM")
 			key = rest_url.split("=")[1].split("%")[0]
-			my_hash.merge!("#{key}": y)
+			my_hash.merge!("#{key}" => y)
 		end
 
 rest_hash[@restaurant.name] =  my_hash
