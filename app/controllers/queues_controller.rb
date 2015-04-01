@@ -38,7 +38,7 @@ class QueuesController < ApplicationController
     if @cue_res.save
 
       puts "Saved successfully"
-      Crawler.crawler_check
+      Crawler.first_crawl @cue_res
       redirect_to home_path
     else
       puts "not saved"
