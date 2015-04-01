@@ -35,7 +35,7 @@ class Crawler < ActiveRecord::Base
 
 	def self.crawler_check
 		join_table = CueRestaurant.all
-		@client = Twilio::REST::Client.new ENV['twilio_account_sid'], ENV['twilio_auth_token']
+		@client = Twilio::REST::Client.new ENV['TWILIO_ACCOUNT_SIDE'], ENV['TWILIO_AUTH_TOKEN']
 		r_hash = {}
 		user_rest_hash ={}
 		beginning_time = Time.now
