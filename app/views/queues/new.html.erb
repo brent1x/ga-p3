@@ -14,7 +14,7 @@
         <%= f.input :covers, collection: 2..9, input_html: { class: 'input-class' }  %>
         <h4>Select a start date for your Queue</h4>
        <%= f.input :start_date, input_html: { class: 'input-class time-inputs' }  %>
-       <h4>Select a end date for your Queue</h4>
+       <h4>Select an end date for your Queue</h4>
        <%= f.input :end_date, input_html: { class: 'input-class time-inputs' }  %>
         <h4>Select a start time for your Reservation</h4>
        <%= f.input :start_time, input_html: { class: 'input-class time-inputs' }  %>
@@ -23,6 +23,7 @@
        <%= f.submit "Add Restaurant to your Queue",:class => "not-selected-item text-center expand-width" %>
      <% end %>
      </div>
+     <br><br><br><br><br>
      </div>
      </div>
 
