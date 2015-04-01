@@ -26,19 +26,11 @@ class SitesController < ApplicationController
     if restaurant_info
       message = Crawler.url_check  restaurant_info
       message
-
     else
-    flash[:notice] = "Restaurant not found" 
+    flash[:notice] = "Restaurant not found"
     end
-    # redirect_to add_path
-    redirect_to home_path
-  end
-private
-  def restaurant_params
-
-    params.require(:restaurant).permit(:name, :city, :state)
+    redirect_to add_path
   end
 
 
 end
-#www.opentable.com/bourbon-steak-san-francisco?DateTime=2015-04-06%2122&Covers=2
