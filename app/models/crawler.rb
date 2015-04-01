@@ -3,6 +3,7 @@ class Crawler < ActiveRecord::Base
 	require 'nokogiri'
 	require 'open-uri'
 	require 'json'
+	require 'twilio-ruby'
 
 	def self.url_check restaurant_info
 		restaurant_info.each do |restaurant|
@@ -29,6 +30,7 @@ class Crawler < ActiveRecord::Base
 	end
 
 	def self.crawler_check join_table
+		@client = Twilio::REST::Client.new ENV["ACCOUNT_SID"], ENV["AUTH_TOKEN"]
 		r_hash = {}
 		user_rest_hash ={}
 		beginning_time = Time.now
@@ -68,15 +70,12 @@ class Crawler < ActiveRecord::Base
 	# user_rest_hash[@user].push()
 	# end
 	puts user_rest_hash
-	binding.pry
 	end_time = Time.now
 	puts "Time elapsed #{(end_time - beginning_time)*1000} milliseconds"
 		end
 final_hash = {}
 user_rest_hash.each do |user_ids, rest_hash|
-	binding.pry
 		rest_hash.each do |restaurant, value|
-			binding.pry
 			rest_id = Restaurant.find_by(name: restaurant).id
 			start_time = CueRestaurant.find_by(restaurant_id:rest_id).start_time.hour
 			end_time = CueRestaurant.find_by(restaurant_id:rest_id).end_time.hour
@@ -97,9 +96,14 @@ user_rest_hash.each do |user_ids, rest_hash|
 			end
 			end
 		end
-	binding.pry
 	puts final_hash
 	puts @user
+@client = Twilio::REST::Client.new ENV["TWILIO_ACCOUNT_SID"], ENV["TWILIO_AUTH_TOKEN"]
+message = @client.account.messages.create(:body => "Please",
+     :from => "+16503993282",
+     :to => "+17277769719")
+puts message.to
+
 	end
 	end
 end
