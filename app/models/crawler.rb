@@ -30,7 +30,7 @@ class Crawler < ActiveRecord::Base
 	end
 
 	def self.crawler_check join_table
-		@client = Twilio::REST::Client.new ENV["ACCOUNT_SID"], ENV["AUTH_TOKEN"]
+		@client = Twilio::REST::Client.new ENV['TWILIO_ACCOUNT_SID'], ENV['TWILIO_AUTH_TOKEN']
 		r_hash = {}
 		user_rest_hash ={}
 		beginning_time = Time.now
