@@ -10,6 +10,8 @@
       <%= simple_form_for @cue, :url => queues_path do |f|%>
         <h4>Choose  restaurant</h4>
        <%= f.input :rests, :selected => ["Choose a Restaurant"], input_html: { class: 'input-class' }, collection: @dropdown_arr %> 
+        <h4>Party Size:</h4>
+        <%= f.input :covers, collection: 2..9, input_html: { class: 'input-class' }  %>
         <h4>Select a start date for your Queue</h4>
        <%= f.input :start_date, input_html: { class: 'input-class time-inputs' }  %>
        <h4>Select a end date for your Queue</h4>

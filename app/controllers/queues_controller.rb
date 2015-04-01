@@ -65,7 +65,7 @@ class QueuesController < ApplicationController
 private
   def cue_params
 
-    params.require(:cue).permit(:user_id, :rests, :start_date, :end_date, :start_time, :end_time)
+    params.require(:cue).permit(:user_id, :rests, :start_date, :end_date, :start_time, :end_time, :covers)
   end
 
   def restaurant_params

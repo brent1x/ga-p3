@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 20150331160850) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "rests"
+    t.integer  "covers"
   end
 
   create_table "open_table_clients", force: :cascade do |t|
