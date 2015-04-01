@@ -22,7 +22,7 @@
           <div class="col-xs-6 text-right">
             <span class="not-selected-item delete-width"><%= link_to "Delete", queue_path(x.id), method:"Delete", data:{ confirm: "Are you sure you want to delete #{x.rests}?"} %></span>
             
-            <h4 class="party-padding">Party Size: 4</h4>
+            <h4 class="party-padding">Party Size: <%= x.covers %></h4>
           </div>
           
         </div>
