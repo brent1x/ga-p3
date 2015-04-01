@@ -31,7 +31,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt', '~> 3.1.7'
 gem 'mechanize', '~> 2.7.3'
 gem 'faraday_middleware'
-gem 'twilio-ruby', '~> 3.12'
 # Use Unicorn as the app server
 # gem 'unicorn'
 gem 'sidekiq'
@@ -50,7 +49,6 @@ group :development, :test do
   gem 'better_errors'
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
-
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
