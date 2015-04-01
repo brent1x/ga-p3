@@ -28,9 +28,14 @@ class Crawler < ActiveRecord::Base
 			end
 		end
 	end
+	def self.get_rest
+		x = Restaurant.all
+			puts x["name"]
+	end
 
-	def self.crawler_check join_table
-		@client = Twilio::REST::Client.new ENV['TWILIO_ACCOUNT_SID'], ENV['TWILIO_AUTH_TOKEN']
+	def self.crawler_check
+		join_table = CueRestaurant.all
+		@client = Twilio::REST::Client.new ENV['twilio_account_sid'], ENV['twilio_auth_token']
 		r_hash = {}
 		user_rest_hash ={}
 		beginning_time = Time.now
@@ -98,7 +103,7 @@ user_rest_hash.each do |user_ids, rest_hash|
 		end
 	puts final_hash
 	puts @user
-@client = Twilio::REST::Client.new ENV["TWILIO_ACCOUNT_SID"], ENV["TWILIO_AUTH_TOKEN"]
+@client = Twilio::REST::Client.new ENV["twilio_account_sid"], ENV["twilio_auth_token"]
 message = @client.account.messages.create(:body => "Please",
      :from => "+16503993282",
      :to => "+17277769719")
