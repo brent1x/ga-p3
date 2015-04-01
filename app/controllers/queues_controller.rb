@@ -19,13 +19,24 @@ class QueuesController < ApplicationController
   end
 
   def create
+    binding.pry
     user = User.find session[:user_id]
-    @cue = Cue.create cue_params
+    rest_params = {}
+    rest_params["restaurant_id"] = Restaurant.find_by(name: cue_params["rests"]).id
+    rest_params["user_id"] = session[:user_id]
+    rest_params["cue_id"] = User.find(session[:user_id]).cues[0].id
+    rest_params["start_date"] = cue_params["start_date(1i)"] + "-" + cue_params["start_date(2i)"] + "-" + cue_params["start_date(3i)"]
+    rest_params["end_date"] = cue_params["end_date(1i)"] + "-" + cue_params["end_date(2i)"] + "-" + cue_params["end_date(3i)"]
+    rest_params["start_time"] = cue_params["start_time(4i)"] + ":" + cue_params["start_time(5i)"] + ":00"
+    rest_params["end_time"] = cue_params["end_time(4i)"] + ":" + cue_params["end_time(5i)"] + ":00"
+    rest_params["covers"] = cue_params["covers"]
+    binding.pry
+    @cue = CueRestaurant.new rest_params
     if @cue.save
-      user.cues << @cue
-      # redirect_to queues_path(session[:user_id]), flash: {success: "New queue added."}
+      puts "Saved successfully"
       redirect_to home_path
     else
+      puts "not saved"
       render :new
     end
   end
@@ -70,4 +81,4 @@ private
   def restaurant_params
     params.require(:restaurant).permit(:id)
   end
- end 
+ end
