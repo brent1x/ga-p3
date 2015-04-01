@@ -29,7 +29,7 @@ class SitesController < ApplicationController
     else
     flash[:notice] = "Restaurant not found"
     end
-    redirect_to add_path
+    redirect_to home_path
   end
 
 
