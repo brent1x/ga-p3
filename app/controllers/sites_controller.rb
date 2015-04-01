@@ -5,7 +5,7 @@ class SitesController < ApplicationController
     # user_id = session[:user_id]
     # @found_user = User.find(user_id)
 
-    redirect_to about_path
+    # redirect_to about_path
 
   end
 
@@ -29,7 +29,7 @@ class SitesController < ApplicationController
     else
     flash[:notice] = "Restaurant not found"
     end
-    redirect_to add_path
+    redirect_to home_path
   end
 
 

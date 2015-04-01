@@ -17,34 +17,34 @@
 </head>
 <body>
 
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-    </div>
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
-        <li><a href="<%= about_path %>">About</a></li>
-        <li><a href="<%= home_path %>">Your Queue</a></li>
-        <li><a href="<%= account_path %>">Account</a></li>
-        <li><a href="<%= add_restaurant_path %>">Add Restaurant to List</a></li>
-        <!-- <li><a href="">F.A.Q</a></li> -->
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-
-
-
 <%= yield %>
+
+<div class="new-nav">
+  <div class="row nav-row">
+    <div class="col-xs-3 text-center">
+    <a href="<%= home_path  %>"> 
+    <div class="home"></div></a>
+    </div>
+    <div class="col-xs-3 text-center">
+    <a href="<%= add_path %>">
+    <div class="add-rest"></div>
+    </a>
+    </div>
+    <div class="col-xs-3 text-center mid-nav">
+    <a href="<%= new_queue_path %>">
+    <div class="your-queue"></div>
+    </a>
+    </div>
+    <div class="col-xs-3 text-center">
+    <a href="<%= about_path %>">
+    <div class="settings"></div>
+    </a>
+    </div>
+    <!-- <div class="col-xs-3 text-center">
+    <div class="info"></div></div>
+  </div> -->
+
+</div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>

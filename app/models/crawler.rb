@@ -6,7 +6,6 @@ class Crawler < ActiveRecord::Base
 	require 'json'
 	require 'twilio-ruby'
 
-
     def self.url_check restaurant_info
         restaurant_info.each do |restaurant|
             restaurant[:restaurant_urls].each do |el_url|

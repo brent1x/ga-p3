@@ -5,17 +5,17 @@
       <div >
         <img class="logo-image-sm" src="<%= asset_path('rezqlogo.png') %>" alt="">
       </div>
-      <h2 class="border-line">Add a Restaurant to your Queue.</h2>
+      <h2 class="border-line">Add a Restaurant to Restaurant List.</h2>
 
       <%= simple_form_for @restaurant, :url => add_restaurant_path do |f|%>
 
-       <%= f.input :name%> 
+       <%= f.input :name, input_html: { class: 'input-class' },placeholder: 'Restaurant Name'%> 
 
-       <%= f.input :city %>
+       <%= f.input :city, input_html: { class: 'input-class' },placeholder: 'City',placeholder: 'State', collection: ["San Francisco", "New York City", "Los Angeles"],:selected => [] %>
 
-       <%= f.input :state %>
-
-       <%= f.submit %>
+       <%= f.input :state, input_html: { class: 'input-class' },placeholder: 'State', collection: ["CA", "NY"],:selected => [] %>
+<div class="end-line"></div>
+       <%= f.submit "Add this Restaurant",:class => "not-selected-item text-center expand-width"%>
      <% end %>
      </div>
      </div>
