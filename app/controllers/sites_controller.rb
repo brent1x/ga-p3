@@ -5,7 +5,7 @@ class SitesController < ApplicationController
     # user_id = session[:user_id]
     # @found_user = User.find(user_id)
 
-    redirect_to about_path
+    # redirect_to about_path
 
   end
 
