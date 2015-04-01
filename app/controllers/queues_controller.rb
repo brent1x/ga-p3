@@ -24,6 +24,7 @@ class QueuesController < ApplicationController
     if @cue.save
       user.cues << @cue
       # redirect_to queues_path(session[:user_id]), flash: {success: "New queue added."}
+      binding.pry
       redirect_to home_path
     else
       render :new
