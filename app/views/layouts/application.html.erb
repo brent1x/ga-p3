@@ -7,8 +7,8 @@
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
- 
-  
+
+
 
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -17,7 +17,7 @@
 </head>
 <body>
   <% flash.each do |key, value| %>
-  
+
     <% if key == "notice" %>
       <%= content_tag :div, value, class: "text-center alert alert-warning flashMessage" %>
     <% elsif key == "alert" %>
@@ -30,10 +30,10 @@
 
 <%= yield %>
 
-<div class="new-nav">
+<!-- <div class="new-nav">
   <div class="row nav-row">
     <div class="col-xs-3 text-center">
-    <a href="<%= home_path  %>"> 
+    <a href="<%= home_path  %>">
     <div class="home"></div></a>
     </div>
     <div class="col-xs-3 text-center">
@@ -50,7 +50,7 @@
     <a href="<%= about_path %>">
     <div class="settings"></div>
     </a>
-    </div>
+    </div> -->
     <!-- <div class="col-xs-3 text-center">
     <div class="info"></div></div>
   </div> -->

@@ -51,13 +51,14 @@ class QueuesController < ApplicationController
     @cue = Cue.find(params[:id])
 
     @findrest = Restaurant.find_by(name: @cue.rests).id
-    @findrow = CueRestaurant.find_by(restaurant_id: @findrest, cue_id: @cue.id).destroy
+    # @findrow = CueRestaurant.find_by(restaurant_id: @findrest, cue_id: @cue.id).destroy
+    @findrow = CueRestaurant.find_by(restaurant_id: @findrest, start_date: @cue.start_date, end_date: @cue.end_date, start_time: @cue.start_time, end_time: @cue.end_time).destroy
 
     @cue.destroy
     if @user.cues.empty?
-          redirect_to new_queue_path
-        else
-           redirect_to home_path
+      redirect_to new_queue_path
+    else
+      redirect_to home_path
     end
   end
 
