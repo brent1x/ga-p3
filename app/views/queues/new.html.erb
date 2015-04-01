@@ -9,7 +9,7 @@
 <div class="text-left">
       <%= simple_form_for @cue, :url => queues_path do |f|%>
         <h4>Choose  restaurant</h4>
-       <%= f.input :rests, :selected => ["Choose a Restaurant"], input_html: { class: 'input-class' }, collection: @dropdown_arr %> 
+       <%= f.input :rests, :selected => ["Choose a Restaurant"], input_html: { class: 'input-class' }, collection: @dropdown_arr %>
         <h4>Party Size:</h4>
         <%= f.input :covers, collection: 2..9, input_html: { class: 'input-class' }  %>
         <h4>Select a start date for your Queue</h4>
@@ -26,4 +26,25 @@
      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
      </div>
      </div>
+     <div class="new-nav">
+  <div class="row nav-row">
+    <div class="col-xs-3 text-center">
+    <a href="<%= home_path  %>">
+    <div class="home"></div></a>
+    </div>
+    <div class="col-xs-3 text-center">
+    <a href="<%= add_path %>">
+    <div class="add-rest"></div>
+    </a>
+    </div>
+    <div class="col-xs-3 text-center mid-nav">
+    <a href="<%= new_queue_path %>">
+    <div class="your-queue"></div>
+    </a>
+    </div>
+    <div class="col-xs-3 text-center">
+    <a href="<%= about_path %>">
+    <div class="settings"></div>
+    </a>
+    </div>
 
