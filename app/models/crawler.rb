@@ -88,7 +88,7 @@ user_rest_hash.each do |user_ids, rest_hash|
 			end_time = CueRestaurant.find_by(restaurant_id:rest_id).end_time.hour
 			value.each do |date, times|
 				times.each do |time|
-					if start_time.to_i <= (time.to_i + 12) && (time.to_i + 12) >= end_time.to_i
+					if start_time.to_i <= (time.to_i + 12) && (time.to_i + 12) <= end_time.to_i
  						puts "Hello World"
  							if final_hash[restaurant].nil?
 								final_hash[restaurant] = {"#{date}" => [time]}
@@ -170,7 +170,7 @@ user_rest_hash.each do |user_ids, rest_hash|
 			end_time = CueRestaurant.find_by(restaurant_id:rest_id).end_time.hour
 			value.each do |date, times|
 				times.each do |time|
-					if start_time.to_i <= (time.to_i + 12) && (time.to_i + 12) >= end_time.to_i
+					if start_time.to_i <= (time.to_i + 12) && (time.to_i + 12) <= end_time.to_i
  						puts "Hello World"
  							if final_hash[restaurant].nil?
 								final_hash[restaurant] = {"#{date}" => [time]}
@@ -186,14 +186,25 @@ user_rest_hash.each do |user_ids, rest_hash|
 			end
 		end
 	puts final_hash
+	binding.pry
 	puts @user
+if final_hash != {}
+restaurant_name = Restaurant.find(join_table[0].restaurant_id).name
+available_date = final_hash[Restaurant.find(join_table[0].restaurant_id).name].keys.first
+available_time = final_hash[Restaurant.find(join_table[0].restaurant_id).name][available_date].first
+base_url = @restaurant.url.split("?")[0]
+covers = cue_res.covers
+final_url = base_url + "?DateTime=" + available_date + "%" + (available_time.to_i + 12).to_s + (available_time.to_i + 13).to_s + "&Covers=" + covers
+binding.pry
+#"http://www.opentable.com/spqr-san-francisco?DateTime=2015-04-02%2122&Covers=2"
+
 @client = Twilio::REST::Client.new ENV["TWILIO_ACCOUNT_SID"], ENV["TWILIO_AUTH_TOKEN"]
 # @client = Twilio::REST::Client.new ENV["twilio_account_sid"], ENV["twilio_auth_token"]
-message = @client.account.messages.create(:body => "Please",
+message = @client.account.messages.create(:body => "One or more restaurant reservations are currently available! Book your table at #{restaurant_name} for #{available_date} @ #{available_time} now: #{final_url}",
      :from => "+16503993282",
      :to => "+17277769719")
 puts message.to
-
+end
 	end
 	end
 end
