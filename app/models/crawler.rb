@@ -40,8 +40,8 @@ class Crawler < ActiveRecord::Base
 		puts join_by_user
 		join_by_user.each do |join_table|
 		join_table.shift
-		# @client = Twilio::REST::Client.new ENV['TWILIO_ACCOUNT_SID'], ENV['TWILIO_AUTH_TOKEN']
-		@client = Twilio::REST::Client.new ENV['twilio_account_sid'], ENV['twilio_auth_token']
+		@client = Twilio::REST::Client.new ENV['TWILIO_ACCOUNT_SID'], ENV['TWILIO_AUTH_TOKEN']
+		# @client = Twilio::REST::Client.new ENV['twilio_account_sid'], ENV['twilio_auth_token']
 		r_hash = {}
 		user_rest_hash ={}
 		beginning_time = Time.now
@@ -142,13 +142,13 @@ end
 body_counter = restaurant_total
 url_list = ""
 while (body_counter > 0) do
-url_list = url_list + " " + url_list[body_counter] + " "
+url_list = url_list + " " + "table at #{restaurant_name[body_counter]} for #{available_date[body_counter]} @ #{available_time[body_counter]}: #{final_url[body_counter]}" + " "
 body_counter = body_counter - 1
 end
 
-# @client = Twilio::REST::Client.new ENV["TWILIO_ACCOUNT_SID"], ENV["TWILIO_AUTH_TOKEN"]
-@client = Twilio::REST::Client.new ENV["twilio_account_sid"], ENV["twilio_auth_token"]
-message = @client.account.messages.create(:body => "Hey @user.first_name! Find your RezQ update below:
+@client = Twilio::REST::Client.new ENV["TWILIO_ACCOUNT_SID"], ENV["TWILIO_AUTH_TOKEN"]
+# @client = Twilio::REST::Client.new ENV["twilio_account_sid"], ENV["twilio_auth_token"]
+message = @client.account.messages.create(:body => "Hey #{@user.first_name}! Find your RezQ update below:
 #{url_list}",
      :from => "+16503993282",
      :to => "+17277769719")
@@ -161,8 +161,8 @@ end
 
 	def self.first_crawl cue_res
 		join_table = [cue_res]
-		# @client = Twilio::REST::Client.new ENV['TWILIO_ACCOUNT_SID'], ENV['TWILIO_AUTH_TOKEN']
-		@client = Twilio::REST::Client.new ENV['twilio_account_sid'], ENV['twilio_auth_token']
+		@client = Twilio::REST::Client.new ENV['TWILIO_ACCOUNT_SID'], ENV['TWILIO_AUTH_TOKEN']
+		# @client = Twilio::REST::Client.new ENV['twilio_account_sid'], ENV['twilio_auth_token']
 		r_hash = {}
 		user_rest_hash ={}
 		beginning_time = Time.now
@@ -239,8 +239,8 @@ covers = cue_res.covers
 final_url = base_url + "?DateTime=" + available_date + "%" + (available_time.to_i + 12).to_s + (available_time.to_i + 13).to_s + "&Covers=" + covers
 #"http://www.opentable.com/spqr-san-francisco?DateTime=2015-04-02%2122&Covers=2"
 
-# @client = Twilio::REST::Client.new ENV["TWILIO_ACCOUNT_SID"], ENV["TWILIO_AUTH_TOKEN"]
-@client = Twilio::REST::Client.new ENV["twilio_account_sid"], ENV["twilio_auth_token"]
+@client = Twilio::REST::Client.new ENV["TWILIO_ACCOUNT_SID"], ENV["TWILIO_AUTH_TOKEN"]
+# @client = Twilio::REST::Client.new ENV["twilio_account_sid"], ENV["twilio_auth_token"]
 message = @client.account.messages.create(:body => "One or more restaurant reservations are currently available! Book your table at #{restaurant_name} for #{available_date} @ #{available_time} now: #{final_url}",
      :from => "+16503993282",
      :to => "+17277769719")
