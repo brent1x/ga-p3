@@ -131,14 +131,21 @@ user_join_table.each do |user_join_table_row|
 user_join_table_row.shift
 first_available = user_join_table_row[0].first
 restaurant_name[counter] = Restaurant.find(first_available.restaurant_id).name
-puts "this is the final has #{final_hash}"
-puts final_hash[Restaurant.find(first_available.restaurant_id).name]
-available_date[counter] = final_hash[Restaurant.find(first_available.restaurant_id).name].keys.first
-available_time[counter] = final_hash[Restaurant.find(first_available.restaurant_id).name][available_date[counter]].first
-base_url[counter] = Restaurant.find(first_available.restaurant_id).url.split("?")[0]
-covers[counter] = user_join_table_row[0].first.covers
-final_url[counter] = base_url[counter] + "?DateTime=" + available_date[counter] + "%" + (available_time[counter].to_i + 12).to_s + (available_time[counter].to_i + 13).to_s + "&Covers=" + covers[counter]
-counter = counter + 1
+	if final_hash[Restaurant.find(first_available.restaurant_id).name].nil?
+	  available_date[counter] = "_"
+		available_time[counter] = "_"
+		base_url[counter] = Restaurant.find(first_available.restaurant_id).url.split("?")[0]
+		covers[counter] = user_join_table_row[0].first.covers
+		final_url[counter] = "No available reservations! Check back soon!"
+		counter = counter + 1
+	else
+		available_date[counter] = final_hash[Restaurant.find(first_available.restaurant_id).name].keys.first
+		available_time[counter] = final_hash[Restaurant.find(first_available.restaurant_id).name][available_date[counter]].first
+		base_url[counter] = Restaurant.find(first_available.restaurant_id).url.split("?")[0]
+		covers[counter] = user_join_table_row[0].first.covers
+		final_url[counter] = base_url[counter] + "?DateTime=" + available_date[counter] + "%" + (available_time[counter].to_i + 12).to_s + (available_time[counter].to_i + 13).to_s + "&Covers=" + covers[counter]
+		counter = counter + 1
+	end
 end
 
 body_counter = restaurant_total
