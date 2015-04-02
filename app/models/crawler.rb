@@ -131,6 +131,7 @@ user_join_table.each do |user_join_table_row|
 user_join_table_row.shift
 first_available = user_join_table_row[0].first
 restaurant_name[counter] = Restaurant.find(first_available.restaurant_id).name
+puts final_hash[Restaurant.find(first_available.restaurant_id).name]
 available_date[counter] = final_hash[Restaurant.find(first_available.restaurant_id).name].keys.first
 available_time[counter] = final_hash[Restaurant.find(first_available.restaurant_id).name][available_date[counter]].first
 base_url[counter] = Restaurant.find(first_available.restaurant_id).url.split("?")[0]
