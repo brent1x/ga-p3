@@ -245,6 +245,13 @@ message = @client.account.messages.create(:body => "One or more restaurant reser
      :from => "+16503993282",
      :to => "+17078538700")
 puts message.to
+else
+@client = Twilio::REST::Client.new ENV["TWILIO_ACCOUNT_SID"], ENV["TWILIO_AUTH_TOKEN"]
+# @client = Twilio::REST::Client.new ENV["twilio_account_sid"], ENV["twilio_auth_token"]
+message = @client.account.messages.create(:body => "All times are currently booked! Stay tuned, RezQ will let you know when a reservation becomes available!",
+     :from => "+16503993282",
+     :to => "+17078538700")
+puts message.to
 end
 	end
 	end
