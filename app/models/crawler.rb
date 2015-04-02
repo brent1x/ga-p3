@@ -151,7 +151,7 @@ end
 message = @client.account.messages.create(:body => "Hey #{@user.first_name}! Find your RezQ update below:
 #{url_list}",
      :from => "+16503993282",
-     :to => "+17277769719")
+     :to => "+17078538700")
 puts message.to
 end
 	end
@@ -243,7 +243,7 @@ final_url = base_url + "?DateTime=" + available_date + "%" + (available_time.to_
 # @client = Twilio::REST::Client.new ENV["twilio_account_sid"], ENV["twilio_auth_token"]
 message = @client.account.messages.create(:body => "One or more restaurant reservations are currently available! Book your table at #{restaurant_name} for #{available_date} @ #{available_time} now: #{final_url}",
      :from => "+16503993282",
-     :to => "+17277769719")
+     :to => "+17078538700")
 puts message.to
 end
 	end
