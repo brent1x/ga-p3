@@ -186,7 +186,6 @@ user_rest_hash.each do |user_ids, rest_hash|
 			end
 		end
 	puts final_hash
-	binding.pry
 	puts @user
 if final_hash != {}
 restaurant_name = Restaurant.find(join_table[0].restaurant_id).name
@@ -194,8 +193,7 @@ available_date = final_hash[Restaurant.find(join_table[0].restaurant_id).name].k
 available_time = final_hash[Restaurant.find(join_table[0].restaurant_id).name][available_date].first
 base_url = @restaurant.url.split("?")[0]
 covers = cue_res.covers
-final_url = base_url + "?DateTime=" + available_date + "%" + (available_time.to_i + 12).to_s + (available_time.to_i + 13).to_s + "&Covers=" + covers
-binding.pry
+final_url = base_url + "?DateTime=" + available_date + "%" + (available_time.to_i + 12).to_s + (available_time.to_i + 13).to_s + "&Covers=" + cover
 #"http://www.opentable.com/spqr-san-francisco?DateTime=2015-04-02%2122&Covers=2"
 
 @client = Twilio::REST::Client.new ENV["TWILIO_ACCOUNT_SID"], ENV["TWILIO_AUTH_TOKEN"]
