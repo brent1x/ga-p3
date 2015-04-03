@@ -160,7 +160,7 @@ if final_hash != {}
 message = @client.account.messages.create(:body => "Hey #{@user.first_name}! Find your RezQ update below:
 	#{url_list}",
 	:from => "+16503993282",
-	:to => "+16508683858")
+	:to => "+1"+"#{@user.phone_number}")
 puts message.to
 end
 end
@@ -247,19 +247,19 @@ user_rest_hash.each do |user_ids, rest_hash|
 		covers = cue_res.covers
 		final_url = base_url + "?DateTime=" + available_date + "%" + (available_time.to_i + 12).to_s + (available_time.to_i + 13).to_s + "&Covers=" + covers
 #"http://www.opentable.com/spqr-san-francisco?DateTime=2015-04-02%2122&Covers=2"
-
+binding.pry
 @client = Twilio::REST::Client.new ENV["TWILIO_ACCOUNT_SID"], ENV["TWILIO_AUTH_TOKEN"]
 # @client = Twilio::REST::Client.new ENV["twilio_account_sid"], ENV["twilio_auth_token"]
 message = @client.account.messages.create(:body => "One or more restaurant reservations are currently available! Book your table at #{restaurant_name} for #{available_date} @ #{available_time} now: #{final_url}",
 	:from => "+16503993282",
-	:to => "+16508683858")
+	:to => "+1"+"#{@user.phone_number}")
 puts message.to
 else
 	@client = Twilio::REST::Client.new ENV["TWILIO_ACCOUNT_SID"], ENV["TWILIO_AUTH_TOKEN"]
 # @client = Twilio::REST::Client.new ENV["twilio_account_sid"], ENV["twilio_auth_token"]
 message = @client.account.messages.create(:body => "All times are currently booked! Stay tuned, RezQ will let you know when a reservation becomes available!",
 	:from => "+16503993282",
-	:to => "+16508683858")
+	:to => "+1"+"#{@user.phone_number}")
 puts message.to
 end
 end
