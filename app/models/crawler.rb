@@ -247,7 +247,6 @@ user_rest_hash.each do |user_ids, rest_hash|
 		covers = cue_res.covers
 		final_url = base_url + "?DateTime=" + available_date + "%" + (available_time.to_i + 12).to_s + (available_time.to_i + 13).to_s + "&Covers=" + covers
 #"http://www.opentable.com/spqr-san-francisco?DateTime=2015-04-02%2122&Covers=2"
-binding.pry
 @client = Twilio::REST::Client.new ENV["TWILIO_ACCOUNT_SID"], ENV["TWILIO_AUTH_TOKEN"]
 # @client = Twilio::REST::Client.new ENV["twilio_account_sid"], ENV["twilio_auth_token"]
 message = @client.account.messages.create(:body => "One or more restaurant reservations are currently available! Book your table at #{restaurant_name} for #{available_date} @ #{available_time} now: #{final_url}",
