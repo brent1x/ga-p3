@@ -12,7 +12,6 @@ return false if resp["total_entries"] == 0
   puts resp["restaurants"][0]["id"]
 @restaurant_info = []
 resp["restaurants"].each do |restaurant|
-  binding.pry
 	@restaurant_info.push({
 		restaurant_name: restaurant["name"],
 		restaurant_city: restaurant["city"],
