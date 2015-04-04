@@ -49,6 +49,11 @@ class QueuesController < ApplicationController
   def destroy
     @user = User.find session[:user_id]
     @cue = Cue.find(params[:id])
+    
+    @restaurant = Restaurant.find_by name: @cue.rests
+    
+    @restaurantCuejoin = CueRestaurant.find_by restaurant_id: @restaurant.id, cue_id: @cue.id
+    @restaurantCuejoin.destroy
     @cue.destroy
     if @user.cues.empty?
           redirect_to new_queue_path
