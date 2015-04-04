@@ -17,7 +17,7 @@ class Crawler < ActiveRecord::Base
 						puts "not found"
 					end
 				else
-					@restaurant = Restaurant.new(name: restaurant[:restaurant_name], city:restaurant[:restaurant_city], state: restaurant[:restaurant_state], url: el_url)
+					@restaurant = Restaurant.new(name: restaurant[:restaurant_name], city:restaurant[:restaurant_city], state: restaurant[:restaurant_state], open_table_id: restaurant[:open_table_id], url: el_url)
 					if  @restaurant.save
 						puts "saved successfully"
 					else
@@ -40,8 +40,8 @@ class Crawler < ActiveRecord::Base
 		puts join_by_user
 		join_by_user.each do |join_table|
 			join_table.shift
-			@client = Twilio::REST::Client.new ENV['TWILIO_ACCOUNT_SID'], ENV['TWILIO_AUTH_TOKEN']
-		# @client = Twilio::REST::Client.new ENV['twilio_account_sid'], ENV['twilio_auth_token']
+			# @client = Twilio::REST::Client.new ENV['TWILIO_ACCOUNT_SID'], ENV['TWILIO_AUTH_TOKEN']
+		@client = Twilio::REST::Client.new ENV['twilio_account_sid'], ENV['twilio_auth_token']
 		r_hash = {}
 		user_rest_hash ={}
 		beginning_time = Time.now
@@ -155,8 +155,8 @@ if final_hash != {}
 		body_counter = body_counter - 1
 	end
 
-	@client = Twilio::REST::Client.new ENV["TWILIO_ACCOUNT_SID"], ENV["TWILIO_AUTH_TOKEN"]
-# @client = Twilio::REST::Client.new ENV["twilio_account_sid"], ENV["twilio_auth_token"]
+	# @client = Twilio::REST::Client.new ENV["TWILIO_ACCOUNT_SID"], ENV["TWILIO_AUTH_TOKEN"]
+@client = Twilio::REST::Client.new ENV["twilio_account_sid"], ENV["twilio_auth_token"]
 message = @client.account.messages.create(:body => "Hey #{@user.first_name}! Find your RezQ update below:
 	#{url_list}",
 	:from => "+16503993282",
@@ -170,8 +170,8 @@ end
 
 def self.first_crawl cue_res
 	join_table = [cue_res]
-	@client = Twilio::REST::Client.new ENV['TWILIO_ACCOUNT_SID'], ENV['TWILIO_AUTH_TOKEN']
-		# @client = Twilio::REST::Client.new ENV['twilio_account_sid'], ENV['twilio_auth_token']
+	# @client = Twilio::REST::Client.new ENV['TWILIO_ACCOUNT_SID'], ENV['TWILIO_AUTH_TOKEN']
+		@client = Twilio::REST::Client.new ENV['twilio_account_sid'], ENV['twilio_auth_token']
 		r_hash = {}
 		user_rest_hash ={}
 		beginning_time = Time.now
@@ -241,21 +241,37 @@ user_rest_hash.each do |user_ids, rest_hash|
 	puts @user
 	if final_hash != {}
 		restaurant_name = Restaurant.find(join_table[0].restaurant_id).name
+		restaurant_id = Restaurant.find(join_table[0].restaurant_id).open_table_id
 		available_date = final_hash[Restaurant.find(join_table[0].restaurant_id).name].keys.first
+		available_date_split = final_hash[Restaurant.find(join_table[0].restaurant_id).name].keys.first.split("-")
+		month = available_date_split[1]
+		day = available_date_split[2]
+		year = available_date_split[0]
 		available_time = final_hash[Restaurant.find(join_table[0].restaurant_id).name][available_date].first
-		base_url = @restaurant.url.split("?")[0]
+		hour = (available_time.split(":")[0].to_i + 12).to_s
+		minute = available_time.split(":")[1]
+		seperator = "%2F"
+		binding.pry
+		# base_url for desktop below
+		# base_url = @restaurant.url.split("?")[0]
+		#base_url for mobile
+		base_url = "https://m.opentable.com/reservation/details?"
+		first_string = "&Points=100&PointsType=Standard&SlotHash=2221649544&SecurityID=0&DateTime="
+		second_string = "&SlotLockID=377&OfferConfirmNumber=0&ChosenOfferId=0&IsMiddleSlot=True&ArePopPoints=False"
 		covers = cue_res.covers
-		final_url = base_url + "?DateTime=" + available_date + "%" + (available_time.to_i + 12).to_s + (available_time.to_i + 13).to_s + "&Covers=" + covers
+		final_url = base_url + "RestaurantID=" + restaurant_id + first_string + month + seperator + day + seperator + year + "%20" + hour + "%3A" + minute + "&PartySize=" + covers + second_string
+		puts final_url
+		# https://m.opentable.com/reservation/details?RestaurantID=7740&Points=100&PointsType=Standard&SlotHash=2221649544&SecurityID=0&DateTime=04%2F06%2F2015%2021%3A00%3A00&PartySize=4&SlotLockID=377&OfferConfirmNumber=0&ChosenOfferId=0&IsMiddleSlot=True&ArePopPoints=False
 #"http://www.opentable.com/spqr-san-francisco?DateTime=2015-04-02%2122&Covers=2"
-@client = Twilio::REST::Client.new ENV["TWILIO_ACCOUNT_SID"], ENV["TWILIO_AUTH_TOKEN"]
-# @client = Twilio::REST::Client.new ENV["twilio_account_sid"], ENV["twilio_auth_token"]
+# @client = Twilio::REST::Client.new ENV["TWILIO_ACCOUNT_SID"], ENV["TWILIO_AUTH_TOKEN"]
+@client = Twilio::REST::Client.new ENV["twilio_account_sid"], ENV["twilio_auth_token"]
 message = @client.account.messages.create(:body => "One or more restaurant reservations are currently available! Book your table at #{restaurant_name} for #{available_date} @ #{available_time} now: #{final_url}",
 	:from => "+16503993282",
 	:to => "+1"+"#{@user.phone_number}")
 puts message.to
 else
-	@client = Twilio::REST::Client.new ENV["TWILIO_ACCOUNT_SID"], ENV["TWILIO_AUTH_TOKEN"]
-# @client = Twilio::REST::Client.new ENV["twilio_account_sid"], ENV["twilio_auth_token"]
+	# @client = Twilio::REST::Client.new ENV["TWILIO_ACCOUNT_SID"], ENV["TWILIO_AUTH_TOKEN"]
+@client = Twilio::REST::Client.new ENV["twilio_account_sid"], ENV["twilio_auth_token"]
 message = @client.account.messages.create(:body => "All times are currently booked! Stay tuned, RezQ will let you know when a reservation becomes available!",
 	:from => "+16503993282",
 	:to => "+1"+"#{@user.phone_number}")
