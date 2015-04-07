@@ -20,6 +20,9 @@ Rails.application.routes.draw do
   get 'cues', to: "users#cues", as: "cues"
   get 'account', to: "users#account", as: 'account'
 
+
+  delete 'cues/:cue_id/:restaurant_id', to: 'queues#destroy_cue_restaurant', as:'destroy_cue_restaurant'
+
   get 'add', to: "sites#add", as: 'add'
   post 'add', to: "sites#add_restaurant", as: 'add_restaurant'
 

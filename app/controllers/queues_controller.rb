@@ -18,11 +18,9 @@ class QueuesController < ApplicationController
   end
 
   def create
-    binding.pry
     user = User.find session[:user_id]
     @cue = Cue.create cue_params
     user.cues << @cue
-    binding.pry
     # user = User.find session[:user_id]
     # rest_params = {}
     # rest_params["restaurant_id"] = Restaurant.find_by(name: cue_params["rests"]).id
@@ -72,16 +70,25 @@ class QueuesController < ApplicationController
   def destroy
     @user = User.find session[:user_id]
     @cue = Cue.find(params[:id])
-
-    @findrest = Restaurant.find_by(name: @cue.rests).id
-    @findrow = CueRestaurant.find_by(restaurant_id: @findrest, start_date: @cue.start_date, end_date: @cue.end_date, start_time: @cue.start_time, end_time: @cue.end_time).destroy
-
     @cue.destroy
-    if @user.cues.empty?
-      redirect_to new_queue_path
-    else
-      redirect_to home_path
-    end
+    CueRestaurant.where(:cue_id => params[:id]).destroy_all
+
+    # @findrest = Restaurant.find_by(name: @cue.rests).id
+    # @findrow = CueRestaurant.find_by(restaurant_id: @findrest, start_date: @cue.start_date, end_date: @cue.end_date, start_time: @cue.start_time, end_time: @cue.end_time).destroy
+
+    # @cue.destroy
+    # if @user.cues.empty?
+    #   redirect_to new_queue_path
+    # else
+    #   redirect_to cues_path
+    # end
+  redirect_to cues_path
+  end
+
+  def destroy_cue_restaurant
+    @cue = Cue.find(params[:cue_id])
+    @cue.restaurants.where(:id => params[:restaurant_id]).destroy_all
+    redirect_to cue_path @cue
   end
 
 private
