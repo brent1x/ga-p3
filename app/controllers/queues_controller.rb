@@ -18,25 +18,51 @@ class QueuesController < ApplicationController
   end
 
   def create
+    binding.pry
     user = User.find session[:user_id]
     @cue = Cue.create cue_params
     user.cues << @cue
+    binding.pry
+    # user = User.find session[:user_id]
+    # rest_params = {}
+    # rest_params["restaurant_id"] = Restaurant.find_by(name: cue_params["rests"]).id
+    # rest_params["user_id"] = session[:user_id]
+    # rest_params["cue_id"] = User.find(session[:user_id]).cues[0].id
+    # rest_params["start_date"] = cue_params["start_date(1i)"] + "-" + cue_params["start_date(2i)"] + "-" + cue_params["start_date(3i)"]
+    # rest_params["end_date"] = cue_params["end_date(1i)"] + "-" + cue_params["end_date(2i)"] + "-" + cue_params["end_date(3i)"]
+    # rest_params["start_time"] = cue_params["start_time(4i)"] + ":" + cue_params["start_time(5i)"] + ":00"
+    # rest_params["end_time"] = cue_params["end_time(4i)"] + ":" + cue_params["end_time(5i)"] + ":00"
+    # rest_params["covers"] = cue_params["covers"]
+
+    # @cue_res = CueRestaurant.new rest_params
+    # if @cue_res.save
+    #   puts "Saved successfully"
+    #   Crawler.first_crawl @cue_res
+    #   redirect_to home_path
+    # else
+    #   puts "not saved"
+    #   render :new
+    # end
+  redirect_to cues_path
+  end
+
+  def update
+    @cue = Cue.find(params[:id])
     user = User.find session[:user_id]
     rest_params = {}
     rest_params["restaurant_id"] = Restaurant.find_by(name: cue_params["rests"]).id
     rest_params["user_id"] = session[:user_id]
-    rest_params["cue_id"] = User.find(session[:user_id]).cues[0].id
-    rest_params["start_date"] = cue_params["start_date(1i)"] + "-" + cue_params["start_date(2i)"] + "-" + cue_params["start_date(3i)"]
-    rest_params["end_date"] = cue_params["end_date(1i)"] + "-" + cue_params["end_date(2i)"] + "-" + cue_params["end_date(3i)"]
-    rest_params["start_time"] = cue_params["start_time(4i)"] + ":" + cue_params["start_time(5i)"] + ":00"
-    rest_params["end_time"] = cue_params["end_time(4i)"] + ":" + cue_params["end_time(5i)"] + ":00"
-    rest_params["covers"] = cue_params["covers"]
-
+    rest_params["cue_id"] = @cue.id
+    rest_params["start_date"] = @cue.start_date
+    rest_params["end_date"] = @cue.end_date
+    rest_params["start_time"] = @cue.start_time
+    rest_params["end_time"] = @cue.end_time
+    rest_params["covers"] = @cue.covers
     @cue_res = CueRestaurant.new rest_params
     if @cue_res.save
       puts "Saved successfully"
       Crawler.first_crawl @cue_res
-      redirect_to home_path
+      redirect_to cue_path @cue
     else
       puts "not saved"
       render :new
@@ -61,7 +87,7 @@ class QueuesController < ApplicationController
 private
   def cue_params
 
-    params.require(:cue).permit(:user_id, :rests, :start_date, :end_date, :start_time, :end_time, :covers)
+    params.require(:cue).permit(:user_id, :rests, :start_date, :end_date, :start_time, :end_time, :covers, :name)
   end
 
   def restaurant_params
