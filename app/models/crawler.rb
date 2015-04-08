@@ -17,12 +17,20 @@ class Crawler < ActiveRecord::Base
 						puts "not found"
 					end
 				else
-					@restaurant = Restaurant.new(name: restaurant[:restaurant_name], city:restaurant[:restaurant_city], state: restaurant[:restaurant_state], open_table_id: restaurant[:open_table_id], url: el_url)
-					if  @restaurant.save
-						puts "saved successfully"
+					if Restaurant.exists?(:open_table_id => restaurant[:open_table_id])
+						 @restaurant = Restaurant.find_by(:open_table_id => restaurant[:open_table_id])
+						 @user = User.find(session[:user_id])
+						 @user.restaurants << @restaurant
 					else
-						puts "not found"
+						@restaurant = Restaurant.new(name: restaurant[:restaurant_name], city:restaurant[:restaurant_city], state: restaurant[:restaurant_state], open_table_id: restaurant[:open_table_id], url: el_url)
+						if  @restaurant.save
+							@user = User.find(session[:user_id])
+						 	@user.restaurants << @restaurant
+							puts "saved successfully"
+						else
+							puts "not found"
 
+						end
 					end
 				end
 
