@@ -5,6 +5,7 @@ class QueuesController < ApplicationController
   def index
     @user = User.find session[:user_id]
     @cues = Cue.all
+    render :new
   end
 
   def new
@@ -87,7 +88,7 @@ class QueuesController < ApplicationController
 
   def destroy_cue_restaurant
     @cue = Cue.find(params[:cue_id])
-    @cue.restaurants.where(:id => params[:restaurant_id]).destroy_all
+    CueRestaurant.where(:restaurant_id => params[:restaurant_id], :cue_id => params[:cue_id]).destroy_all
     redirect_to cue_path @cue
   end
 

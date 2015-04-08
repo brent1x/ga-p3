@@ -1,4 +1,6 @@
 class Restaurant < ActiveRecord::Base
-  has_many :cue_restaurants	
+  validates :name, uniqueness: true
+  validates :open_table_id, uniqueness: true
+  has_many :cue_restaurants
   has_many :cues, through: :cue_restaurants
 end
