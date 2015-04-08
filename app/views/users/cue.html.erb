@@ -23,6 +23,7 @@
       <%= simple_form_for @cue, :url => "/queues/#{@cue.id}" do |f|%>
         <h4>Choose  restaurant</h4>
        <%= f.input :rests, :selected => ["Choose a Restaurant"], input_html: { class: 'input-class' }, collection: @dropdown_arr %>
+       <%= f.input :covers, :selected => ["Priority Rank"], input_html: { class: 'input-class' }, collection: [1,2,3,4,5] %>
        <%= f.submit "Add Restaurant to #{@cue.name}",:class => "not-selected-item text-center expand-width" %>
      <% end %>
      </div>

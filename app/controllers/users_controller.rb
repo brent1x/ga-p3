@@ -15,7 +15,7 @@ class UsersController < ApplicationController
   	@user = User.find(session[:user_id])
     @cue = Cue.find(params[:cue_id])
     @cues = Cue.all
-        @restaurant = Restaurant.all
+        @restaurant = @user.restaurants
     @dropdown_arr = []
     @restaurant.each do |f|
       @dropdown_arr.push(f.name)

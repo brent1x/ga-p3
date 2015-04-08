@@ -6,7 +6,7 @@ class Crawler < ActiveRecord::Base
 	require 'json'
 	require 'twilio-ruby'
 
-	def self.url_check restaurant_info
+	def self.url_check restaurant_info, user
 		restaurant_info.each do |restaurant|
 			restaurant[:restaurant_urls].each do |el_url|
 				begin
@@ -19,13 +19,13 @@ class Crawler < ActiveRecord::Base
 				else
 					if Restaurant.exists?(:open_table_id => restaurant[:open_table_id])
 						 @restaurant = Restaurant.find_by(:open_table_id => restaurant[:open_table_id])
-						 @user = User.find(session[:user_id])
-						 @user.restaurants << @restaurant
+						 unless user.restaurants.exists?(:open_table_id => restaurant[:open_table_id])
+						 user.restaurants << @restaurant
+						 end
 					else
 						@restaurant = Restaurant.new(name: restaurant[:restaurant_name], city:restaurant[:restaurant_city], state: restaurant[:restaurant_state], open_table_id: restaurant[:open_table_id], url: el_url)
 						if  @restaurant.save
-							@user = User.find(session[:user_id])
-						 	@user.restaurants << @restaurant
+						 	user.restaurants << @restaurant
 							puts "saved successfully"
 						else
 							puts "not found"
