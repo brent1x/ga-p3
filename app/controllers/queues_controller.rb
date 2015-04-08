@@ -15,14 +15,12 @@ class QueuesController < ApplicationController
     @restaurant.each do |f|
       @dropdown_arr.push(f.name)
     end
-
   end
 
   def create
     user = User.find session[:user_id]
     @cue = Cue.create cue_params
     user.cues << @cue
-
     user = User.find session[:user_id]
     rest_params = {}
     rest_params["restaurant_id"] = Restaurant.find_by(name: cue_params["rests"]).id
@@ -36,9 +34,8 @@ class QueuesController < ApplicationController
 
     @cue_res = CueRestaurant.new rest_params
     if @cue_res.save
-
       puts "Saved successfully"
-      Crawler.crawler_check
+      Crawler.first_crawl @cue_res
       redirect_to home_path
     else
       puts "not saved"
@@ -49,38 +46,16 @@ class QueuesController < ApplicationController
   def destroy
     @user = User.find session[:user_id]
     @cue = Cue.find(params[:id])
-    
-    @restaurant = Restaurant.find_by name: @cue.rests
-    
-    @restaurantCuejoin = CueRestaurant.find_by restaurant_id: @restaurant.id, cue_id: @cue.id
-    @restaurantCuejoin.destroy
+    @findrest = Restaurant.find_by(name: @cue.rests).id
+    @findrow = CueRestaurant.find_by(restaurant_id: @findrest, start_date: @cue.start_date, end_date: @cue.end_date, start_time: @cue.start_time, end_time: @cue.end_time).destroy
+
     @cue.destroy
     if @user.cues.empty?
-          redirect_to new_queue_path
-        else
-           redirect_to home_path
+      redirect_to new_queue_path
+    else
+      redirect_to home_path
     end
   end
-
-  ########## REMOVING EDIT & SHOW CAPABILITIES – USER CAN ONLY ADD OR DESTROY CUES ##########
-
-  # def show
-  #   @cue = Cue.find(params[:id])
-  # end
-
-  # def edit
-  #   @cue = Cue.find(params[:id])
-  # end
-
-  # def update
-  #   @cue = Cue.find(params[:id])
-  #   @cue.update_attributes(cue_params)
-  #   if @cue.save
-  #     redirect_to home_path
-  #   else
-  #     render :edit
-  #   end
-  # end
 
 private
   def cue_params
@@ -91,4 +66,5 @@ private
   def restaurant_params
     params.require(:restaurant).permit(:id)
   end
- end
+
+end
