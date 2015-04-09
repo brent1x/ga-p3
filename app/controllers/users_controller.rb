@@ -47,7 +47,7 @@ class UsersController < ApplicationController
 		session[:last_name] = @user.last_name
   			flash[:notice] = "Welcome #{session[:first_name]}"
         if @user.cues.empty?
-          redirect_to new_queue_path
+          redirect_to add_restaurant_path
         else
   			   redirect_to cues_path
         end
