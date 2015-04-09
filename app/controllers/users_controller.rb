@@ -11,14 +11,20 @@ class UsersController < ApplicationController
   	@user = User.find(session[:user_id])
   end
 
-  def home
+  def cue
   	@user = User.find(session[:user_id])
-    @cue = @user.cues
+    @cue = Cue.find(params[:cue_id])
     @cues = Cue.all
-
-
+        @restaurant = @user.restaurants
+    @dropdown_arr = []
+    @restaurant.each do |f|
+      @dropdown_arr.push(f.name)
+    end
   end
 
+  def cues
+    @cues =  Cue.where(user_id:session[:user_id])
+  end
 
   def create
    @user = User.new user_params
@@ -43,7 +49,7 @@ class UsersController < ApplicationController
         if @user.cues.empty?
           redirect_to new_queue_path
         else
-  			   redirect_to home_path
+  			   redirect_to cues_path
         end
   		else
 

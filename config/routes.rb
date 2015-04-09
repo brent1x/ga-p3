@@ -16,13 +16,19 @@ Rails.application.routes.draw do
   get 'about', to: "sites#about", as: 'about'
   get 'menu', to: "sites#menu", as: 'menu'
 
-  get 'home', to: "users#home", as: 'home'
+  get 'cues/:cue_id', to: "users#cue", as: 'cue'
+  get 'cues', to: "users#cues", as: "cues"
   get 'account', to: "users#account", as: 'account'
+
+  #removes restaurant from queue
+  delete 'cues/:cue_id/:restaurant_id', to: 'queues#destroy_cue_restaurant', as:'destroy_cue_restaurant'
+  #removes restaurant from Users restaurant list
+  delete 'add/remove_restaurant/:id', to: 'sites#destroy_restaurant', as: 'remove_restaurant_from_user'
 
   get 'add', to: "sites#add", as: 'add'
   post 'add', to: "sites#add_restaurant", as: 'add_restaurant'
 
-  get 'test', to: "crawlers#run", as:'run' 
+  get 'test', to: "crawlers#run", as:'run'
 
 ###################### RAKE ROUTES PASTED BELOW ######################
 #                                                                    #
