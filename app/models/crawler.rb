@@ -49,40 +49,43 @@ class Crawler < ActiveRecord::Base
 		join_by_user.each do |join_table|
 			join_table.shift
 			# @client = Twilio::REST::Client.new ENV['TWILIO_ACCOUNT_SID'], ENV['TWILIO_AUTH_TOKEN']
-		@client = Twilio::REST::Client.new ENV['twilio_account_sid'], ENV['twilio_auth_token']
-		r_hash = {}
-		user_rest_hash ={}
-		beginning_time = Time.now
-		final_url_arr = []
-		join_table[0].each do |row|
-			url_arr = []
-			@restaurant = Restaurant.find(row.restaurant_id)
-			@user = User.find(row.user_id)
-			base_url = @restaurant.url.split("?")[0]
-			time_arr = []
-			i = row.start_date
-			x = row.start_time.hour
-			covers = row.covers
-			while(x<=row.end_time.hour) do
-				time_arr.push(x)
-				x+= 1
-			end
-			while(i<=row.end_date) do
-				time_arr.each do |time|
-					url_arr.push("#{base_url}?DateTime=#{i.to_s}%#{time}#{time+1}&Covers=#{covers}")
-					i+= 1
+			@client = Twilio::REST::Client.new ENV['twilio_account_sid'], ENV['twilio_auth_token']
+			beginning_time = Time.now
+			final_url_arr = []
+			join_table[0].group_by{|row| row.cue_id}.each do |cue|
+				user_rest_hash = {}
+				my_hash = {};
+				r_hash = {}
+				cue.shift
+			# cue[0].sort_by { |hsh| [hsh[:cue_id],hsh[:rank]] }.each
+			cue[0].sort_by { |hsh| hsh[:rank] }.each do |row|
+				url_arr = []
+				@restaurant = Restaurant.find(row.restaurant_id)
+				@user = User.find(row.user_id)
+				base_url = @restaurant.url.split("?")[0]
+				time_arr = []
+				i = row.start_date
+				x = row.start_time.hour
+				covers = row.covers
+				while(x<=row.end_time.hour) do
+					time_arr.push(x)
+					x+= 1
 				end
-			end
-			final_url_arr = url_arr
-			my_hash = {};
-			final_url_arr.each do |rest_url|
-				url = rest_url
-				doc = Nokogiri::HTML(open(url))
-				y = doc.css("a.dtp-button.button").text.split(" PM")
-				key = rest_url.split("=")[1].split("%")[0]
-				my_hash.merge!("#{key}" => y)
-			end
-			r_hash[@restaurant.name] =  my_hash
+				while(i<=row.start_date) do
+					time_arr.each do |time|
+						url_arr.push("#{base_url}?DateTime=#{i.to_s}%#{time}#{time+1}&Covers=#{covers}")
+						i+= 1
+					end
+				end
+				final_url_arr = url_arr
+				final_url_arr.each do |rest_url|
+					url = rest_url
+					doc = Nokogiri::HTML(open(url))
+					y = doc.css("a.dtp-button.button").text.split(" PM")
+					key = rest_url.split("=")[1].split("%")[0]
+					my_hash.merge!("#{key}" => y)
+				end
+				r_hash[@restaurant.name] =  my_hash
 	# if user_rest_hash[@user].nil?
 	user_rest_hash[@user.id] = r_hash
 	# else
@@ -100,7 +103,7 @@ user_rest_hash.each do |user_ids, rest_hash|
 		start_time = CueRestaurant.find_by(restaurant_id:rest_id).start_time.hour
 		end_time = CueRestaurant.find_by(restaurant_id:rest_id).end_time.hour
 		value.each do |date, times|
-			if date <=  cue_res.end_date.to_s
+			if date <=  value.keys.first.to_s
 				times.each do |time|
 					if start_time.to_i <= (time.to_i + 12) && (time.to_i + 12) <= end_time.to_i
 						puts "Hello World"
@@ -126,52 +129,97 @@ user_rest_hash.each do |user_ids, rest_hash|
 #      :from => "+16503993282",
 #      :to => "+17277769719")
 # puts message.to
-if final_hash != {}
-	restaurant_name = {}
-	available_date = {}
-	available_time = {}
-	base_url = {}
-	covers = {}
-	final_url = {}
+# if final_hash != {}
+# 	restaurant_name = {}
+# 	available_date = {}
+# 	available_time = {}
+# 	base_url = {}
+# 	covers = {}
+# 	final_url = {}
+day_of_week = {}
+day_of_week["Sun"] = "Sunday"
+day_of_week["Mon"] = "Monday"
+day_of_week["Tue"] = "Tuesday"
+day_of_week["Wed"] = "Wednesday"
+day_of_week["Thu"] = "Thursday"
+day_of_week["Fri"] = "Friday"
+day_of_week["Sat"] = "Saturday"
 
-	user_join_table = join_table[0].group_by{|row| row.restaurant_id}
-	restaurant_total = user_join_table.length
+	user_join_table = join_table[0].group_by{|row| row.cue_id}
+	cue_total = user_join_table.length
 	counter = 1
 	user_join_table.each do |user_join_table_row|
 		user_join_table_row.shift
-		first_available = user_join_table_row[0].first
-		restaurant_name[counter] = Restaurant.find(first_available.restaurant_id).name
-		if final_hash[Restaurant.find(first_available.restaurant_id).name].nil?
-			available_date[counter] = "_"
-			available_time[counter] = "_"
-			base_url[counter] = Restaurant.find(first_available.restaurant_id).url.split("?")[0]
-			covers[counter] = user_join_table_row[0].first.covers
-			final_url[counter] = "No available reservations! Check back soon!"
-			counter = counter + 1
-		else
-			available_date[counter] = final_hash[Restaurant.find(first_available.restaurant_id).name].keys.first
-			available_time[counter] = final_hash[Restaurant.find(first_available.restaurant_id).name][available_date[counter]].first
-			base_url[counter] = Restaurant.find(first_available.restaurant_id).url.split("?")[0]
-			covers[counter] = user_join_table_row[0].first.covers
-			final_url[counter] = base_url[counter] + "?DateTime=" + available_date[counter] + "%" + (available_time[counter].to_i + 12).to_s + (available_time[counter].to_i + 13).to_s + "&Covers=" + covers[counter]
-			counter = counter + 1
+		user_join_table_row = user_join_table_row[0].sort_by { |hsh| hsh[:rank] }
+		user_join_table_row.each do |restaurant|
+			if final_hash.keys.include? Restaurant.find(restaurant.restaurant_id).name
+				available_date = final_hash[Restaurant.find(restaurant.restaurant_id).name].keys.first
+				available_time = final_hash[Restaurant.find(restaurant.restaurant_id).name][available_date].first
+				form_info = {}
+				form_info["first_name"] = @user.first_name
+				form_info["last_name"] = @user.last_name
+				form_info["email"] = @user.email
+				form_info["metro_id"] = Metroid.find_by(city: Restaurant.find(restaurant.restaurant_id).city).metro_id.to_s
+				form_info["phone_number"] = @user.phone_number
+				form_info["restaurant_name"] = Restaurant.find(restaurant.restaurant_id).name
+				form_info["first_date"] =Cue.find(user_join_table_row.first.cue_id).start_date.strftime('%a %m/%e/%Y') + final_hash[Restaurant.find(restaurant.restaurant_id).name][available_date].first.to_time.strftime('%l:%M')+" PM"
+				form_info["covers"] = Cue.find(user_join_table_row.first.cue_id).covers.to_s
+				form_info["second_date"] = restaurant.start_date.strftime('%A, %b %d')
+				form_info["third_date"] = final_hash[Restaurant.find(restaurant.restaurant_id).name][available_date].first.to_time.strftime('%l:%M')+" PM"  + " for" + " #{form_info["covers"]}" + " people"
+				month = form_info["first_date"].split(" ")[1].split("/")[0]
+				day = form_info["first_date"].split(" ")[1].split("/")[1]
+				year = form_info["first_date"].split(" ")[1].split("/")[2]
+				hour = (available_time.split(":")[0].to_i + 12).to_s
+				minute = available_time.split(":")[1]
+				seperator = "%2F"
+				base_url = "https://m.opentable.com/reservation/details?"
+				first_string = "&Points=100&PointsType=Standard&SlotHash=2221649544&SecurityID=0&DateTime="
+				second_string = "&SlotLockID=377&OfferConfirmNumber=0&ChosenOfferId=0&IsMiddleSlot=True&ArePopPoints=False"
+				covers= Cue.find(user_join_table_row.first.cue_id).covers.to_s
+				form_info["final_url"] = base_url + "RestaurantID=" + Restaurant.find(restaurant.restaurant_id).open_table_id.to_s + first_string + month + seperator + day + seperator + year + "%20" + hour + "%3A" + minute + "&PartySize=" + covers + second_string
+				binding.pry
+				Bot.book_reservation form_info
+				cue_reservations
+			end
 		end
 	end
 
-	body_counter = restaurant_total
-	url_list = ""
-	while (body_counter > 0) do
-		url_list = url_list + " " + "table at #{restaurant_name[body_counter]} for #{available_date[body_counter]} @ #{available_time[body_counter]}: #{final_url[body_counter]}" + " "
-		body_counter = body_counter - 1
-	end
+
+		# No longer a need to send Twilio text
+		# first_available = user_join_table_row[0].first
+		# restaurant_name[counter] = Restaurant.find(first_available.restaurant_id).name
+		# if final_hash[Restaurant.find(first_available.restaurant_id).name].nil?
+		# 	available_date[counter] = "_"
+		# 	available_time[counter] = "_"
+		# 	base_url[counter] = Restaurant.find(first_available.restaurant_id).url.split("?")[0]
+		# 	covers[counter] = user_join_table_row[0].first.covers
+		# 	final_url[counter] = "No available reservations! Check back soon!"
+		# 	counter = counter + 1
+		# else
+		# 	available_date[counter] = final_hash[Restaurant.find(first_available.restaurant_id).name].keys.first
+		# 	available_time[counter] = final_hash[Restaurant.find(first_available.restaurant_id).name][available_date[counter]].first
+		# 	base_url[counter] = Restaurant.find(first_available.restaurant_id).url.split("?")[0]
+		# 	covers[counter] = user_join_table_row[0].first.covers
+		# 	final_url[counter] = base_url[counter] + "?DateTime=" + available_date[counter] + "%" + (available_time[counter].to_i + 12).to_s + (available_time[counter].to_i + 13).to_s + "&Covers=" + covers[counter]
+		# 	counter = counter + 1
+		# end
+	# end - former ending point of user_join_table.each
+
+	# body_counter = restaurant_total
+	# url_list = ""
+	# while (body_counter > 0) do
+	# 	url_list = url_list + " " + "table at #{restaurant_name[body_counter]} for #{available_date[body_counter]} @ #{available_time[body_counter]}: #{final_url[body_counter]}" + " "
+	# 	body_counter = body_counter - 1
+	# end
 
 	# @client = Twilio::REST::Client.new ENV["TWILIO_ACCOUNT_SID"], ENV["TWILIO_AUTH_TOKEN"]
-@client = Twilio::REST::Client.new ENV["twilio_account_sid"], ENV["twilio_auth_token"]
-message = @client.account.messages.create(:body => "Hey #{@user.first_name}! Find your RezQ update below:
-	#{url_list}",
-	:from => "+16503993282",
-	:to => "+1"+"#{@user.phone_number}")
-puts message.to
+# @client = Twilio::REST::Client.new ENV["twilio_account_sid"], ENV["twilio_auth_token"]
+# message = @client.account.messages.create(:body => "Hey #{@user.first_name}! Find your RezQ update below:
+# 	#{url_list}",
+# 	:from => "+16503993282",
+# 	:to => "+1"+"#{@user.phone_number}")
+# puts message.to
+# end - end to if final_hash != empty
 end
 end
 end
@@ -288,4 +336,9 @@ puts message.to
 end
 end
 end
+	def self.cue_reservations
+		binding.pry
+		# if a previous reservation for the cue exists return that reservation object / else return nothing
+		# Can check for nil in crawler method to make next decision
+	end
 end

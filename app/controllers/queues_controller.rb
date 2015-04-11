@@ -57,6 +57,7 @@ class QueuesController < ApplicationController
     rest_params["start_time"] = @cue.start_time
     rest_params["end_time"] = @cue.end_time
     rest_params["covers"] = @cue.covers
+    rest_params["rank"] = params["cue"]["covers"]
     @cue_res = CueRestaurant.new rest_params
     if @cue_res.save
       puts "Saved successfully"
