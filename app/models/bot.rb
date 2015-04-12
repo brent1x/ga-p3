@@ -5,7 +5,9 @@ require 'logger'
 require 'pry'
 require "watir"
 
-  def self.previous_reservation_check form_info, cue, restaurant_id, cue_restaurant_rank
+  def self.previous_reservation_check form_info, cue
+    restaurant_id = Restaurant.where(name:form_info["restaurant_name"])[0].id
+    cue_restaurant_rank = CueRestaurant.where(cue_id:cue.id).where(restaurant_id:restaurant_id)[0].rank
     if User.find(cue.user.id).reservations == []
       book_reservation form_info, cue, restaurant_id, cue_restaurant_rank
     else
@@ -43,8 +45,13 @@ require "watir"
       confirmation_results.body
       puts agent.page.uri.to_s
 
-    unless agent.page.uri.to_s == form_info["final_url"]
+    if agent.page.uri.to_s != form_info["final_url"]
+
         Reservation.user_reservation agent.page.uri.to_s.split("Points")[0][0...-1], cue.user.id, cue.id, restaurant_id, cue_restaurant_rank
+    else
+      rest_url = optable_url agent.page.uri.to_s
+
+      Email.error_email form_info, cue.id, rest_url
     end
   end
 
@@ -57,6 +64,14 @@ require "watir"
     puts "fin"
     Reservation.remove_reservation url, cue_id, user_id
 
+  end
+
+  def self.optable_url url
+    browser = Watir::Browser.new :chrome
+    browser.goto url
+    browser.link(:id, "btnCancel").when_present.click
+    puts "fin"
+    browser.url
   end
 
 end
