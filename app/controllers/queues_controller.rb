@@ -74,8 +74,7 @@ class QueuesController < ApplicationController
     @cue = Cue.find(params[:id])
     @cue.destroy
     CueRestaurant.where(:cue_id => params[:id]).destroy_all
-
-    # @findrest = Restaurant.find_by(name: @cue.rests).id
+    @user.reservations.where(:cue_id => params[:id]).destroy_all
     # @findrow = CueRestaurant.find_by(restaurant_id: @findrest, start_date: @cue.start_date, end_date: @cue.end_date, start_time: @cue.start_time, end_time: @cue.end_time).destroy
 
     # @cue.destroy
@@ -88,8 +87,10 @@ class QueuesController < ApplicationController
   end
 
   def destroy_cue_restaurant
+    @user = User.find session[:user_id]
     @cue = Cue.find(params[:cue_id])
     CueRestaurant.where(:restaurant_id => params[:restaurant_id], :cue_id => params[:cue_id]).destroy_all
+    @user.reservations.where(:restaurant_id => params[:restaurant_id], :cue_id => params[:cue_id]).destroy_all
     redirect_to cue_path @cue
   end
 

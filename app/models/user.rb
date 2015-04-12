@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   has_many :cues
   has_many :user_restaurants
   has_many :restaurants, through: :user_restaurants
+  has_many :reservations
 
 def self.check_if_user_exists user_email
     exists?(email: user_email)
