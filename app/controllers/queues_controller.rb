@@ -69,6 +69,14 @@ class QueuesController < ApplicationController
     end
   end
 
+  def check_availability
+    binding.pry
+    @cue = Cue.find(params[:cue_id])
+    rest_list = CueRestaurant.where(cue_id:params[:cue_id])
+    Crawler.cue_reservation_check rest_list
+    redirect_to cue_path @cue
+  end
+
   def destroy
     @user = User.find session[:user_id]
     @cue = Cue.find(params[:id])

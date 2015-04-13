@@ -223,7 +223,108 @@ end
 end
 end
 
+	def self.cue_reservation_check rest_list
+		binding.pry
+		beginning_time = Time.now
+		final_url_arr = []
+		user_rest_hash = {}
+		my_hash = {};
+		r_hash = {}
+		rest_list.sort_by { |hsh| hsh[:rank] }.each do |row|
+			url_arr = []
+			@restaurant = Restaurant.find(row.restaurant_id)
+			@user = User.find(row.user_id)
+			base_url = @restaurant.url.split("?")[0]
+			time_arr = []
+			i = row.start_date
+			x = row.start_time.hour
+			covers = row.covers
+			while(x<=row.end_time.hour) do
+				time_arr.push(x)
+				x+= 1
+			end
+			while(i<=row.start_date) do
+				time_arr.each do |time|
+				url_arr.push("#{base_url}?DateTime=#{i.to_s}%#{time}#{time+1}&Covers=#{covers}")
+				i+= 1
+				end
+			end
+			final_url_arr = url_arr
+			final_url_arr.each do |rest_url|
+				url = rest_url
+				doc = Nokogiri::HTML(open(url))
+				y = doc.css("a.dtp-button.button").text.split(" PM")
+				key = rest_url.split("=")[1].split("%")[0]
+				my_hash.merge!("#{key}" => y)
+			end
+			r_hash[@restaurant.name] =  my_hash
+			user_rest_hash[@user.id] = r_hash
+			puts user_rest_hash
+			end_time = Time.now
+			puts "Time elapsed #{(end_time - beginning_time)*1000} milliseconds"
+			user_rest_hash.each do |user_ids, rest_hash|
+				final_hash = {}
+				rest_hash.each do |restaurant, value|
+					rest_id = Restaurant.find_by(name: restaurant).id
+					start_time = CueRestaurant.find_by(restaurant_id:rest_id).start_time.hour
+					end_time = CueRestaurant.find_by(restaurant_id:rest_id).end_time.hour
+					value.each do |date, times|
+						if date <=  value.keys.first.to_s
+							times.each do |time|
+								if start_time.to_i <= (time.to_i + 12) && (time.to_i + 12) <= end_time.to_i
+									puts "Hello World"
+									if final_hash[restaurant].nil?
+										final_hash[restaurant] = {"#{date}" => [time]}
+									else
+										unless final_hash[restaurant][date].nil?
+											final_hash[restaurant][date].push(time)
+										else
+											final_hash[restaurant][date] = [time]
+										end
+									end
+								end
+							end
+						end
+					end
+				end
+				puts final_hash
+				puts @user
+				user_join_table_row = rest_list.sort_by { |hsh| hsh[:rank] }.sort_by { |hsh| hsh[:rank] }
+				user_join_table_row.each do |restaurant|
+					if final_hash.keys.include? Restaurant.find(restaurant.restaurant_id).name
+						available_date = final_hash[Restaurant.find(restaurant.restaurant_id).name].keys.first
+						available_time = final_hash[Restaurant.find(restaurant.restaurant_id).name][available_date].first
+						form_info = {}
+						form_info["first_name"] = @user.first_name
+						form_info["last_name"] = @user.last_name
+						form_info["email"] = @user.email
+						form_info["metro_id"] = Metroid.find_by(city: Restaurant.find(restaurant.restaurant_id).city).metro_id.to_s
+						form_info["phone_number"] = @user.phone_number
+						form_info["restaurant_name"] = Restaurant.find(restaurant.restaurant_id).name
+						form_info["first_date"] =Cue.find(user_join_table_row.first.cue_id).start_date.strftime('%a %m/%e/%Y') + final_hash[Restaurant.find(restaurant.restaurant_id).name][available_date].first.to_time.strftime('%l:%M')+" PM"
+						form_info["covers"] = Cue.find(user_join_table_row.first.cue_id).covers.to_s
+						form_info["second_date"] = restaurant.start_date.strftime('%A, %b %d')
+						form_info["third_date"] = final_hash[Restaurant.find(restaurant.restaurant_id).name][available_date].first.to_time.strftime('%l:%M')+" PM"  + " for" + " #{form_info["covers"]}" + " people"
+						month = form_info["first_date"].split(" ")[1].split("/")[0]
+						day = form_info["first_date"].split(" ")[1].split("/")[1]
+						year = form_info["first_date"].split(" ")[1].split("/")[2]
+						hour = (available_time.split(":")[0].to_i + 12).to_s
+						minute = available_time.split(":")[1]
+						seperator = "%2F"
+						base_url = "https://m.opentable.com/reservation/details?"
+						first_string = "&Points=100&PointsType=Standard&SlotHash=2221649544&SecurityID=0&DateTime="
+						second_string = "&SlotLockID=377&OfferConfirmNumber=0&ChosenOfferId=0&IsMiddleSlot=True&ArePopPoints=False"
+						covers= Cue.find(user_join_table_row.first.cue_id).covers.to_s
+						form_info["final_url"] = base_url + "RestaurantID=" + Restaurant.find(restaurant.restaurant_id).open_table_id.to_s + first_string + month + seperator + day + seperator + year + "%20" + hour + "%3A" + minute + "&PartySize=" + covers + second_string
+						Bot.previous_reservation_check form_info, Cue.find(user_join_table_row.first.cue_id)
+					end
+				end # closes user_join_table.each do
+			end #closes user_hash.each do
+		end #closes rest_list sorty by do
+	end # Closes method
+
 def self.first_crawl cue_res
+	binding.pry
 	join_table = [cue_res]
 	# @client = Twilio::REST::Client.new ENV['TWILIO_ACCOUNT_SID'], ENV['TWILIO_AUTH_TOKEN']
 		@client = Twilio::REST::Client.new ENV['twilio_account_sid'], ENV['twilio_auth_token']

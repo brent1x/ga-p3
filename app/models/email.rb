@@ -3,6 +3,7 @@ require 'mandrill'
 mandrill = Mandrill::API.new ENV["MANDRIL_APIKEY"]
 
   def self.error_email form_info, cue_id, rest_url
+    binding.pry
     @user = User.find_by(email: form_info["email"])
     require 'mandrill'
     m = Mandrill::API.new

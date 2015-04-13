@@ -24,7 +24,8 @@ Rails.application.routes.draw do
   delete 'cues/:cue_id/:restaurant_id', to: 'queues#destroy_cue_restaurant', as:'destroy_cue_restaurant'
   #removes restaurant from Users restaurant list
   delete 'add/remove_restaurant/:id', to: 'sites#destroy_restaurant', as: 'remove_restaurant_from_user'
-
+  #checks availability of cue
+  patch '/queues/:cue_id/check', to: 'queues#check_availability', as:'check_availability'
   get 'add', to: "sites#add", as: 'add'
   post 'add', to: "sites#add_restaurant", as: 'add_restaurant'
 
