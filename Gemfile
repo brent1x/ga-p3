@@ -39,6 +39,10 @@ gem 'sinatra', require: false
 gem 'slim'
 gem 'whenever', '~> 0.9.4'
 gem 'twilio-ruby', '~> 3.12'
+gem 'logger'
+gem 'watir'
+gem 'watir-webdriver', '~> 0.7.0'
+gem 'mandrill-api'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
