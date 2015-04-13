@@ -33,7 +33,6 @@ reservation_form["ExpireMonth"] = "05"
 reservation_form["ExpireYear"] = "2016"
 reservation_form["Last4"] = "1973"
 
-binding.pry
 
 confirmation_results = reservation_form.submit
 

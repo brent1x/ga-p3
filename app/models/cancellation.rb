@@ -25,16 +25,12 @@ page = agent.get "https://m.opentable.com/reservation/view?RestaurantID=47881&Co
 link1 = page.link_with(:class => 'btn btn-default btn-block font-color-primary watch-for-touch-toggle')
 page = link1.click
 
-binding.pry
 
 sleep 2
 
-binding.pry
 
 link2 = page.button_with(:class => "btn btn-default ng-scope ng-binding btn-primary")
 
-binding.pry
 
 page = link2.click_button
 
-binding.pry

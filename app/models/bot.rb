@@ -7,7 +7,6 @@ require 'watir'
 require 'watir-webdriver'
 
   def self.previous_reservation_check form_info, cue
-    binding.pry
     restaurant_id = Restaurant.where(name:form_info["restaurant_name"])[0].id
     cue_restaurant_rank = CueRestaurant.where(cue_id:cue.id).where(restaurant_id:restaurant_id)[0].rank
     if User.find(cue.user.id).reservations.where(cue_id:cue.id) == []
@@ -21,7 +20,6 @@ require 'watir-webdriver'
   end
 
   def self.book_reservation form_info, cue, restaurant_id, cue_restaurant_rank
-    binding.pry
     agent = Mechanize.new
     agent.log = Logger.new "mech.log"
     agent.user_agent_alias = 'Mac Safari'

@@ -193,7 +193,6 @@ class Crawler < ActiveRecord::Base
 				doc = Nokogiri::HTML(open(url))
 				# y = doc.css("a.dtp-button.button").text.split(" PM")
 				y = doc.xpath('//*[@id="dtp-results"]/div/ul/li/a').text.split(" PM")
-				binding.pry
 				key = rest_url.split("=")[1].split("%")[0]
 				my_hash.merge!("#{key}" => y)
 			end
