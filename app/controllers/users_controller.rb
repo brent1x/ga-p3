@@ -14,10 +14,10 @@ class UsersController < ApplicationController
   def cue
   	@user = User.find(session[:user_id])
     @cue = Cue.find(params[:cue_id])
-    @cue_rest = CueRestaurant.where(cue_id: @cue.id) 
+    @cue_rest = CueRestaurant.where(cue_id: @cue.id)
     @restaurant = @user.restaurants - @cue.restaurants
     @cues = Cue.all
-    # @restaurant = @user.restaurants
+    @restaurant = @user.restaurants - @cue.restaurants
     @dropdown_arr = []
     @restaurant.each do |f|
       @dropdown_arr.push(f.name)
