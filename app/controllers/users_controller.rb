@@ -14,6 +14,8 @@ class UsersController < ApplicationController
   def cue
   	@user = User.find(session[:user_id])
     @cue = Cue.find(params[:cue_id])
+    @cue_rest = CueRestaurant.where(cue_id: @cue.id)
+    @restaurant = @user.restaurants - @cue.restaurants
     @cues = Cue.all
     @restaurant = @user.restaurants - @cue.restaurants
     @dropdown_arr = []
@@ -47,7 +49,7 @@ class UsersController < ApplicationController
 		session[:last_name] = @user.last_name
   			flash[:notice] = "Welcome #{session[:first_name]}"
         if @user.cues.empty?
-          redirect_to new_queue_path
+          redirect_to add_restaurant_path
         else
   			   redirect_to cues_path
         end

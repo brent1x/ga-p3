@@ -5,6 +5,7 @@ class QueuesController < ApplicationController
   def index
     @user = User.find session[:user_id]
     @cues = Cue.all
+
     render :new
   end
 
@@ -16,6 +17,7 @@ class QueuesController < ApplicationController
     @restaurant.each do |f|
       @dropdown_arr.push(f.name)
     end
+
   end
 
   def create
@@ -46,6 +48,7 @@ class QueuesController < ApplicationController
   end
 
   def update
+    
     @cue = Cue.find(params[:id])
     user = User.find session[:user_id]
     rest_params = {}
@@ -66,6 +69,7 @@ class QueuesController < ApplicationController
       puts "not saved"
       render :new
     end
+
   end
 
   def check_availability

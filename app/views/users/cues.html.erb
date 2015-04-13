@@ -13,7 +13,8 @@
           <!-- For loop for Q goes here -->
           <div class="col-xs-12 text-center">
             <!-- Queue Name -->
-            <h4><%= x.name %> </h4>
+
+            <h3><%= x.name %> </h3>
           </div>
         </div>
         <div class="row">
@@ -26,24 +27,24 @@
             <h4 class="party-padding">Party Size: <%= x.covers %></h4>
           </div>
           <div class="col-xs-6 text-right">
-            <span class="not-selected-item delete-width"><%= link_to "Delete", queue_path(x.id), method:"Delete" %></span>
+<%= link_to "Delete", queue_path(x.id),class:"not-selected-item delete-width", method:"Delete" %>
           </div>
         </div> 
          <!-- End Loop -->
-      <div class="end-line"></div>
+
       <p class="not-selected-item text-center expand-width">
         <%= link_to "Add Restaurants to #{x.name}", cue_path(x.id) %>
-
       </p>
+      <div class="end-line"></div>
         <% end %>
         <% end %>
+        <p class="expand-width text-center not-selected-item">
+         <%= link_to "Create New Queue", new_queue_path %>
+         </p>
       </div>
       </div>
-      <p class="not-selected-item text-center expand-width">
-        <%= link_to "Create New Queue", new_queue_path %>
 
-      </p>
-    <br><br> <br><br><br><br><br><br><br>
+    <br><br> <br><br><br><br><br><br><br><br><br><br>
   </div>
 </div>
 <div class="new-nav">

@@ -18,15 +18,19 @@
        <%= f.submit "Add this Restaurant",:class => "not-selected-item text-center expand-width"%>
      <% end %>
 <br><br><br><br><br>
-     <h2 class="border-line">My restaurants.</h2>
-     <ol>
+     <h2 class="border-line">My Restaurants.</h2>
      <% @restaurants.each do |restaurant| %>
-          <li><%=restaurant.name  %> <h4><span class="not-selected-item delete-width"><%= link_to "Delete", remove_restaurant_from_user_path(restaurant.open_table_id), method:"Delete" %></span></h4></li>
-      <% end %>
-     </ol>
-
+     <div class="row">
+      <div class="col-xs-6 text-left">
+          <h2><%=restaurant.name  %></h2>
+      </div>
+      <div class="col-xs-6">
+<%= link_to "Delete", remove_restaurant_from_user_path(restaurant.open_table_id),class:"not-selected-item delete-width", method:"Delete" %>
+      </div>
      </div>
+     <% end %>
      </div>
+     <br><br> <br><br><br><br><br><br><br><br><br><br>
 
 
 <div class="new-nav">
