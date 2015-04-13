@@ -14,7 +14,6 @@
 require 'rubygems'
 require 'mechanize'
 require 'logger'
-require 'pry'
 
 agent = Mechanize.new
 agent.log = Logger.new "mech.log"
