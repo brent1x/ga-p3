@@ -1,0 +1,53 @@
+  <div class="overlow-hidden">
+
+
+    <div class="container text-center text-white">
+      <div >
+        <img class="logo-image-sm" src="<%= asset_path('rezqlogo.png') %>" alt="">
+      </div>
+      <h2 class="border-line">Create new Queue.</h2>
+<div class="text-left">
+      <%= simple_form_for @cue, :url => queues_path do |f|%>
+        <h4>Queue name</h4>
+       <%= f.input :name, input_html: { class: 'input-class' } %>
+        <h4>Party Size:</h4>
+        <%= f.input :covers, collection: 2..9, input_html: { class: 'input-class' }  %>
+        <h4>Select a date for your Queue</h4>
+       <%= f.input :start_date, input_html: { class: 'input-class time-inputs' }  %>
+        <h4>Select a start time for your Reservation</h4>
+       <%= f.input :start_time, input_html: { class: 'input-class time-inputs' }, :minute_step => 15  %>
+        <h4>Select an end time for your Reservation</h4>
+       <%= f.input :end_time, input_html: { class: 'input-class time-inputs' }, :minute_step => 15  %>
+       <%= f.submit "Create Queue",:class => "not-selected-item text-center expand-width" %>
+     <% end %>
+     </div>
+     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+     </div>
+     </div>
+     <div class="new-nav">
+  <div class="row nav-row">
+    <div class="col-xs-3 text-center">
+    <a href="<%= cues_path  %>">
+    <div class="home"></div></a>
+    </div>
+    <div class="col-xs-3 text-center">
+    <a href="<%= add_path %>">
+    <div class="add-rest"></div>
+    </a>
+    </div>
+    <div class="col-xs-3 text-center mid-nav">
+    <a href="<%= new_queue_path %>">
+    <div class="your-queue"></div>
+    </a>
+    </div>
+    <div class="col-xs-3 text-center">
+    <a href="<%= about_path %>">
+    <div class="settings"></div>
+    </a>
+    </div>
+
+
+</div>
+
+
+

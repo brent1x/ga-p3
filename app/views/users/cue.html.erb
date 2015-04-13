@@ -1,0 +1,71 @@
+<div id="crimson">
+  <div class="overlow-hidden">
+    <div class="container text-center text-white">
+      <div >
+        <img class="logo-image-sm" src="<%= asset_path('rezqlogo.png') %>" alt="">
+      </div>
+      <h2 class="border-line"><%= @cue.name %></h2>
+      <div class="text-left">
+      <% @cue.restaurants.each do |restaurant| %>
+        <div class="row">
+          <!-- For loop for Q goes here -->
+          <div class="col-xs-12 text-center">
+            <!-- Restaurant name -->
+            <h4><%= restaurant.name%> - Rank: <%= CueRestaurant.where(restaurant_id:restaurant.id).where(cue_id:@cue.id)[0].rank %></h4>
+
+
+            <h4><span class="not-selected-item delete-width"><%= link_to "Delete", destroy_cue_restaurant_path(@cue.id, restaurant.id), method:"Delete" %></span></h4>
+          </div>
+        <% end %>
+      </div>
+<!-- Need to add two things above: 1) Show Restaurant Rank and 2) Highlight indicate the restaurants currently booked -->
+
+      <!-- End Loop -->
+      <div class="text-left">
+      <%= simple_form_for @cue, :url => "/queues/#{@cue.id}" do |f|%>
+        <h4>Choose  restaurant</h4>
+       <%= f.input :rests, :selected => ["Choose a Restaurant"], input_html: { class: 'input-class' }, collection: @dropdown_arr %>
+       <%= f.input :covers, :selected => ["Priority Rank"], input_html: { class: 'input-class' }, collection: [1,2,3,4,5] %>
+       <%= f.submit "Add Restaurant to #{@cue.name}",:class => "not-selected-item text-center expand-width" %>
+     <% end %>
+     </div>
+
+     <div class="text-left">
+      <%= simple_form_for @cue, :url => "/queues/#{@cue.id}/check" do |f|%>
+        <h4>Choose  restaurant</h4>
+       <%= f.submit "Check reservation availability #{@cue.name}",:class => "not-selected-item text-center expand-width" %>
+     <% end %>
+     </div>
+
+    <div class="text-left">
+      <%= simple_form_for @cue, :url => "/queues/#{@cue.id}/remove_reservation", method: :delete do |f|%>
+        <h4>Choose  restaurant</h4>
+       <%= f.submit "Remove Existing Reservation #{@cue.name}",:class => "not-selected-item text-center expand-width" %>
+     <% end %>
+     </div>
+    <!-- Need to add a button on this page to check availability - this will kick off the crawler just for that cue -->
+  <br><br> <br><br><br><br><br><br><br>
+  </div>
+</div>
+<div class="new-nav">
+  <div class="row nav-row">
+    <div class="col-xs-3 text-center">
+    <a href="<%= cues_path  %>">
+    <div class="home"></div></a>
+    </div>
+    <div class="col-xs-3 text-center">
+    <a href="<%= add_path %>">
+    <div class="add-rest"></div>
+    </a>
+    </div>
+    <div class="col-xs-3 text-center mid-nav">
+    <a href="<%= new_queue_path %>">
+    <div class="your-queue"></div>
+    </a>
+    </div>
+    <div class="col-xs-3 text-center">
+    <a href="<%= about_path %>">
+    <div class="settings"></div>
+    </a>
+    </div>
+

@@ -1,0 +1,56 @@
+  <div class="overlow-hidden">
+
+
+    <div class="container text-center text-white">
+      <div >
+        <img class="logo-image-sm" src="<%= asset_path('rezqlogo.png') %>" alt="">
+      </div>
+      <h2 class="border-line">Add a Restaurant to Restaurant List.</h2>
+
+      <%= simple_form_for @restaurant, :url => add_restaurant_path do |f|%>
+
+       <%= f.input :name, input_html: { class: 'input-class' },placeholder: 'Restaurant Name'%>
+
+       <%= f.input :city, input_html: { class: 'input-class' },placeholder: 'City',placeholder: 'State', collection: ["San Francisco", "New York City", "Los Angeles"],:selected => [] %>
+
+       <%= f.input :state, input_html: { class: 'input-class' },placeholder: 'State', collection: ["CA", "NY"],:selected => [] %>
+<div class="end-line"></div>
+       <%= f.submit "Add this Restaurant",:class => "not-selected-item text-center expand-width"%>
+     <% end %>
+<br><br><br><br><br>
+     <h2 class="border-line">My Restaurants.</h2>
+     <% @restaurants.each do |restaurant| %>
+     <div class="row">
+      <div class="col-xs-6 text-left">
+          <h2><%=restaurant.name  %></h2>
+      </div>
+      <div class="col-xs-6">
+<%= link_to "Delete", remove_restaurant_from_user_path(restaurant.open_table_id),class:"not-selected-item delete-width", method:"Delete" %>
+      </div>
+     </div>
+     <% end %>
+     </div>
+     <br><br> <br><br><br><br><br><br><br><br><br><br>
+
+
+<div class="new-nav">
+  <div class="row nav-row">
+    <div class="col-xs-3 text-center">
+    <a href="<%= cues_path  %>">
+    <div class="home"></div></a>
+    </div>
+    <div class="col-xs-3 text-center">
+    <a href="<%= add_path %>">
+    <div class="add-rest"></div>
+    </a>
+    </div>
+    <div class="col-xs-3 text-center mid-nav">
+    <a href="<%= new_queue_path %>">
+    <div class="your-queue"></div>
+    </a>
+    </div>
+    <div class="col-xs-3 text-center">
+    <a href="<%= about_path %>">
+    <div class="settings"></div>
+    </a>
+    </div>

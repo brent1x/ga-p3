@@ -1,0 +1,2 @@
+class TwiliosController < ApplicationController
+end

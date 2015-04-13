@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RezQ – Get Notified When Your Table Opens Up</title>
+  <!-- BootStrap -->
+  <!-- Latest compiled and minified CSS -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+
+
+
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <% flash.each do |key, value| %>
+
+    <% if key == "notice" %>
+      <%= content_tag :div, value, class: "text-center alert alert-warning flashMessage" %>
+    <% elsif key == "alert" %>
+      <%= content_tag :div, value, class: "text-center alert alert-danger flashMessage" %>
+    <% else %>
+      <%= content_tag :div, value, class: "text-center alert alert-success flashMessage" %>
+    <% end %>
+  <% end %>
+
+
+<%= yield %>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<div id="crimson">
+  <div class="overlow-hidden">
+    <div class="container text-center text-white">
+      <div >
+        <img class="logo-image-sm" src="<%= asset_path('rezqlogo.png') %>" alt="">
+      </div>
+      <h2 class="border-line">Your Queues</h2>
+      <div class="text-left">
+      <% @cues.each do |x| %>
+
+      <% if x.user_id == session[:user_id] %>
+        <div class="row">
+          <!-- For loop for Q goes here -->
+          <div class="col-xs-12 text-center">
+            <!-- Queue Name -->
+
+            <h3><%= x.name %> </h3>
+          </div>
+        </div>
+        <div class="row">
+          <!-- For loop for Q goes here -->
+          <div class="col-xs-6">
+            <!-- Restaurant date -->
+            <h4><%= x.start_date.strftime('%a %d %b') %> </h4>
+            <!-- q time -->
+            <h4><%= x.start_time.strftime('%I:%M:%S %p') %> - <%= x.end_time.strftime('%I:%M:%S %p') %></h4>
+            <h4 class="party-padding">Party Size: <%= x.covers %></h4>
+          </div>
+          <div class="col-xs-6 text-right">
+<%= link_to "Delete", queue_path(x.id),class:"not-selected-item delete-width", method:"Delete" %>
+          </div>
+        </div> 
+         <!-- End Loop -->
+
+      <p class="not-selected-item text-center expand-width">
+        <%= link_to "Add Restaurants to #{x.name}", cue_path(x.id) %>
+      </p>
+      <div class="end-line"></div>
+        <% end %>
+        <% end %>
+        <p class="expand-width text-center not-selected-item">
+         <%= link_to "Create New Queue", new_queue_path %>
+         </p>
+      </div>
+      </div>
+
+    <br><br> <br><br><br><br><br><br><br><br><br><br>
+  </div>
+</div>
+<div class="new-nav">
+  <div class="row nav-row">
+    <div class="col-xs-3 text-center">
+    <a href="<%= cues_path  %>">
+    <div class="home"></div></a>
+    </div>
+    <div class="col-xs-3 text-center">
+    <a href="<%= add_path %>">
+    <div class="add-rest"></div>
+    </a>
+    </div>
+    <div class="col-xs-3 text-center mid-nav">
+    <a href="<%= new_queue_path %>">
+    <div class="your-queue"></div>
+    </a>
+    </div>
+    <div class="col-xs-3 text-center">
+    <a href="<%= about_path %>">
+    <div class="settings"></div>
+    </a>
+    </div>

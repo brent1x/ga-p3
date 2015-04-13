@@ -1,0 +1,27 @@
+<div class="overlow-hidden">
+
+<div id="food-background">
+
+<div class="container">
+  <div class="text-center">
+    <div >
+      <img class="logo-image" src="<%= asset_path('rezqlogo.png') %>" alt="">
+    </div>
+      <div>
+      <%= simple_form_for @user, :url => attempt_login_path do |f| %>
+      <%= f.input :email, placeholder: 'Email'  %>
+      <%= f.input :password, placeholder: 'Password' %>
+      <%= f.button :submit, "Login"%>
+    <% end %>
+    <div class="btn signup-button">
+      <a href="<%= signup_path %>" %>Sign Up</a>
+    </div>
+    </div>
+
+  </div>
+</div>
+<br><br><br><br><br>
+</div>
+</div>
+
+<!-- <%=link_to "test", run_path %> -->
