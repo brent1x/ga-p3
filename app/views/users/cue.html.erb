@@ -29,6 +29,7 @@
        <%= f.submit "Add Restaurant to #{@cue.name}",:class => "not-selected-item text-center expand-width" %>
      <% end %>
      </div>
+     <% binding.pry %>
 
      <div class="text-left">
       <%= simple_form_for @cue, :url => "/queues/#{@cue.id}/check" do |f|%>

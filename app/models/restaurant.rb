@@ -5,5 +5,4 @@ class Restaurant < ActiveRecord::Base
   has_many :cues, through: :cue_restaurants
   has_many :user_restaurants
   has_many :users, through: :user_restaurants
-  has_many :ranks, through: :cue_restaurants
 end
