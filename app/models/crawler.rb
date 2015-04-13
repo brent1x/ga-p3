@@ -72,7 +72,8 @@ class Crawler < ActiveRecord::Base
 					final_url_arr.each do |rest_url|
 						url = rest_url
 						doc = Nokogiri::HTML(open(url))
-						y = doc.css("a.dtp-button.button").text.split(" PM")
+						# y = doc.css("a.dtp-button.button").text.split(" PM")
+						y = doc.xpath('//*[@id="dtp-results"]/div/ul/li/a').text.split(" PM")
 						key = rest_url.split("=")[1].split("%")[0]
 						my_hash.merge!("#{key}" => y)
 					end
@@ -157,10 +158,10 @@ class Crawler < ActiveRecord::Base
 
 	# Below method used to check reservation availability for a given cure upon request by user
 	def self.cue_reservation_check rest_list
-		binding.pry
+
 		beginning_time = Time.now
 		rest_list.sort_by { |hsh| hsh[:rank] }.each do |row|
-			binding.pry
+
 			final_url_arr = []
 			user_rest_hash = {}
 			my_hash = {};
@@ -177,20 +178,22 @@ class Crawler < ActiveRecord::Base
 				time_arr.push(x)
 				x+= 1
 			end
-			binding.pry
+
 			if(i == row.start_date)
-				binding.pry
+
 				time_arr.each do |time|
 				url_arr.push("#{base_url}?DateTime=#{i.to_s}%#{time}#{time+1}&Covers=#{covers}")
 				i+= 1
 				end
 			end
 			final_url_arr = url_arr
-			binding.pry
+
 			final_url_arr.each do |rest_url|
 				url = rest_url
 				doc = Nokogiri::HTML(open(url))
-				y = doc.css("a.dtp-button.button").text.split(" PM")
+				# y = doc.css("a.dtp-button.button").text.split(" PM")
+				y = doc.xpath('//*[@id="dtp-results"]/div/ul/li/a').text.split(" PM")
+				binding.pry
 				key = rest_url.split("=")[1].split("%")[0]
 				my_hash.merge!("#{key}" => y)
 			end
@@ -200,7 +203,7 @@ class Crawler < ActiveRecord::Base
 			end_time = Time.now
 			puts "Time elapsed #{(end_time - beginning_time)*1000} milliseconds"
 			user_rest_hash.each do |user_ids, rest_hash|
-				binding.pry
+
 				final_hash = {}
 				rest_hash.each do |restaurant, value|
 					rest_id = Restaurant.find_by(name: restaurant).id
@@ -209,7 +212,7 @@ class Crawler < ActiveRecord::Base
 					value.each do |date, times|
 						if date <=  value.keys.first.to_s
 							times.each do |time|
-								binding.pry
+
 								if start_time.to_i <= (time.to_i + 12) && (time.to_i + 12) <= end_time.to_i
 									puts "Hello World"
 									if final_hash[restaurant].nil?
@@ -225,10 +228,10 @@ class Crawler < ActiveRecord::Base
 							end
 						end
 					end
-					binding.pry
+
 				end
 				puts final_hash
-				binding.pry
+
 				puts @user
 				user_join_table_row = rest_list.sort_by { |hsh| hsh[:rank] }.sort_by { |hsh| hsh[:rank] }
 				user_join_table_row.each do |restaurant|
@@ -281,7 +284,7 @@ end # Closes Class
 
 #old Code - Not needed for now
 # def self.first_crawl cue_res
-# 	binding.pry
+#
 # 	join_table = [cue_res]
 # 	# @client = Twilio::REST::Client.new ENV['TWILIO_ACCOUNT_SID'], ENV['TWILIO_AUTH_TOKEN']
 # 		@client = Twilio::REST::Client.new ENV['twilio_account_sid'], ENV['twilio_auth_token']
