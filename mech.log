@@ -7301,3 +7301,835 @@ D, [2015-04-12T19:15:28.339179 #53827] DEBUG -- : gzip response
 D, [2015-04-12T19:15:28.341758 #53827] DEBUG -- : saved cookie: mSLogcke=sc=0
 D, [2015-04-12T19:15:28.342483 #53827] DEBUG -- : saved cookie: mUcke=em=gannavas%40gmail.com&fn=George&ln=Navas&pn=7277769719&sfn=&sln=
 D, [2015-04-12T19:15:28.342918 #53827] DEBUG -- : saved cookie: ftc=x=2015-04-13T05%3A15%3A28&c=1&pt1=291&pt2=291&er=53860&p1ca=reservation%2Fdetails&p1q=RestaurantID%3D53860%26Points%3D100%26PointsType%3DStandard%26SlotHash%3D2221649544%26SecurityID%3D0%26DateTime%3D04%252F22%25...
+I, [2015-04-12T22:49:20.961278 #53827]  INFO -- : Net::HTTP::Get: /reservation/details?RestaurantID=35785&Points=100&PointsType=Standard&SlotHash=2221649544&SecurityID=0&DateTime=04%2F22%2F2015%2017%3A45&PartySize=2&SlotLockID=377&OfferConfirmNumber=0&ChosenOfferId=0&IsMiddleSlot=True&ArePopPoints=False
+D, [2015-04-12T22:49:20.961348 #53827] DEBUG -- : request-header: accept-encoding => gzip,deflate,identity
+D, [2015-04-12T22:49:20.961371 #53827] DEBUG -- : request-header: accept => */*
+D, [2015-04-12T22:49:20.961390 #53827] DEBUG -- : request-header: user-agent => Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/534.51.22 (KHTML, like Gecko) Version/5.1.1 Safari/534.51.22
+D, [2015-04-12T22:49:20.961407 #53827] DEBUG -- : request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+D, [2015-04-12T22:49:20.961423 #53827] DEBUG -- : request-header: accept-language => en-us,en;q=0.5
+D, [2015-04-12T22:49:20.961438 #53827] DEBUG -- : request-header: host => m.opentable.com
+I, [2015-04-12T22:49:21.237824 #53827]  INFO -- : status: Net::HTTPOK 1.1 200 OK
+D, [2015-04-12T22:49:21.237902 #53827] DEBUG -- : response-header: cache-control => private
+D, [2015-04-12T22:49:21.237944 #53827] DEBUG -- : response-header: content-type => text/html; charset=utf-8
+D, [2015-04-12T22:49:21.237971 #53827] DEBUG -- : response-header: server => Microsoft-IIS/7.5
+D, [2015-04-12T22:49:21.237988 #53827] DEBUG -- : response-header: x-aspnetmvc-version => 4.0
+D, [2015-04-12T22:49:21.238004 #53827] DEBUG -- : response-header: x-aspnet-version => 4.0.30319
+D, [2015-04-12T22:49:21.238020 #53827] DEBUG -- : response-header: x-powered-by => ASP.NET
+D, [2015-04-12T22:49:21.238035 #53827] DEBUG -- : response-header: vary => Accept-Encoding
+D, [2015-04-12T22:49:21.238051 #53827] DEBUG -- : response-header: content-encoding => gzip
+D, [2015-04-12T22:49:21.238066 #53827] DEBUG -- : response-header: content-length => 3635
+D, [2015-04-12T22:49:21.238082 #53827] DEBUG -- : response-header: date => Mon, 13 Apr 2015 05:49:21 GMT
+D, [2015-04-12T22:49:21.238097 #53827] DEBUG -- : response-header: connection => keep-alive
+D, [2015-04-12T22:49:21.238112 #53827] DEBUG -- : response-header: set-cookie => ftc=x=2015-04-13T08%3A49%3A21&c=1&pt1=291&pt2=291&er=35785&p1ca=reservation%2Fdetails&p1q=RestaurantID%3D35785%26Points%3D100%26PointsType%3DStandard%26SlotHash%3D2221649544%26SecurityID%3D0%26DateTime%3D04%252F22%25...; domain=opentable.com; path=/
+D, [2015-04-12T22:49:21.238209 #53827] DEBUG -- : Read 3635 bytes (3635 total)
+D, [2015-04-12T22:49:21.238300 #53827] DEBUG -- : gzip response
+D, [2015-04-12T22:49:21.239494 #53827] DEBUG -- : saved cookie: ftc=x=2015-04-13T08%3A49%3A21&c=1&pt1=291&pt2=291&er=35785&p1ca=reservation%2Fdetails&p1q=RestaurantID%3D35785%26Points%3D100%26PointsType%3DStandard%26SlotHash%3D2221649544%26SecurityID%3D0%26DateTime%3D04%252F22%25...
+I, [2015-04-12T22:49:21.241537 #53827]  INFO -- : form encoding: utf-8
+D, [2015-04-12T22:49:21.241935 #53827] DEBUG -- : query: "FirstName=George&LastName=Navas&Email=gannavas%40gmail.com&MetroId=4&PhoneNumber=7277769719&SpecialInstructions=&RestaurantName=SPQR&FormattedDateTime=Wed+04%2F22%2F2015+5%3A45+PM&GuestText=%2B+1+guest%28s%29&OffersCsv=&ChosenOfferVersion=0&IsJustRegistered=False&IsForeignGuest=False&FormattedReservationDate=Wednesday%2C+April+22&FormattedReservationTimePartySize=+5%3A45+PM+for+2+people&FormattedReservationDate%3A=Wednesday%2C+Apr+22"
+I, [2015-04-12T22:49:21.243756 #53827]  INFO -- : Net::HTTP::Post: /reservation/details?RestaurantID=35785&Points=100&PointsType=Standard&SlotHash=2221649544&SecurityID=0&DateTime=04%2F22%2F2015%2017%3A45&PartySize=2&SlotLockID=377&OfferConfirmNumber=0&ChosenOfferId=0&IsMiddleSlot=True&ArePopPoints=False
+D, [2015-04-12T22:49:21.243819 #53827] DEBUG -- : request-header: accept-encoding => gzip,deflate,identity
+D, [2015-04-12T22:49:21.243840 #53827] DEBUG -- : request-header: accept => */*
+D, [2015-04-12T22:49:21.243857 #53827] DEBUG -- : request-header: user-agent => Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/534.51.22 (KHTML, like Gecko) Version/5.1.1 Safari/534.51.22
+D, [2015-04-12T22:49:21.243873 #53827] DEBUG -- : request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+D, [2015-04-12T22:49:21.243889 #53827] DEBUG -- : request-header: accept-language => en-us,en;q=0.5
+D, [2015-04-12T22:49:21.243904 #53827] DEBUG -- : request-header: cookie => ftc=x=2015-04-13T08%3A49%3A21&c=1&pt1=291&pt2=291&er=35785&p1ca=reservation%2Fdetails&p1q=RestaurantID%3D35785%26Points%3D100%26PointsType%3DStandard%26SlotHash%3D2221649544%26SecurityID%3D0%26DateTime%3D04%252F22%25...
+D, [2015-04-12T22:49:21.243919 #53827] DEBUG -- : request-header: host => m.opentable.com
+D, [2015-04-12T22:49:21.243940 #53827] DEBUG -- : request-header: referer => https://m.opentable.com/reservation/details?RestaurantID=35785&Points=100&PointsType=Standard&SlotHash=2221649544&SecurityID=0&DateTime=04%2F22%2F2015%2017%3A45&PartySize=2&SlotLockID=377&OfferConfirmNumber=0&ChosenOfferId=0&IsMiddleSlot=True&ArePopPoints=False
+D, [2015-04-12T22:49:21.243956 #53827] DEBUG -- : request-header: content-type => application/x-www-form-urlencoded
+D, [2015-04-12T22:49:21.243971 #53827] DEBUG -- : request-header: content-length => 437
+I, [2015-04-12T22:49:21.668315 #53827]  INFO -- : status: Net::HTTPOK 1.1 200 OK
+D, [2015-04-12T22:49:21.668401 #53827] DEBUG -- : response-header: cache-control => private
+D, [2015-04-12T22:49:21.668436 #53827] DEBUG -- : response-header: content-type => text/html; charset=utf-8
+D, [2015-04-12T22:49:21.668465 #53827] DEBUG -- : response-header: server => Microsoft-IIS/7.5
+D, [2015-04-12T22:49:21.668491 #53827] DEBUG -- : response-header: x-aspnetmvc-version => 4.0
+D, [2015-04-12T22:49:21.668518 #53827] DEBUG -- : response-header: x-aspnet-version => 4.0.30319
+D, [2015-04-12T22:49:21.668543 #53827] DEBUG -- : response-header: x-powered-by => ASP.NET
+D, [2015-04-12T22:49:21.668568 #53827] DEBUG -- : response-header: vary => Accept-Encoding
+D, [2015-04-12T22:49:21.668592 #53827] DEBUG -- : response-header: content-encoding => gzip
+D, [2015-04-12T22:49:21.668617 #53827] DEBUG -- : response-header: content-length => 3417
+D, [2015-04-12T22:49:21.668642 #53827] DEBUG -- : response-header: date => Mon, 13 Apr 2015 05:49:21 GMT
+D, [2015-04-12T22:49:21.668667 #53827] DEBUG -- : response-header: connection => keep-alive
+D, [2015-04-12T22:49:21.668696 #53827] DEBUG -- : response-header: set-cookie => mUcke=em=gannavas%40gmail.com&fn=George&ln=Navas&pn=7277769719&sfn=&sln=; domain=opentable.com; expires=Wed, 13-Apr-2016 05:49:21 GMT; path=/
+D, [2015-04-12T22:49:21.668782 #53827] DEBUG -- : Read 3417 bytes (3417 total)
+D, [2015-04-12T22:49:21.668892 #53827] DEBUG -- : gzip response
+D, [2015-04-12T22:49:21.670437 #53827] DEBUG -- : saved cookie: mUcke=em=gannavas%40gmail.com&fn=George&ln=Navas&pn=7277769719&sfn=&sln=
+I, [2015-04-12T22:51:00.492956 #53827]  INFO -- : Net::HTTP::Get: /reservation/details?RestaurantID=35785&Points=100&PointsType=Standard&SlotHash=2221649544&SecurityID=0&DateTime=04%2F22%2F2015%2017%3A00&PartySize=2&SlotLockID=377&OfferConfirmNumber=0&ChosenOfferId=0&IsMiddleSlot=True&ArePopPoints=False
+D, [2015-04-12T22:51:00.493026 #53827] DEBUG -- : request-header: accept-encoding => gzip,deflate,identity
+D, [2015-04-12T22:51:00.493048 #53827] DEBUG -- : request-header: accept => */*
+D, [2015-04-12T22:51:00.493066 #53827] DEBUG -- : request-header: user-agent => Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/534.51.22 (KHTML, like Gecko) Version/5.1.1 Safari/534.51.22
+D, [2015-04-12T22:51:00.493083 #53827] DEBUG -- : request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+D, [2015-04-12T22:51:00.493100 #53827] DEBUG -- : request-header: accept-language => en-us,en;q=0.5
+D, [2015-04-12T22:51:00.493134 #53827] DEBUG -- : request-header: host => m.opentable.com
+I, [2015-04-12T22:51:00.894008 #53827]  INFO -- : status: Net::HTTPOK 1.1 200 OK
+D, [2015-04-12T22:51:00.894072 #53827] DEBUG -- : response-header: cache-control => private
+D, [2015-04-12T22:51:00.894094 #53827] DEBUG -- : response-header: content-type => text/html; charset=utf-8
+D, [2015-04-12T22:51:00.894113 #53827] DEBUG -- : response-header: server => Microsoft-IIS/7.5
+D, [2015-04-12T22:51:00.894129 #53827] DEBUG -- : response-header: x-aspnetmvc-version => 4.0
+D, [2015-04-12T22:51:00.894144 #53827] DEBUG -- : response-header: x-aspnet-version => 4.0.30319
+D, [2015-04-12T22:51:00.894159 #53827] DEBUG -- : response-header: x-powered-by => ASP.NET
+D, [2015-04-12T22:51:00.894174 #53827] DEBUG -- : response-header: vary => Accept-Encoding
+D, [2015-04-12T22:51:00.894189 #53827] DEBUG -- : response-header: content-encoding => gzip
+D, [2015-04-12T22:51:00.894205 #53827] DEBUG -- : response-header: date => Mon, 13 Apr 2015 05:51:00 GMT
+D, [2015-04-12T22:51:00.894221 #53827] DEBUG -- : response-header: content-length => 3630
+D, [2015-04-12T22:51:00.894236 #53827] DEBUG -- : response-header: connection => keep-alive
+D, [2015-04-12T22:51:00.894252 #53827] DEBUG -- : response-header: set-cookie => ftc=x=2015-04-13T08%3A51%3A00&c=1&pt1=291&pt2=291&er=35785&p1ca=reservation%2Fdetails&p1q=RestaurantID%3D35785%26Points%3D100%26PointsType%3DStandard%26SlotHash%3D2221649544%26SecurityID%3D0%26DateTime%3D04%252F22%25...; domain=opentable.com; path=/
+D, [2015-04-12T22:51:00.894326 #53827] DEBUG -- : Read 3630 bytes (3630 total)
+D, [2015-04-12T22:51:00.894414 #53827] DEBUG -- : gzip response
+D, [2015-04-12T22:51:00.895666 #53827] DEBUG -- : saved cookie: ftc=x=2015-04-13T08%3A51%3A00&c=1&pt1=291&pt2=291&er=35785&p1ca=reservation%2Fdetails&p1q=RestaurantID%3D35785%26Points%3D100%26PointsType%3DStandard%26SlotHash%3D2221649544%26SecurityID%3D0%26DateTime%3D04%252F22%25...
+I, [2015-04-12T22:51:00.899927 #53827]  INFO -- : form encoding: utf-8
+D, [2015-04-12T22:51:00.900650 #53827] DEBUG -- : query: "FirstName=George&LastName=Navas&Email=gannavas%40gmail.com&MetroId=4&PhoneNumber=7277769719&SpecialInstructions=&RestaurantName=SPQR&FormattedDateTime=Wed+04%2F22%2F2015+5%3A00+PM&GuestText=%2B+1+guest%28s%29&OffersCsv=&ChosenOfferVersion=0&IsJustRegistered=False&IsForeignGuest=False&FormattedReservationDate=Wednesday%2C+April+22&FormattedReservationTimePartySize=+5%3A00+PM+for+2+people&FormattedReservationDate%3A=Wednesday%2C+Apr+22"
+I, [2015-04-12T22:51:00.903496 #53827]  INFO -- : Net::HTTP::Post: /reservation/details?RestaurantID=35785&Points=100&PointsType=Standard&SlotHash=2221649544&SecurityID=0&DateTime=04%2F22%2F2015%2017%3A00&PartySize=2&SlotLockID=377&OfferConfirmNumber=0&ChosenOfferId=0&IsMiddleSlot=True&ArePopPoints=False
+D, [2015-04-12T22:51:00.903551 #53827] DEBUG -- : request-header: accept-encoding => gzip,deflate,identity
+D, [2015-04-12T22:51:00.903570 #53827] DEBUG -- : request-header: accept => */*
+D, [2015-04-12T22:51:00.903587 #53827] DEBUG -- : request-header: user-agent => Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/534.51.22 (KHTML, like Gecko) Version/5.1.1 Safari/534.51.22
+D, [2015-04-12T22:51:00.903604 #53827] DEBUG -- : request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+D, [2015-04-12T22:51:00.903621 #53827] DEBUG -- : request-header: accept-language => en-us,en;q=0.5
+D, [2015-04-12T22:51:00.903636 #53827] DEBUG -- : request-header: cookie => ftc=x=2015-04-13T08%3A51%3A00&c=1&pt1=291&pt2=291&er=35785&p1ca=reservation%2Fdetails&p1q=RestaurantID%3D35785%26Points%3D100%26PointsType%3DStandard%26SlotHash%3D2221649544%26SecurityID%3D0%26DateTime%3D04%252F22%25...
+D, [2015-04-12T22:51:00.903652 #53827] DEBUG -- : request-header: host => m.opentable.com
+D, [2015-04-12T22:51:00.903674 #53827] DEBUG -- : request-header: referer => https://m.opentable.com/reservation/details?RestaurantID=35785&Points=100&PointsType=Standard&SlotHash=2221649544&SecurityID=0&DateTime=04%2F22%2F2015%2017%3A00&PartySize=2&SlotLockID=377&OfferConfirmNumber=0&ChosenOfferId=0&IsMiddleSlot=True&ArePopPoints=False
+D, [2015-04-12T22:51:00.903709 #53827] DEBUG -- : request-header: content-type => application/x-www-form-urlencoded
+D, [2015-04-12T22:51:00.903726 #53827] DEBUG -- : request-header: content-length => 437
+I, [2015-04-12T22:51:01.198263 #53827]  INFO -- : status: Net::HTTPOK 1.1 200 OK
+D, [2015-04-12T22:51:01.198355 #53827] DEBUG -- : response-header: cache-control => private
+D, [2015-04-12T22:51:01.198394 #53827] DEBUG -- : response-header: content-type => text/html; charset=utf-8
+D, [2015-04-12T22:51:01.198425 #53827] DEBUG -- : response-header: server => Microsoft-IIS/7.5
+D, [2015-04-12T22:51:01.198453 #53827] DEBUG -- : response-header: x-aspnetmvc-version => 4.0
+D, [2015-04-12T22:51:01.198480 #53827] DEBUG -- : response-header: x-aspnet-version => 4.0.30319
+D, [2015-04-12T22:51:01.198506 #53827] DEBUG -- : response-header: x-powered-by => ASP.NET
+D, [2015-04-12T22:51:01.198531 #53827] DEBUG -- : response-header: vary => Accept-Encoding
+D, [2015-04-12T22:51:01.198556 #53827] DEBUG -- : response-header: content-encoding => gzip
+D, [2015-04-12T22:51:01.198581 #53827] DEBUG -- : response-header: content-length => 3412
+D, [2015-04-12T22:51:01.198607 #53827] DEBUG -- : response-header: date => Mon, 13 Apr 2015 05:51:01 GMT
+D, [2015-04-12T22:51:01.198632 #53827] DEBUG -- : response-header: connection => keep-alive
+D, [2015-04-12T22:51:01.198659 #53827] DEBUG -- : response-header: set-cookie => mUcke=em=gannavas%40gmail.com&fn=George&ln=Navas&pn=7277769719&sfn=&sln=; domain=opentable.com; expires=Wed, 13-Apr-2016 05:51:01 GMT; path=/
+D, [2015-04-12T22:51:01.198749 #53827] DEBUG -- : Read 3412 bytes (3412 total)
+D, [2015-04-12T22:51:01.198865 #53827] DEBUG -- : gzip response
+D, [2015-04-12T22:51:01.200228 #53827] DEBUG -- : saved cookie: mUcke=em=gannavas%40gmail.com&fn=George&ln=Navas&pn=7277769719&sfn=&sln=
+I, [2015-04-12T22:52:10.265926 #53827]  INFO -- : Net::HTTP::Get: /reservation/details?RestaurantID=7740&Points=100&PointsType=Standard&SlotHash=2221649544&SecurityID=0&DateTime=04%2F22%2F2015%2017%3A00&PartySize=2&SlotLockID=377&OfferConfirmNumber=0&ChosenOfferId=0&IsMiddleSlot=True&ArePopPoints=False
+D, [2015-04-12T22:52:10.267416 #53827] DEBUG -- : request-header: accept-encoding => gzip,deflate,identity
+D, [2015-04-12T22:52:10.267460 #53827] DEBUG -- : request-header: accept => */*
+D, [2015-04-12T22:52:10.267479 #53827] DEBUG -- : request-header: user-agent => Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/534.51.22 (KHTML, like Gecko) Version/5.1.1 Safari/534.51.22
+D, [2015-04-12T22:52:10.267497 #53827] DEBUG -- : request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+D, [2015-04-12T22:52:10.267512 #53827] DEBUG -- : request-header: accept-language => en-us,en;q=0.5
+D, [2015-04-12T22:52:10.267527 #53827] DEBUG -- : request-header: host => m.opentable.com
+I, [2015-04-12T22:52:10.590076 #53827]  INFO -- : status: Net::HTTPOK 1.1 200 OK
+D, [2015-04-12T22:52:10.590167 #53827] DEBUG -- : response-header: cache-control => private
+D, [2015-04-12T22:52:10.590204 #53827] DEBUG -- : response-header: content-type => text/html; charset=utf-8
+D, [2015-04-12T22:52:10.590233 #53827] DEBUG -- : response-header: server => Microsoft-IIS/7.5
+D, [2015-04-12T22:52:10.590259 #53827] DEBUG -- : response-header: x-aspnetmvc-version => 4.0
+D, [2015-04-12T22:52:10.590285 #53827] DEBUG -- : response-header: x-aspnet-version => 4.0.30319
+D, [2015-04-12T22:52:10.590310 #53827] DEBUG -- : response-header: x-powered-by => ASP.NET
+D, [2015-04-12T22:52:10.590335 #53827] DEBUG -- : response-header: vary => Accept-Encoding
+D, [2015-04-12T22:52:10.590360 #53827] DEBUG -- : response-header: content-encoding => gzip
+D, [2015-04-12T22:52:10.590384 #53827] DEBUG -- : response-header: content-length => 3633
+D, [2015-04-12T22:52:10.590409 #53827] DEBUG -- : response-header: date => Mon, 13 Apr 2015 05:52:10 GMT
+D, [2015-04-12T22:52:10.590434 #53827] DEBUG -- : response-header: connection => keep-alive
+D, [2015-04-12T22:52:10.590487 #53827] DEBUG -- : response-header: set-cookie => ftc=x=2015-04-13T08%3A52%3A10&c=1&pt1=291&pt2=291&er=7740&p1ca=reservation%2Fdetails&p1q=RestaurantID%3D7740%26Points%3D100%26PointsType%3DStandard%26SlotHash%3D2221649544%26SecurityID%3D0%26DateTime%3D04%252F22%252...; domain=opentable.com; path=/
+D, [2015-04-12T22:52:10.590597 #53827] DEBUG -- : Read 3633 bytes (3633 total)
+D, [2015-04-12T22:52:10.590724 #53827] DEBUG -- : gzip response
+D, [2015-04-12T22:52:10.592082 #53827] DEBUG -- : saved cookie: ftc=x=2015-04-13T08%3A52%3A10&c=1&pt1=291&pt2=291&er=7740&p1ca=reservation%2Fdetails&p1q=RestaurantID%3D7740%26Points%3D100%26PointsType%3DStandard%26SlotHash%3D2221649544%26SecurityID%3D0%26DateTime%3D04%252F22%252...
+I, [2015-04-12T22:52:10.594129 #53827]  INFO -- : form encoding: utf-8
+D, [2015-04-12T22:52:10.594621 #53827] DEBUG -- : query: "FirstName=George&LastName=Navas&Email=gannavas%40gmail.com&MetroId=4&PhoneNumber=7277769719&SpecialInstructions=&RestaurantName=Slanted+Door&FormattedDateTime=Wed+04%2F22%2F2015+5%3A00+PM&GuestText=%2B+1+guest%28s%29&OffersCsv=&ChosenOfferVersion=0&IsJustRegistered=False&IsForeignGuest=False&FormattedReservationDate=Wednesday%2C+April+22&FormattedReservationTimePartySize=+5%3A00+PM+for+2+people&FormattedReservationDate%3A=Wednesday%2C+Apr+22"
+I, [2015-04-12T22:52:10.596497 #53827]  INFO -- : Net::HTTP::Post: /reservation/details?RestaurantID=7740&Points=100&PointsType=Standard&SlotHash=2221649544&SecurityID=0&DateTime=04%2F22%2F2015%2017%3A00&PartySize=2&SlotLockID=377&OfferConfirmNumber=0&ChosenOfferId=0&IsMiddleSlot=True&ArePopPoints=False
+D, [2015-04-12T22:52:10.596542 #53827] DEBUG -- : request-header: accept-encoding => gzip,deflate,identity
+D, [2015-04-12T22:52:10.596562 #53827] DEBUG -- : request-header: accept => */*
+D, [2015-04-12T22:52:10.596579 #53827] DEBUG -- : request-header: user-agent => Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/534.51.22 (KHTML, like Gecko) Version/5.1.1 Safari/534.51.22
+D, [2015-04-12T22:52:10.596596 #53827] DEBUG -- : request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+D, [2015-04-12T22:52:10.596612 #53827] DEBUG -- : request-header: accept-language => en-us,en;q=0.5
+D, [2015-04-12T22:52:10.596628 #53827] DEBUG -- : request-header: cookie => ftc=x=2015-04-13T08%3A52%3A10&c=1&pt1=291&pt2=291&er=7740&p1ca=reservation%2Fdetails&p1q=RestaurantID%3D7740%26Points%3D100%26PointsType%3DStandard%26SlotHash%3D2221649544%26SecurityID%3D0%26DateTime%3D04%252F22%252...
+D, [2015-04-12T22:52:10.596644 #53827] DEBUG -- : request-header: host => m.opentable.com
+D, [2015-04-12T22:52:10.596666 #53827] DEBUG -- : request-header: referer => https://m.opentable.com/reservation/details?RestaurantID=7740&Points=100&PointsType=Standard&SlotHash=2221649544&SecurityID=0&DateTime=04%2F22%2F2015%2017%3A00&PartySize=2&SlotLockID=377&OfferConfirmNumber=0&ChosenOfferId=0&IsMiddleSlot=True&ArePopPoints=False
+D, [2015-04-12T22:52:10.596683 #53827] DEBUG -- : request-header: content-type => application/x-www-form-urlencoded
+D, [2015-04-12T22:52:10.596698 #53827] DEBUG -- : request-header: content-length => 445
+I, [2015-04-12T22:52:10.912820 #53827]  INFO -- : status: Net::HTTPOK 1.1 200 OK
+D, [2015-04-12T22:52:10.912971 #53827] DEBUG -- : response-header: cache-control => private
+D, [2015-04-12T22:52:10.913051 #53827] DEBUG -- : response-header: content-type => text/html; charset=utf-8
+D, [2015-04-12T22:52:10.913108 #53827] DEBUG -- : response-header: server => Microsoft-IIS/7.5
+D, [2015-04-12T22:52:10.913158 #53827] DEBUG -- : response-header: x-aspnetmvc-version => 4.0
+D, [2015-04-12T22:52:10.913209 #53827] DEBUG -- : response-header: x-aspnet-version => 4.0.30319
+D, [2015-04-12T22:52:10.913261 #53827] DEBUG -- : response-header: x-powered-by => ASP.NET
+D, [2015-04-12T22:52:10.913313 #53827] DEBUG -- : response-header: vary => Accept-Encoding
+D, [2015-04-12T22:52:10.913362 #53827] DEBUG -- : response-header: content-encoding => gzip
+D, [2015-04-12T22:52:10.913453 #53827] DEBUG -- : response-header: content-length => 3408
+D, [2015-04-12T22:52:10.913514 #53827] DEBUG -- : response-header: date => Mon, 13 Apr 2015 05:52:10 GMT
+D, [2015-04-12T22:52:10.913542 #53827] DEBUG -- : response-header: connection => keep-alive
+D, [2015-04-12T22:52:10.913568 #53827] DEBUG -- : response-header: set-cookie => mUcke=em=gannavas%40gmail.com&fn=George&ln=Navas&pn=7277769719&sfn=&sln=; domain=opentable.com; expires=Wed, 13-Apr-2016 05:52:10 GMT; path=/
+D, [2015-04-12T22:52:10.913669 #53827] DEBUG -- : Read 3408 bytes (3408 total)
+D, [2015-04-12T22:52:10.913792 #53827] DEBUG -- : gzip response
+D, [2015-04-12T22:52:10.916253 #53827] DEBUG -- : saved cookie: mUcke=em=gannavas%40gmail.com&fn=George&ln=Navas&pn=7277769719&sfn=&sln=
+I, [2015-04-12T22:52:50.581358 #53827]  INFO -- : Net::HTTP::Get: /reservation/details?RestaurantID=53860&Points=100&PointsType=Standard&SlotHash=2221649544&SecurityID=0&DateTime=04%2F22%2F2015%2017%3A00&PartySize=2&SlotLockID=377&OfferConfirmNumber=0&ChosenOfferId=0&IsMiddleSlot=True&ArePopPoints=False
+D, [2015-04-12T22:52:50.581433 #53827] DEBUG -- : request-header: accept-encoding => gzip,deflate,identity
+D, [2015-04-12T22:52:50.581457 #53827] DEBUG -- : request-header: accept => */*
+D, [2015-04-12T22:52:50.581476 #53827] DEBUG -- : request-header: user-agent => Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/534.51.22 (KHTML, like Gecko) Version/5.1.1 Safari/534.51.22
+D, [2015-04-12T22:52:50.581494 #53827] DEBUG -- : request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+D, [2015-04-12T22:52:50.581510 #53827] DEBUG -- : request-header: accept-language => en-us,en;q=0.5
+D, [2015-04-12T22:52:50.581527 #53827] DEBUG -- : request-header: host => m.opentable.com
+I, [2015-04-12T22:52:51.482535 #53827]  INFO -- : status: Net::HTTPOK 1.1 200 OK
+D, [2015-04-12T22:52:51.482699 #53827] DEBUG -- : response-header: cache-control => private
+D, [2015-04-12T22:52:51.482749 #53827] DEBUG -- : response-header: content-type => text/html; charset=utf-8
+D, [2015-04-12T22:52:51.482795 #53827] DEBUG -- : response-header: server => Microsoft-IIS/7.5
+D, [2015-04-12T22:52:51.482840 #53827] DEBUG -- : response-header: x-aspnetmvc-version => 4.0
+D, [2015-04-12T22:52:51.482904 #53827] DEBUG -- : response-header: x-aspnet-version => 4.0.30319
+D, [2015-04-12T22:52:51.482950 #53827] DEBUG -- : response-header: x-powered-by => ASP.NET
+D, [2015-04-12T22:52:51.482983 #53827] DEBUG -- : response-header: vary => Accept-Encoding
+D, [2015-04-12T22:52:51.483020 #53827] DEBUG -- : response-header: content-encoding => gzip
+D, [2015-04-12T22:52:51.483053 #53827] DEBUG -- : response-header: content-length => 3666
+D, [2015-04-12T22:52:51.483097 #53827] DEBUG -- : response-header: date => Mon, 13 Apr 2015 05:52:51 GMT
+D, [2015-04-12T22:52:51.483175 #53827] DEBUG -- : response-header: connection => keep-alive
+D, [2015-04-12T22:52:51.483316 #53827] DEBUG -- : response-header: set-cookie => ftc=x=2015-04-13T08%3A52%3A51&c=1&pt1=291&pt2=291&er=53860&p1ca=reservation%2Fdetails&p1q=RestaurantID%3D53860%26Points%3D100%26PointsType%3DStandard%26SlotHash%3D2221649544%26SecurityID%3D0%26DateTime%3D04%252F22%25...; domain=opentable.com; path=/
+D, [2015-04-12T22:52:51.483759 #53827] DEBUG -- : Read 3666 bytes (3666 total)
+D, [2015-04-12T22:52:51.484029 #53827] DEBUG -- : gzip response
+D, [2015-04-12T22:52:51.485818 #53827] DEBUG -- : saved cookie: ftc=x=2015-04-13T08%3A52%3A51&c=1&pt1=291&pt2=291&er=53860&p1ca=reservation%2Fdetails&p1q=RestaurantID%3D53860%26Points%3D100%26PointsType%3DStandard%26SlotHash%3D2221649544%26SecurityID%3D0%26DateTime%3D04%252F22%25...
+I, [2015-04-12T22:52:51.488011 #53827]  INFO -- : form encoding: utf-8
+D, [2015-04-12T22:52:51.488370 #53827] DEBUG -- : query: "FirstName=George&LastName=Navas&Email=gannavas%40gmail.com&MetroId=4&PhoneNumber=7277769719&SpecialInstructions=&RestaurantName=Limon+Rotisserie+%E2%80%93+Van+Ness&FormattedDateTime=Wed+04%2F22%2F2015+5%3A00+PM&GuestText=%2B+1+guest%28s%29&OffersCsv=&ChosenOfferVersion=0&IsJustRegistered=False&IsForeignGuest=False&FormattedReservationDate=Wednesday%2C+April+22&FormattedReservationTimePartySize=+5%3A00+PM+for+2+people&FormattedReservationDate%3A=Wednesday%2C+Apr+22"
+I, [2015-04-12T22:52:51.490176 #53827]  INFO -- : Net::HTTP::Post: /reservation/details?RestaurantID=53860&Points=100&PointsType=Standard&SlotHash=2221649544&SecurityID=0&DateTime=04%2F22%2F2015%2017%3A00&PartySize=2&SlotLockID=377&OfferConfirmNumber=0&ChosenOfferId=0&IsMiddleSlot=True&ArePopPoints=False
+D, [2015-04-12T22:52:51.490222 #53827] DEBUG -- : request-header: accept-encoding => gzip,deflate,identity
+D, [2015-04-12T22:52:51.490241 #53827] DEBUG -- : request-header: accept => */*
+D, [2015-04-12T22:52:51.490258 #53827] DEBUG -- : request-header: user-agent => Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/534.51.22 (KHTML, like Gecko) Version/5.1.1 Safari/534.51.22
+D, [2015-04-12T22:52:51.490273 #53827] DEBUG -- : request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+D, [2015-04-12T22:52:51.490288 #53827] DEBUG -- : request-header: accept-language => en-us,en;q=0.5
+D, [2015-04-12T22:52:51.490303 #53827] DEBUG -- : request-header: cookie => ftc=x=2015-04-13T08%3A52%3A51&c=1&pt1=291&pt2=291&er=53860&p1ca=reservation%2Fdetails&p1q=RestaurantID%3D53860%26Points%3D100%26PointsType%3DStandard%26SlotHash%3D2221649544%26SecurityID%3D0%26DateTime%3D04%252F22%25...
+D, [2015-04-12T22:52:51.490318 #53827] DEBUG -- : request-header: host => m.opentable.com
+D, [2015-04-12T22:52:51.490339 #53827] DEBUG -- : request-header: referer => https://m.opentable.com/reservation/details?RestaurantID=53860&Points=100&PointsType=Standard&SlotHash=2221649544&SecurityID=0&DateTime=04%2F22%2F2015%2017%3A00&PartySize=2&SlotLockID=377&OfferConfirmNumber=0&ChosenOfferId=0&IsMiddleSlot=True&ArePopPoints=False
+D, [2015-04-12T22:52:51.490355 #53827] DEBUG -- : request-header: content-type => application/x-www-form-urlencoded
+D, [2015-04-12T22:52:51.490369 #53827] DEBUG -- : request-header: content-length => 468
+I, [2015-04-12T22:52:52.279137 #53827]  INFO -- : status: Net::HTTPFound 1.1 302 Moved Temporarily
+D, [2015-04-12T22:52:52.279232 #53827] DEBUG -- : response-header: cache-control => private
+D, [2015-04-12T22:52:52.279270 #53827] DEBUG -- : response-header: content-type => text/html; charset=utf-8
+D, [2015-04-12T22:52:52.279295 #53827] DEBUG -- : response-header: location => /reservation/view?RestaurantID=53860&ConfirmationNumber=675426764&DateTime=04%2F22%2F2015%2017%3A00%3A00&PartySize=2&Points=100&UserName=George%20Navas&IsCreditCardEnabled=False&MakeMessage=Thank%20you%20for%20choosing%20Limon%20Rotisserie%20%E2%80%93%20Van%20Ness.%20%20Should%20your%20plans%20change%2C%20please%20let%20us%20know.%20We%20look%20forward%20to%20serving%20you.%20%20&OfferId=0&OfferConfirmNumber=0&Status=Make&IsJustRegistered=False&IsRestaurantReferralReservation=False
+D, [2015-04-12T22:52:52.279315 #53827] DEBUG -- : response-header: server => Microsoft-IIS/7.5
+D, [2015-04-12T22:52:52.279334 #53827] DEBUG -- : response-header: x-aspnetmvc-version => 4.0
+D, [2015-04-12T22:52:52.279351 #53827] DEBUG -- : response-header: x-aspnet-version => 4.0.30319
+D, [2015-04-12T22:52:52.279367 #53827] DEBUG -- : response-header: x-powered-by => ASP.NET
+D, [2015-04-12T22:52:52.279384 #53827] DEBUG -- : response-header: content-length => 651
+D, [2015-04-12T22:52:52.279401 #53827] DEBUG -- : response-header: date => Mon, 13 Apr 2015 05:52:52 GMT
+D, [2015-04-12T22:52:52.279417 #53827] DEBUG -- : response-header: connection => keep-alive
+D, [2015-04-12T22:52:52.279434 #53827] DEBUG -- : response-header: set-cookie => mUcke=em=gannavas%40gmail.com&fn=George&ln=Navas&pn=7277769719&sfn=&sln=; domain=opentable.com; expires=Wed, 13-Apr-2016 05:52:52 GMT; path=/
+D, [2015-04-12T22:52:52.279499 #53827] DEBUG -- : Read 651 bytes (651 total)
+D, [2015-04-12T22:52:52.280083 #53827] DEBUG -- : saved cookie: mUcke=em=gannavas%40gmail.com&fn=George&ln=Navas&pn=7277769719&sfn=&sln=
+I, [2015-04-12T22:52:52.280163 #53827]  INFO -- : follow redirect to: /reservation/view?RestaurantID=53860&ConfirmationNumber=675426764&DateTime=04%2F22%2F2015%2017%3A00%3A00&PartySize=2&Points=100&UserName=George%20Navas&IsCreditCardEnabled=False&MakeMessage=Thank%20you%20for%20choosing%20Limon%20Rotisserie%20%E2%80%93%20Van%20Ness.%20%20Should%20your%20plans%20change%2C%20please%20let%20us%20know.%20We%20look%20forward%20to%20serving%20you.%20%20&OfferId=0&OfferConfirmNumber=0&Status=Make&IsJustRegistered=False&IsRestaurantReferralReservation=False
+I, [2015-04-12T22:52:52.282142 #53827]  INFO -- : Net::HTTP::Get: /reservation/view?RestaurantID=53860&ConfirmationNumber=675426764&DateTime=04%2F22%2F2015%2017%3A00%3A00&PartySize=2&Points=100&UserName=George%20Navas&IsCreditCardEnabled=False&MakeMessage=Thank%20you%20for%20choosing%20Limon%20Rotisserie%20%E2%80%93%20Van%20Ness.%20%20Should%20your%20plans%20change%2C%20please%20let%20us%20know.%20We%20look%20forward%20to%20serving%20you.%20%20&OfferId=0&OfferConfirmNumber=0&Status=Make&IsJustRegistered=False&IsRestaurantReferralReservation=False
+D, [2015-04-12T22:52:52.282195 #53827] DEBUG -- : request-header: accept-encoding => gzip,deflate,identity
+D, [2015-04-12T22:52:52.282217 #53827] DEBUG -- : request-header: accept => */*
+D, [2015-04-12T22:52:52.282235 #53827] DEBUG -- : request-header: user-agent => Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/534.51.22 (KHTML, like Gecko) Version/5.1.1 Safari/534.51.22
+D, [2015-04-12T22:52:52.282252 #53827] DEBUG -- : request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+D, [2015-04-12T22:52:52.282268 #53827] DEBUG -- : request-header: accept-language => en-us,en;q=0.5
+D, [2015-04-12T22:52:52.282283 #53827] DEBUG -- : request-header: cookie => ftc=x=2015-04-13T08%3A52%3A51&c=1&pt1=291&pt2=291&er=53860&p1ca=reservation%2Fdetails&p1q=RestaurantID%3D53860%26Points%3D100%26PointsType%3DStandard%26SlotHash%3D2221649544%26SecurityID%3D0%26DateTime%3D04%252F22%25...; mUcke=em=gannavas%40gmail.com&fn=George&ln=Navas&pn=7277769719&sfn=&sln=
+D, [2015-04-12T22:52:52.282298 #53827] DEBUG -- : request-header: host => m.opentable.com
+D, [2015-04-12T22:52:52.282320 #53827] DEBUG -- : request-header: referer => https://m.opentable.com/reservation/details?RestaurantID=53860&Points=100&PointsType=Standard&SlotHash=2221649544&SecurityID=0&DateTime=04%2F22%2F2015%2017%3A00&PartySize=2&SlotLockID=377&OfferConfirmNumber=0&ChosenOfferId=0&IsMiddleSlot=True&ArePopPoints=False
+I, [2015-04-12T22:52:52.653653 #53827]  INFO -- : status: Net::HTTPOK 1.1 200 OK
+D, [2015-04-12T22:52:52.653773 #53827] DEBUG -- : response-header: cache-control => private
+D, [2015-04-12T22:52:52.653831 #53827] DEBUG -- : response-header: content-type => text/html; charset=utf-8
+D, [2015-04-12T22:52:52.653881 #53827] DEBUG -- : response-header: server => Microsoft-IIS/7.5
+D, [2015-04-12T22:52:52.653926 #53827] DEBUG -- : response-header: x-aspnetmvc-version => 4.0
+D, [2015-04-12T22:52:52.653973 #53827] DEBUG -- : response-header: x-aspnet-version => 4.0.30319
+D, [2015-04-12T22:52:52.654017 #53827] DEBUG -- : response-header: x-powered-by => ASP.NET
+D, [2015-04-12T22:52:52.654052 #53827] DEBUG -- : response-header: vary => Accept-Encoding
+D, [2015-04-12T22:52:52.654078 #53827] DEBUG -- : response-header: content-encoding => gzip
+D, [2015-04-12T22:52:52.654103 #53827] DEBUG -- : response-header: content-length => 6691
+D, [2015-04-12T22:52:52.654129 #53827] DEBUG -- : response-header: date => Mon, 13 Apr 2015 05:52:52 GMT
+D, [2015-04-12T22:52:52.654155 #53827] DEBUG -- : response-header: connection => keep-alive
+D, [2015-04-12T22:52:52.654182 #53827] DEBUG -- : response-header: set-cookie => mSLogcke=sc=0; domain=opentable.com; path=/, mUcke=em=gannavas%40gmail.com&fn=George&ln=Navas&pn=7277769719&sfn=&sln=; domain=opentable.com; expires=Wed, 13-Apr-2016 05:52:53 GMT; path=/, ftc=x=2015-04-13T08%3A52%3A52&c=1&pt1=291&pt2=291&er=53860&p1ca=reservation%2Fdetails&p1q=RestaurantID%3D53860%26Points%3D100%26PointsType%3DStandard%26SlotHash%3D2221649544%26SecurityID%3D0%26DateTime%3D04%252F22%25...; domain=opentable.com; path=/
+D, [2015-04-12T22:52:52.654280 #53827] DEBUG -- : Read 6691 bytes (6691 total)
+D, [2015-04-12T22:52:52.654400 #53827] DEBUG -- : gzip response
+D, [2015-04-12T22:52:52.656301 #53827] DEBUG -- : saved cookie: mSLogcke=sc=0
+D, [2015-04-12T22:52:52.656802 #53827] DEBUG -- : saved cookie: mUcke=em=gannavas%40gmail.com&fn=George&ln=Navas&pn=7277769719&sfn=&sln=
+D, [2015-04-12T22:52:52.657041 #53827] DEBUG -- : saved cookie: ftc=x=2015-04-13T08%3A52%3A52&c=1&pt1=291&pt2=291&er=53860&p1ca=reservation%2Fdetails&p1q=RestaurantID%3D53860%26Points%3D100%26PointsType%3DStandard%26SlotHash%3D2221649544%26SecurityID%3D0%26DateTime%3D04%252F22%25...
+I, [2015-04-12T22:54:02.155991 #53827]  INFO -- : Net::HTTP::Get: /reservation/details?RestaurantID=35785&Points=100&PointsType=Standard&SlotHash=2221649544&SecurityID=0&DateTime=04%2F22%2F2015%2017%3A00&PartySize=2&SlotLockID=377&OfferConfirmNumber=0&ChosenOfferId=0&IsMiddleSlot=True&ArePopPoints=False
+D, [2015-04-12T22:54:02.156065 #53827] DEBUG -- : request-header: accept-encoding => gzip,deflate,identity
+D, [2015-04-12T22:54:02.156086 #53827] DEBUG -- : request-header: accept => */*
+D, [2015-04-12T22:54:02.156105 #53827] DEBUG -- : request-header: user-agent => Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/534.51.22 (KHTML, like Gecko) Version/5.1.1 Safari/534.51.22
+D, [2015-04-12T22:54:02.156125 #53827] DEBUG -- : request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+D, [2015-04-12T22:54:02.156141 #53827] DEBUG -- : request-header: accept-language => en-us,en;q=0.5
+D, [2015-04-12T22:54:02.156156 #53827] DEBUG -- : request-header: host => m.opentable.com
+I, [2015-04-12T22:54:02.696679 #53827]  INFO -- : status: Net::HTTPOK 1.1 200 OK
+D, [2015-04-12T22:54:02.696749 #53827] DEBUG -- : response-header: cache-control => private
+D, [2015-04-12T22:54:02.696772 #53827] DEBUG -- : response-header: content-type => text/html; charset=utf-8
+D, [2015-04-12T22:54:02.696791 #53827] DEBUG -- : response-header: server => Microsoft-IIS/7.5
+D, [2015-04-12T22:54:02.696807 #53827] DEBUG -- : response-header: x-aspnetmvc-version => 4.0
+D, [2015-04-12T22:54:02.696825 #53827] DEBUG -- : response-header: x-aspnet-version => 4.0.30319
+D, [2015-04-12T22:54:02.696841 #53827] DEBUG -- : response-header: x-powered-by => ASP.NET
+D, [2015-04-12T22:54:02.696856 #53827] DEBUG -- : response-header: vary => Accept-Encoding
+D, [2015-04-12T22:54:02.696871 #53827] DEBUG -- : response-header: content-encoding => gzip
+D, [2015-04-12T22:54:02.696889 #53827] DEBUG -- : response-header: content-length => 3630
+D, [2015-04-12T22:54:02.696909 #53827] DEBUG -- : response-header: date => Mon, 13 Apr 2015 05:54:02 GMT
+D, [2015-04-12T22:54:02.696924 #53827] DEBUG -- : response-header: connection => keep-alive
+D, [2015-04-12T22:54:02.696942 #53827] DEBUG -- : response-header: set-cookie => ftc=x=2015-04-13T08%3A54%3A02&c=1&pt1=291&pt2=291&er=35785&p1ca=reservation%2Fdetails&p1q=RestaurantID%3D35785%26Points%3D100%26PointsType%3DStandard%26SlotHash%3D2221649544%26SecurityID%3D0%26DateTime%3D04%252F22%25...; domain=opentable.com; path=/
+D, [2015-04-12T22:54:02.697036 #53827] DEBUG -- : Read 3630 bytes (3630 total)
+D, [2015-04-12T22:54:02.697130 #53827] DEBUG -- : gzip response
+D, [2015-04-12T22:54:02.698305 #53827] DEBUG -- : saved cookie: ftc=x=2015-04-13T08%3A54%3A02&c=1&pt1=291&pt2=291&er=35785&p1ca=reservation%2Fdetails&p1q=RestaurantID%3D35785%26Points%3D100%26PointsType%3DStandard%26SlotHash%3D2221649544%26SecurityID%3D0%26DateTime%3D04%252F22%25...
+I, [2015-04-12T22:54:02.701426 #53827]  INFO -- : form encoding: utf-8
+D, [2015-04-12T22:54:02.701900 #53827] DEBUG -- : query: "FirstName=George&LastName=Navas&Email=gannavas%40gmail.com&MetroId=4&PhoneNumber=7277769719&SpecialInstructions=&RestaurantName=SPQR&FormattedDateTime=Wed+04%2F22%2F2015+5%3A00+PM&GuestText=%2B+1+guest%28s%29&OffersCsv=&ChosenOfferVersion=0&IsJustRegistered=False&IsForeignGuest=False&FormattedReservationDate=Wednesday%2C+April+22&FormattedReservationTimePartySize=+5%3A00+PM+for+2+people&FormattedReservationDate%3A=Wednesday%2C+Apr+22"
+I, [2015-04-12T22:54:02.704400 #53827]  INFO -- : Net::HTTP::Post: /reservation/details?RestaurantID=35785&Points=100&PointsType=Standard&SlotHash=2221649544&SecurityID=0&DateTime=04%2F22%2F2015%2017%3A00&PartySize=2&SlotLockID=377&OfferConfirmNumber=0&ChosenOfferId=0&IsMiddleSlot=True&ArePopPoints=False
+D, [2015-04-12T22:54:02.704473 #53827] DEBUG -- : request-header: accept-encoding => gzip,deflate,identity
+D, [2015-04-12T22:54:02.704494 #53827] DEBUG -- : request-header: accept => */*
+D, [2015-04-12T22:54:02.704512 #53827] DEBUG -- : request-header: user-agent => Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/534.51.22 (KHTML, like Gecko) Version/5.1.1 Safari/534.51.22
+D, [2015-04-12T22:54:02.704527 #53827] DEBUG -- : request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+D, [2015-04-12T22:54:02.704541 #53827] DEBUG -- : request-header: accept-language => en-us,en;q=0.5
+D, [2015-04-12T22:54:02.704556 #53827] DEBUG -- : request-header: cookie => ftc=x=2015-04-13T08%3A54%3A02&c=1&pt1=291&pt2=291&er=35785&p1ca=reservation%2Fdetails&p1q=RestaurantID%3D35785%26Points%3D100%26PointsType%3DStandard%26SlotHash%3D2221649544%26SecurityID%3D0%26DateTime%3D04%252F22%25...
+D, [2015-04-12T22:54:02.704571 #53827] DEBUG -- : request-header: host => m.opentable.com
+D, [2015-04-12T22:54:02.704590 #53827] DEBUG -- : request-header: referer => https://m.opentable.com/reservation/details?RestaurantID=35785&Points=100&PointsType=Standard&SlotHash=2221649544&SecurityID=0&DateTime=04%2F22%2F2015%2017%3A00&PartySize=2&SlotLockID=377&OfferConfirmNumber=0&ChosenOfferId=0&IsMiddleSlot=True&ArePopPoints=False
+D, [2015-04-12T22:54:02.704604 #53827] DEBUG -- : request-header: content-type => application/x-www-form-urlencoded
+D, [2015-04-12T22:54:02.704617 #53827] DEBUG -- : request-header: content-length => 437
+I, [2015-04-12T22:54:03.040865 #53827]  INFO -- : status: Net::HTTPOK 1.1 200 OK
+D, [2015-04-12T22:54:03.041004 #53827] DEBUG -- : response-header: cache-control => private
+D, [2015-04-12T22:54:03.041058 #53827] DEBUG -- : response-header: content-type => text/html; charset=utf-8
+D, [2015-04-12T22:54:03.041089 #53827] DEBUG -- : response-header: server => Microsoft-IIS/7.5
+D, [2015-04-12T22:54:03.041119 #53827] DEBUG -- : response-header: x-aspnetmvc-version => 4.0
+D, [2015-04-12T22:54:03.041147 #53827] DEBUG -- : response-header: x-aspnet-version => 4.0.30319
+D, [2015-04-12T22:54:03.041178 #53827] DEBUG -- : response-header: x-powered-by => ASP.NET
+D, [2015-04-12T22:54:03.041206 #53827] DEBUG -- : response-header: vary => Accept-Encoding
+D, [2015-04-12T22:54:03.041238 #53827] DEBUG -- : response-header: content-encoding => gzip
+D, [2015-04-12T22:54:03.041265 #53827] DEBUG -- : response-header: content-length => 3412
+D, [2015-04-12T22:54:03.041293 #53827] DEBUG -- : response-header: date => Mon, 13 Apr 2015 05:54:02 GMT
+D, [2015-04-12T22:54:03.041340 #53827] DEBUG -- : response-header: connection => keep-alive
+D, [2015-04-12T22:54:03.041369 #53827] DEBUG -- : response-header: set-cookie => mUcke=em=gannavas%40gmail.com&fn=George&ln=Navas&pn=7277769719&sfn=&sln=; domain=opentable.com; expires=Wed, 13-Apr-2016 05:54:02 GMT; path=/
+D, [2015-04-12T22:54:03.041438 #53827] DEBUG -- : Read 3412 bytes (3412 total)
+D, [2015-04-12T22:54:03.041520 #53827] DEBUG -- : gzip response
+D, [2015-04-12T22:54:03.042660 #53827] DEBUG -- : saved cookie: mUcke=em=gannavas%40gmail.com&fn=George&ln=Navas&pn=7277769719&sfn=&sln=
+I, [2015-04-12T22:54:38.161138 #53827]  INFO -- : Net::HTTP::Get: /reservation/details?RestaurantID=7740&Points=100&PointsType=Standard&SlotHash=2221649544&SecurityID=0&DateTime=04%2F22%2F2015%2017%3A00&PartySize=2&SlotLockID=377&OfferConfirmNumber=0&ChosenOfferId=0&IsMiddleSlot=True&ArePopPoints=False
+D, [2015-04-12T22:54:38.161208 #53827] DEBUG -- : request-header: accept-encoding => gzip,deflate,identity
+D, [2015-04-12T22:54:38.161231 #53827] DEBUG -- : request-header: accept => */*
+D, [2015-04-12T22:54:38.161249 #53827] DEBUG -- : request-header: user-agent => Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/534.51.22 (KHTML, like Gecko) Version/5.1.1 Safari/534.51.22
+D, [2015-04-12T22:54:38.161266 #53827] DEBUG -- : request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+D, [2015-04-12T22:54:38.161302 #53827] DEBUG -- : request-header: accept-language => en-us,en;q=0.5
+D, [2015-04-12T22:54:38.161320 #53827] DEBUG -- : request-header: host => m.opentable.com
+I, [2015-04-12T22:54:38.442989 #53827]  INFO -- : status: Net::HTTPOK 1.1 200 OK
+D, [2015-04-12T22:54:38.443081 #53827] DEBUG -- : response-header: cache-control => private
+D, [2015-04-12T22:54:38.443119 #53827] DEBUG -- : response-header: content-type => text/html; charset=utf-8
+D, [2015-04-12T22:54:38.443148 #53827] DEBUG -- : response-header: server => Microsoft-IIS/7.5
+D, [2015-04-12T22:54:38.443176 #53827] DEBUG -- : response-header: x-aspnetmvc-version => 4.0
+D, [2015-04-12T22:54:38.443202 #53827] DEBUG -- : response-header: x-aspnet-version => 4.0.30319
+D, [2015-04-12T22:54:38.443227 #53827] DEBUG -- : response-header: x-powered-by => ASP.NET
+D, [2015-04-12T22:54:38.443253 #53827] DEBUG -- : response-header: vary => Accept-Encoding
+D, [2015-04-12T22:54:38.443277 #53827] DEBUG -- : response-header: content-encoding => gzip
+D, [2015-04-12T22:54:38.443303 #53827] DEBUG -- : response-header: content-length => 3633
+D, [2015-04-12T22:54:38.443328 #53827] DEBUG -- : response-header: date => Mon, 13 Apr 2015 05:54:38 GMT
+D, [2015-04-12T22:54:38.443353 #53827] DEBUG -- : response-header: connection => keep-alive
+D, [2015-04-12T22:54:38.443379 #53827] DEBUG -- : response-header: set-cookie => ftc=x=2015-04-13T08%3A54%3A38&c=1&pt1=291&pt2=291&er=7740&p1ca=reservation%2Fdetails&p1q=RestaurantID%3D7740%26Points%3D100%26PointsType%3DStandard%26SlotHash%3D2221649544%26SecurityID%3D0%26DateTime%3D04%252F22%252...; domain=opentable.com; path=/
+D, [2015-04-12T22:54:38.443491 #53827] DEBUG -- : Read 3633 bytes (3633 total)
+D, [2015-04-12T22:54:38.443622 #53827] DEBUG -- : gzip response
+D, [2015-04-12T22:54:38.445450 #53827] DEBUG -- : saved cookie: ftc=x=2015-04-13T08%3A54%3A38&c=1&pt1=291&pt2=291&er=7740&p1ca=reservation%2Fdetails&p1q=RestaurantID%3D7740%26Points%3D100%26PointsType%3DStandard%26SlotHash%3D2221649544%26SecurityID%3D0%26DateTime%3D04%252F22%252...
+I, [2015-04-12T22:54:38.447644 #53827]  INFO -- : form encoding: utf-8
+D, [2015-04-12T22:54:38.447960 #53827] DEBUG -- : query: "FirstName=George&LastName=Navas&Email=gannavas%40gmail.com&MetroId=4&PhoneNumber=7277769719&SpecialInstructions=&RestaurantName=Slanted+Door&FormattedDateTime=Wed+04%2F22%2F2015+5%3A00+PM&GuestText=%2B+1+guest%28s%29&OffersCsv=&ChosenOfferVersion=0&IsJustRegistered=False&IsForeignGuest=False&FormattedReservationDate=Wednesday%2C+April+22&FormattedReservationTimePartySize=+5%3A00+PM+for+2+people&FormattedReservationDate%3A=Wednesday%2C+Apr+22"
+I, [2015-04-12T22:54:38.449926 #53827]  INFO -- : Net::HTTP::Post: /reservation/details?RestaurantID=7740&Points=100&PointsType=Standard&SlotHash=2221649544&SecurityID=0&DateTime=04%2F22%2F2015%2017%3A00&PartySize=2&SlotLockID=377&OfferConfirmNumber=0&ChosenOfferId=0&IsMiddleSlot=True&ArePopPoints=False
+D, [2015-04-12T22:54:38.449976 #53827] DEBUG -- : request-header: accept-encoding => gzip,deflate,identity
+D, [2015-04-12T22:54:38.449996 #53827] DEBUG -- : request-header: accept => */*
+D, [2015-04-12T22:54:38.450014 #53827] DEBUG -- : request-header: user-agent => Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/534.51.22 (KHTML, like Gecko) Version/5.1.1 Safari/534.51.22
+D, [2015-04-12T22:54:38.450030 #53827] DEBUG -- : request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+D, [2015-04-12T22:54:38.450045 #53827] DEBUG -- : request-header: accept-language => en-us,en;q=0.5
+D, [2015-04-12T22:54:38.450060 #53827] DEBUG -- : request-header: cookie => ftc=x=2015-04-13T08%3A54%3A38&c=1&pt1=291&pt2=291&er=7740&p1ca=reservation%2Fdetails&p1q=RestaurantID%3D7740%26Points%3D100%26PointsType%3DStandard%26SlotHash%3D2221649544%26SecurityID%3D0%26DateTime%3D04%252F22%252...
+D, [2015-04-12T22:54:38.450075 #53827] DEBUG -- : request-header: host => m.opentable.com
+D, [2015-04-12T22:54:38.450096 #53827] DEBUG -- : request-header: referer => https://m.opentable.com/reservation/details?RestaurantID=7740&Points=100&PointsType=Standard&SlotHash=2221649544&SecurityID=0&DateTime=04%2F22%2F2015%2017%3A00&PartySize=2&SlotLockID=377&OfferConfirmNumber=0&ChosenOfferId=0&IsMiddleSlot=True&ArePopPoints=False
+D, [2015-04-12T22:54:38.450130 #53827] DEBUG -- : request-header: content-type => application/x-www-form-urlencoded
+D, [2015-04-12T22:54:38.450147 #53827] DEBUG -- : request-header: content-length => 445
+I, [2015-04-12T22:54:39.006527 #53827]  INFO -- : status: Net::HTTPOK 1.1 200 OK
+D, [2015-04-12T22:54:39.006611 #53827] DEBUG -- : response-header: cache-control => private
+D, [2015-04-12T22:54:39.006647 #53827] DEBUG -- : response-header: content-type => text/html; charset=utf-8
+D, [2015-04-12T22:54:39.006676 #53827] DEBUG -- : response-header: server => Microsoft-IIS/7.5
+D, [2015-04-12T22:54:39.006703 #53827] DEBUG -- : response-header: x-aspnetmvc-version => 4.0
+D, [2015-04-12T22:54:39.006729 #53827] DEBUG -- : response-header: x-aspnet-version => 4.0.30319
+D, [2015-04-12T22:54:39.006754 #53827] DEBUG -- : response-header: x-powered-by => ASP.NET
+D, [2015-04-12T22:54:39.006778 #53827] DEBUG -- : response-header: vary => Accept-Encoding
+D, [2015-04-12T22:54:39.006803 #53827] DEBUG -- : response-header: content-encoding => gzip
+D, [2015-04-12T22:54:39.006828 #53827] DEBUG -- : response-header: content-length => 3408
+D, [2015-04-12T22:54:39.006854 #53827] DEBUG -- : response-header: date => Mon, 13 Apr 2015 05:54:38 GMT
+D, [2015-04-12T22:54:39.006879 #53827] DEBUG -- : response-header: connection => keep-alive
+D, [2015-04-12T22:54:39.006905 #53827] DEBUG -- : response-header: set-cookie => mUcke=em=gannavas%40gmail.com&fn=George&ln=Navas&pn=7277769719&sfn=&sln=; domain=opentable.com; expires=Wed, 13-Apr-2016 05:54:39 GMT; path=/
+D, [2015-04-12T22:54:39.006987 #53827] DEBUG -- : Read 3408 bytes (3408 total)
+D, [2015-04-12T22:54:39.007098 #53827] DEBUG -- : gzip response
+D, [2015-04-12T22:54:39.008712 #53827] DEBUG -- : saved cookie: mUcke=em=gannavas%40gmail.com&fn=George&ln=Navas&pn=7277769719&sfn=&sln=
+I, [2015-04-12T22:55:05.829363 #53827]  INFO -- : Net::HTTP::Get: /reservation/details?RestaurantID=53860&Points=100&PointsType=Standard&SlotHash=2221649544&SecurityID=0&DateTime=04%2F22%2F2015%2017%3A00&PartySize=2&SlotLockID=377&OfferConfirmNumber=0&ChosenOfferId=0&IsMiddleSlot=True&ArePopPoints=False
+D, [2015-04-12T22:55:05.830360 #53827] DEBUG -- : request-header: accept-encoding => gzip,deflate,identity
+D, [2015-04-12T22:55:05.830410 #53827] DEBUG -- : request-header: accept => */*
+D, [2015-04-12T22:55:05.830431 #53827] DEBUG -- : request-header: user-agent => Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/534.51.22 (KHTML, like Gecko) Version/5.1.1 Safari/534.51.22
+D, [2015-04-12T22:55:05.830449 #53827] DEBUG -- : request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+D, [2015-04-12T22:55:05.830464 #53827] DEBUG -- : request-header: accept-language => en-us,en;q=0.5
+D, [2015-04-12T22:55:05.830480 #53827] DEBUG -- : request-header: host => m.opentable.com
+I, [2015-04-12T22:55:06.323966 #53827]  INFO -- : status: Net::HTTPOK 1.1 200 OK
+D, [2015-04-12T22:55:06.324041 #53827] DEBUG -- : response-header: cache-control => private
+D, [2015-04-12T22:55:06.324065 #53827] DEBUG -- : response-header: content-type => text/html; charset=utf-8
+D, [2015-04-12T22:55:06.324081 #53827] DEBUG -- : response-header: server => Microsoft-IIS/7.5
+D, [2015-04-12T22:55:06.324096 #53827] DEBUG -- : response-header: x-aspnetmvc-version => 4.0
+D, [2015-04-12T22:55:06.324110 #53827] DEBUG -- : response-header: x-aspnet-version => 4.0.30319
+D, [2015-04-12T22:55:06.324124 #53827] DEBUG -- : response-header: x-powered-by => ASP.NET
+D, [2015-04-12T22:55:06.324139 #53827] DEBUG -- : response-header: vary => Accept-Encoding
+D, [2015-04-12T22:55:06.324164 #53827] DEBUG -- : response-header: content-encoding => gzip
+D, [2015-04-12T22:55:06.324188 #53827] DEBUG -- : response-header: content-length => 3666
+D, [2015-04-12T22:55:06.324214 #53827] DEBUG -- : response-header: date => Mon, 13 Apr 2015 05:55:06 GMT
+D, [2015-04-12T22:55:06.324240 #53827] DEBUG -- : response-header: connection => keep-alive
+D, [2015-04-12T22:55:06.324289 #53827] DEBUG -- : response-header: set-cookie => ftc=x=2015-04-13T08%3A55%3A06&c=1&pt1=291&pt2=291&er=53860&p1ca=reservation%2Fdetails&p1q=RestaurantID%3D53860%26Points%3D100%26PointsType%3DStandard%26SlotHash%3D2221649544%26SecurityID%3D0%26DateTime%3D04%252F22%25...; domain=opentable.com; path=/
+D, [2015-04-12T22:55:06.324396 #53827] DEBUG -- : Read 3666 bytes (3666 total)
+D, [2015-04-12T22:55:06.324517 #53827] DEBUG -- : gzip response
+D, [2015-04-12T22:55:06.326337 #53827] DEBUG -- : saved cookie: ftc=x=2015-04-13T08%3A55%3A06&c=1&pt1=291&pt2=291&er=53860&p1ca=reservation%2Fdetails&p1q=RestaurantID%3D53860%26Points%3D100%26PointsType%3DStandard%26SlotHash%3D2221649544%26SecurityID%3D0%26DateTime%3D04%252F22%25...
+I, [2015-04-12T22:55:06.329192 #53827]  INFO -- : form encoding: utf-8
+D, [2015-04-12T22:55:06.329677 #53827] DEBUG -- : query: "FirstName=George&LastName=Navas&Email=gannavas%40gmail.com&MetroId=4&PhoneNumber=7277769719&SpecialInstructions=&RestaurantName=Limon+Rotisserie+%E2%80%93+Van+Ness&FormattedDateTime=Wed+04%2F22%2F2015+5%3A00+PM&GuestText=%2B+1+guest%28s%29&OffersCsv=&ChosenOfferVersion=0&IsJustRegistered=False&IsForeignGuest=False&FormattedReservationDate=Wednesday%2C+April+22&FormattedReservationTimePartySize=+5%3A00+PM+for+2+people&FormattedReservationDate%3A=Wednesday%2C+Apr+22"
+I, [2015-04-12T22:55:06.332573 #53827]  INFO -- : Net::HTTP::Post: /reservation/details?RestaurantID=53860&Points=100&PointsType=Standard&SlotHash=2221649544&SecurityID=0&DateTime=04%2F22%2F2015%2017%3A00&PartySize=2&SlotLockID=377&OfferConfirmNumber=0&ChosenOfferId=0&IsMiddleSlot=True&ArePopPoints=False
+D, [2015-04-12T22:55:06.332645 #53827] DEBUG -- : request-header: accept-encoding => gzip,deflate,identity
+D, [2015-04-12T22:55:06.332677 #53827] DEBUG -- : request-header: accept => */*
+D, [2015-04-12T22:55:06.332705 #53827] DEBUG -- : request-header: user-agent => Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/534.51.22 (KHTML, like Gecko) Version/5.1.1 Safari/534.51.22
+D, [2015-04-12T22:55:06.332731 #53827] DEBUG -- : request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+D, [2015-04-12T22:55:06.332755 #53827] DEBUG -- : request-header: accept-language => en-us,en;q=0.5
+D, [2015-04-12T22:55:06.332779 #53827] DEBUG -- : request-header: cookie => ftc=x=2015-04-13T08%3A55%3A06&c=1&pt1=291&pt2=291&er=53860&p1ca=reservation%2Fdetails&p1q=RestaurantID%3D53860%26Points%3D100%26PointsType%3DStandard%26SlotHash%3D2221649544%26SecurityID%3D0%26DateTime%3D04%252F22%25...
+D, [2015-04-12T22:55:06.332851 #53827] DEBUG -- : request-header: host => m.opentable.com
+D, [2015-04-12T22:55:06.332901 #53827] DEBUG -- : request-header: referer => https://m.opentable.com/reservation/details?RestaurantID=53860&Points=100&PointsType=Standard&SlotHash=2221649544&SecurityID=0&DateTime=04%2F22%2F2015%2017%3A00&PartySize=2&SlotLockID=377&OfferConfirmNumber=0&ChosenOfferId=0&IsMiddleSlot=True&ArePopPoints=False
+D, [2015-04-12T22:55:06.332932 #53827] DEBUG -- : request-header: content-type => application/x-www-form-urlencoded
+D, [2015-04-12T22:55:06.332958 #53827] DEBUG -- : request-header: content-length => 468
+I, [2015-04-12T22:55:06.962315 #53827]  INFO -- : status: Net::HTTPFound 1.1 302 Moved Temporarily
+D, [2015-04-12T22:55:06.962403 #53827] DEBUG -- : response-header: cache-control => private
+D, [2015-04-12T22:55:06.962438 #53827] DEBUG -- : response-header: content-type => text/html; charset=utf-8
+D, [2015-04-12T22:55:06.962466 #53827] DEBUG -- : response-header: location => /reservation/view?RestaurantID=53860&ConfirmationNumber=675426765&DateTime=04%2F22%2F2015%2017%3A00%3A00&PartySize=2&Points=100&UserName=George%20Navas&IsCreditCardEnabled=False&MakeMessage=Thank%20you%20for%20choosing%20Limon%20Rotisserie%20%E2%80%93%20Van%20Ness.%20%20Should%20your%20plans%20change%2C%20please%20let%20us%20know.%20We%20look%20forward%20to%20serving%20you.%20%20&OfferId=0&OfferConfirmNumber=0&Status=Make&IsJustRegistered=False&IsRestaurantReferralReservation=False
+D, [2015-04-12T22:55:06.962521 #53827] DEBUG -- : response-header: server => Microsoft-IIS/7.5
+D, [2015-04-12T22:55:06.962549 #53827] DEBUG -- : response-header: x-aspnetmvc-version => 4.0
+D, [2015-04-12T22:55:06.962575 #53827] DEBUG -- : response-header: x-aspnet-version => 4.0.30319
+D, [2015-04-12T22:55:06.962600 #53827] DEBUG -- : response-header: x-powered-by => ASP.NET
+D, [2015-04-12T22:55:06.962624 #53827] DEBUG -- : response-header: content-length => 651
+D, [2015-04-12T22:55:06.962649 #53827] DEBUG -- : response-header: date => Mon, 13 Apr 2015 05:55:06 GMT
+D, [2015-04-12T22:55:06.962673 #53827] DEBUG -- : response-header: connection => keep-alive
+D, [2015-04-12T22:55:06.962698 #53827] DEBUG -- : response-header: set-cookie => mUcke=em=gannavas%40gmail.com&fn=George&ln=Navas&pn=7277769719&sfn=&sln=; domain=opentable.com; expires=Wed, 13-Apr-2016 05:55:06 GMT; path=/
+D, [2015-04-12T22:55:06.962783 #53827] DEBUG -- : Read 651 bytes (651 total)
+D, [2015-04-12T22:55:06.963756 #53827] DEBUG -- : saved cookie: mUcke=em=gannavas%40gmail.com&fn=George&ln=Navas&pn=7277769719&sfn=&sln=
+I, [2015-04-12T22:55:06.963914 #53827]  INFO -- : follow redirect to: /reservation/view?RestaurantID=53860&ConfirmationNumber=675426765&DateTime=04%2F22%2F2015%2017%3A00%3A00&PartySize=2&Points=100&UserName=George%20Navas&IsCreditCardEnabled=False&MakeMessage=Thank%20you%20for%20choosing%20Limon%20Rotisserie%20%E2%80%93%20Van%20Ness.%20%20Should%20your%20plans%20change%2C%20please%20let%20us%20know.%20We%20look%20forward%20to%20serving%20you.%20%20&OfferId=0&OfferConfirmNumber=0&Status=Make&IsJustRegistered=False&IsRestaurantReferralReservation=False
+I, [2015-04-12T22:55:06.966845 #53827]  INFO -- : Net::HTTP::Get: /reservation/view?RestaurantID=53860&ConfirmationNumber=675426765&DateTime=04%2F22%2F2015%2017%3A00%3A00&PartySize=2&Points=100&UserName=George%20Navas&IsCreditCardEnabled=False&MakeMessage=Thank%20you%20for%20choosing%20Limon%20Rotisserie%20%E2%80%93%20Van%20Ness.%20%20Should%20your%20plans%20change%2C%20please%20let%20us%20know.%20We%20look%20forward%20to%20serving%20you.%20%20&OfferId=0&OfferConfirmNumber=0&Status=Make&IsJustRegistered=False&IsRestaurantReferralReservation=False
+D, [2015-04-12T22:55:06.966897 #53827] DEBUG -- : request-header: accept-encoding => gzip,deflate,identity
+D, [2015-04-12T22:55:06.966918 #53827] DEBUG -- : request-header: accept => */*
+D, [2015-04-12T22:55:06.966935 #53827] DEBUG -- : request-header: user-agent => Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/534.51.22 (KHTML, like Gecko) Version/5.1.1 Safari/534.51.22
+D, [2015-04-12T22:55:06.966951 #53827] DEBUG -- : request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+D, [2015-04-12T22:55:06.966966 #53827] DEBUG -- : request-header: accept-language => en-us,en;q=0.5
+D, [2015-04-12T22:55:06.966981 #53827] DEBUG -- : request-header: cookie => ftc=x=2015-04-13T08%3A55%3A06&c=1&pt1=291&pt2=291&er=53860&p1ca=reservation%2Fdetails&p1q=RestaurantID%3D53860%26Points%3D100%26PointsType%3DStandard%26SlotHash%3D2221649544%26SecurityID%3D0%26DateTime%3D04%252F22%25...; mUcke=em=gannavas%40gmail.com&fn=George&ln=Navas&pn=7277769719&sfn=&sln=
+D, [2015-04-12T22:55:06.966996 #53827] DEBUG -- : request-header: host => m.opentable.com
+D, [2015-04-12T22:55:06.967015 #53827] DEBUG -- : request-header: referer => https://m.opentable.com/reservation/details?RestaurantID=53860&Points=100&PointsType=Standard&SlotHash=2221649544&SecurityID=0&DateTime=04%2F22%2F2015%2017%3A00&PartySize=2&SlotLockID=377&OfferConfirmNumber=0&ChosenOfferId=0&IsMiddleSlot=True&ArePopPoints=False
+I, [2015-04-12T22:55:07.572732 #53827]  INFO -- : status: Net::HTTPOK 1.1 200 OK
+D, [2015-04-12T22:55:07.572825 #53827] DEBUG -- : response-header: cache-control => private
+D, [2015-04-12T22:55:07.572862 #53827] DEBUG -- : response-header: content-type => text/html; charset=utf-8
+D, [2015-04-12T22:55:07.572892 #53827] DEBUG -- : response-header: server => Microsoft-IIS/7.5
+D, [2015-04-12T22:55:07.572920 #53827] DEBUG -- : response-header: x-aspnetmvc-version => 4.0
+D, [2015-04-12T22:55:07.572975 #53827] DEBUG -- : response-header: x-aspnet-version => 4.0.30319
+D, [2015-04-12T22:55:07.573004 #53827] DEBUG -- : response-header: x-powered-by => ASP.NET
+D, [2015-04-12T22:55:07.573031 #53827] DEBUG -- : response-header: vary => Accept-Encoding
+D, [2015-04-12T22:55:07.573057 #53827] DEBUG -- : response-header: content-encoding => gzip
+D, [2015-04-12T22:55:07.573082 #53827] DEBUG -- : response-header: content-length => 6693
+D, [2015-04-12T22:55:07.573108 #53827] DEBUG -- : response-header: date => Mon, 13 Apr 2015 05:55:07 GMT
+D, [2015-04-12T22:55:07.573133 #53827] DEBUG -- : response-header: connection => keep-alive
+D, [2015-04-12T22:55:07.573160 #53827] DEBUG -- : response-header: set-cookie => mSLogcke=sc=0; domain=opentable.com; path=/, mUcke=em=gannavas%40gmail.com&fn=George&ln=Navas&pn=7277769719&sfn=&sln=; domain=opentable.com; expires=Wed, 13-Apr-2016 05:55:07 GMT; path=/, ftc=x=2015-04-13T08%3A55%3A07&c=1&pt1=291&pt2=291&er=53860&p1ca=reservation%2Fdetails&p1q=RestaurantID%3D53860%26Points%3D100%26PointsType%3DStandard%26SlotHash%3D2221649544%26SecurityID%3D0%26DateTime%3D04%252F22%25...; domain=opentable.com; path=/
+D, [2015-04-12T22:55:07.573256 #53827] DEBUG -- : Read 6693 bytes (6693 total)
+D, [2015-04-12T22:55:07.573379 #53827] DEBUG -- : gzip response
+D, [2015-04-12T22:55:07.582074 #53827] DEBUG -- : saved cookie: mSLogcke=sc=0
+D, [2015-04-12T22:55:07.582399 #53827] DEBUG -- : saved cookie: mUcke=em=gannavas%40gmail.com&fn=George&ln=Navas&pn=7277769719&sfn=&sln=
+D, [2015-04-12T22:55:07.582630 #53827] DEBUG -- : saved cookie: ftc=x=2015-04-13T08%3A55%3A07&c=1&pt1=291&pt2=291&er=53860&p1ca=reservation%2Fdetails&p1q=RestaurantID%3D53860%26Points%3D100%26PointsType%3DStandard%26SlotHash%3D2221649544%26SecurityID%3D0%26DateTime%3D04%252F22%25...
+I, [2015-04-12T22:55:37.836801 #53827]  INFO -- : Net::HTTP::Get: /reservation/details?RestaurantID=35785&Points=100&PointsType=Standard&SlotHash=2221649544&SecurityID=0&DateTime=04%2F22%2F2015%2017%3A45&PartySize=2&SlotLockID=377&OfferConfirmNumber=0&ChosenOfferId=0&IsMiddleSlot=True&ArePopPoints=False
+D, [2015-04-12T22:55:37.837979 #53827] DEBUG -- : request-header: accept-encoding => gzip,deflate,identity
+D, [2015-04-12T22:55:37.838043 #53827] DEBUG -- : request-header: accept => */*
+D, [2015-04-12T22:55:37.838154 #53827] DEBUG -- : request-header: user-agent => Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/534.51.22 (KHTML, like Gecko) Version/5.1.1 Safari/534.51.22
+D, [2015-04-12T22:55:37.838225 #53827] DEBUG -- : request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+D, [2015-04-12T22:55:37.838269 #53827] DEBUG -- : request-header: accept-language => en-us,en;q=0.5
+D, [2015-04-12T22:55:37.838299 #53827] DEBUG -- : request-header: host => m.opentable.com
+I, [2015-04-12T22:55:38.417582 #53827]  INFO -- : status: Net::HTTPOK 1.1 200 OK
+D, [2015-04-12T22:55:38.417809 #53827] DEBUG -- : response-header: cache-control => private
+D, [2015-04-12T22:55:38.417858 #53827] DEBUG -- : response-header: content-type => text/html; charset=utf-8
+D, [2015-04-12T22:55:38.417888 #53827] DEBUG -- : response-header: server => Microsoft-IIS/7.5
+D, [2015-04-12T22:55:38.417913 #53827] DEBUG -- : response-header: x-aspnetmvc-version => 4.0
+D, [2015-04-12T22:55:38.417936 #53827] DEBUG -- : response-header: x-aspnet-version => 4.0.30319
+D, [2015-04-12T22:55:38.417960 #53827] DEBUG -- : response-header: x-powered-by => ASP.NET
+D, [2015-04-12T22:55:38.417985 #53827] DEBUG -- : response-header: vary => Accept-Encoding
+D, [2015-04-12T22:55:38.418009 #53827] DEBUG -- : response-header: content-encoding => gzip
+D, [2015-04-12T22:55:38.418032 #53827] DEBUG -- : response-header: date => Mon, 13 Apr 2015 05:55:38 GMT
+D, [2015-04-12T22:55:38.418055 #53827] DEBUG -- : response-header: content-length => 3635
+D, [2015-04-12T22:55:38.418079 #53827] DEBUG -- : response-header: connection => keep-alive
+D, [2015-04-12T22:55:38.418102 #53827] DEBUG -- : response-header: set-cookie => ftc=x=2015-04-13T08%3A55%3A38&c=1&pt1=291&pt2=291&er=35785&p1ca=reservation%2Fdetails&p1q=RestaurantID%3D35785%26Points%3D100%26PointsType%3DStandard%26SlotHash%3D2221649544%26SecurityID%3D0%26DateTime%3D04%252F22%25...; domain=opentable.com; path=/
+D, [2015-04-12T22:55:38.418250 #53827] DEBUG -- : Read 3635 bytes (3635 total)
+D, [2015-04-12T22:55:38.418543 #53827] DEBUG -- : gzip response
+D, [2015-04-12T22:55:38.420313 #53827] DEBUG -- : saved cookie: ftc=x=2015-04-13T08%3A55%3A38&c=1&pt1=291&pt2=291&er=35785&p1ca=reservation%2Fdetails&p1q=RestaurantID%3D35785%26Points%3D100%26PointsType%3DStandard%26SlotHash%3D2221649544%26SecurityID%3D0%26DateTime%3D04%252F22%25...
+I, [2015-04-12T22:55:38.423596 #53827]  INFO -- : form encoding: utf-8
+D, [2015-04-12T22:55:38.424118 #53827] DEBUG -- : query: "FirstName=George&LastName=Navas&Email=gannavas%40gmail.com&MetroId=4&PhoneNumber=7277769719&SpecialInstructions=&RestaurantName=SPQR&FormattedDateTime=Wed+04%2F22%2F2015+5%3A45+PM&GuestText=%2B+1+guest%28s%29&OffersCsv=&ChosenOfferVersion=0&IsJustRegistered=False&IsForeignGuest=False&FormattedReservationDate=Wednesday%2C+April+22&FormattedReservationTimePartySize=+5%3A45+PM+for+2+people&FormattedReservationDate%3A=Wednesday%2C+Apr+22"
+I, [2015-04-12T22:55:38.432272 #53827]  INFO -- : Net::HTTP::Post: /reservation/details?RestaurantID=35785&Points=100&PointsType=Standard&SlotHash=2221649544&SecurityID=0&DateTime=04%2F22%2F2015%2017%3A45&PartySize=2&SlotLockID=377&OfferConfirmNumber=0&ChosenOfferId=0&IsMiddleSlot=True&ArePopPoints=False
+D, [2015-04-12T22:55:38.432346 #53827] DEBUG -- : request-header: accept-encoding => gzip,deflate,identity
+D, [2015-04-12T22:55:38.435391 #53827] DEBUG -- : request-header: accept => */*
+D, [2015-04-12T22:55:38.435470 #53827] DEBUG -- : request-header: user-agent => Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/534.51.22 (KHTML, like Gecko) Version/5.1.1 Safari/534.51.22
+D, [2015-04-12T22:55:38.435498 #53827] DEBUG -- : request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+D, [2015-04-12T22:55:38.440456 #53827] DEBUG -- : request-header: accept-language => en-us,en;q=0.5
+D, [2015-04-12T22:55:38.440503 #53827] DEBUG -- : request-header: cookie => ftc=x=2015-04-13T08%3A55%3A38&c=1&pt1=291&pt2=291&er=35785&p1ca=reservation%2Fdetails&p1q=RestaurantID%3D35785%26Points%3D100%26PointsType%3DStandard%26SlotHash%3D2221649544%26SecurityID%3D0%26DateTime%3D04%252F22%25...
+D, [2015-04-12T22:55:38.440530 #53827] DEBUG -- : request-header: host => m.opentable.com
+D, [2015-04-12T22:55:38.440570 #53827] DEBUG -- : request-header: referer => https://m.opentable.com/reservation/details?RestaurantID=35785&Points=100&PointsType=Standard&SlotHash=2221649544&SecurityID=0&DateTime=04%2F22%2F2015%2017%3A45&PartySize=2&SlotLockID=377&OfferConfirmNumber=0&ChosenOfferId=0&IsMiddleSlot=True&ArePopPoints=False
+D, [2015-04-12T22:55:38.440595 #53827] DEBUG -- : request-header: content-type => application/x-www-form-urlencoded
+D, [2015-04-12T22:55:38.440618 #53827] DEBUG -- : request-header: content-length => 437
+I, [2015-04-12T22:55:38.838851 #53827]  INFO -- : status: Net::HTTPOK 1.1 200 OK
+D, [2015-04-12T22:55:38.838920 #53827] DEBUG -- : response-header: cache-control => private
+D, [2015-04-12T22:55:38.838951 #53827] DEBUG -- : response-header: content-type => text/html; charset=utf-8
+D, [2015-04-12T22:55:38.839181 #53827] DEBUG -- : response-header: server => Microsoft-IIS/7.5
+D, [2015-04-12T22:55:38.839208 #53827] DEBUG -- : response-header: x-aspnetmvc-version => 4.0
+D, [2015-04-12T22:55:38.839231 #53827] DEBUG -- : response-header: x-aspnet-version => 4.0.30319
+D, [2015-04-12T22:55:38.839253 #53827] DEBUG -- : response-header: x-powered-by => ASP.NET
+D, [2015-04-12T22:55:38.839275 #53827] DEBUG -- : response-header: vary => Accept-Encoding
+D, [2015-04-12T22:55:38.839297 #53827] DEBUG -- : response-header: content-encoding => gzip
+D, [2015-04-12T22:55:38.839324 #53827] DEBUG -- : response-header: date => Mon, 13 Apr 2015 05:55:38 GMT
+D, [2015-04-12T22:55:38.839350 #53827] DEBUG -- : response-header: content-length => 3417
+D, [2015-04-12T22:55:38.839376 #53827] DEBUG -- : response-header: connection => keep-alive
+D, [2015-04-12T22:55:38.839420 #53827] DEBUG -- : response-header: set-cookie => mUcke=em=gannavas%40gmail.com&fn=George&ln=Navas&pn=7277769719&sfn=&sln=; domain=opentable.com; expires=Wed, 13-Apr-2016 05:55:38 GMT; path=/
+D, [2015-04-12T22:55:38.839514 #53827] DEBUG -- : Read 3417 bytes (3417 total)
+D, [2015-04-12T22:55:38.839750 #53827] DEBUG -- : gzip response
+D, [2015-04-12T22:55:38.842567 #53827] DEBUG -- : saved cookie: mUcke=em=gannavas%40gmail.com&fn=George&ln=Navas&pn=7277769719&sfn=&sln=
+I, [2015-04-12T22:55:58.093019 #53827]  INFO -- : Net::HTTP::Get: /reservation/details?RestaurantID=7740&Points=100&PointsType=Standard&SlotHash=2221649544&SecurityID=0&DateTime=04%2F22%2F2015%2017%3A45&PartySize=2&SlotLockID=377&OfferConfirmNumber=0&ChosenOfferId=0&IsMiddleSlot=True&ArePopPoints=False
+D, [2015-04-12T22:55:58.093114 #53827] DEBUG -- : request-header: accept-encoding => gzip,deflate,identity
+D, [2015-04-12T22:55:58.093153 #53827] DEBUG -- : request-header: accept => */*
+D, [2015-04-12T22:55:58.093183 #53827] DEBUG -- : request-header: user-agent => Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/534.51.22 (KHTML, like Gecko) Version/5.1.1 Safari/534.51.22
+D, [2015-04-12T22:55:58.093213 #53827] DEBUG -- : request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+D, [2015-04-12T22:55:58.093242 #53827] DEBUG -- : request-header: accept-language => en-us,en;q=0.5
+D, [2015-04-12T22:55:58.093269 #53827] DEBUG -- : request-header: host => m.opentable.com
+I, [2015-04-12T22:55:58.339120 #53827]  INFO -- : status: Net::HTTPOK 1.1 200 OK
+D, [2015-04-12T22:55:58.339181 #53827] DEBUG -- : response-header: cache-control => private
+D, [2015-04-12T22:55:58.339203 #53827] DEBUG -- : response-header: content-type => text/html; charset=utf-8
+D, [2015-04-12T22:55:58.339220 #53827] DEBUG -- : response-header: server => Microsoft-IIS/7.5
+D, [2015-04-12T22:55:58.339236 #53827] DEBUG -- : response-header: x-aspnetmvc-version => 4.0
+D, [2015-04-12T22:55:58.339252 #53827] DEBUG -- : response-header: x-aspnet-version => 4.0.30319
+D, [2015-04-12T22:55:58.339266 #53827] DEBUG -- : response-header: x-powered-by => ASP.NET
+D, [2015-04-12T22:55:58.339281 #53827] DEBUG -- : response-header: vary => Accept-Encoding
+D, [2015-04-12T22:55:58.339295 #53827] DEBUG -- : response-header: content-encoding => gzip
+D, [2015-04-12T22:55:58.339310 #53827] DEBUG -- : response-header: date => Mon, 13 Apr 2015 05:55:58 GMT
+D, [2015-04-12T22:55:58.339324 #53827] DEBUG -- : response-header: content-length => 3641
+D, [2015-04-12T22:55:58.339338 #53827] DEBUG -- : response-header: connection => keep-alive
+D, [2015-04-12T22:55:58.339352 #53827] DEBUG -- : response-header: set-cookie => ftc=x=2015-04-13T08%3A55%3A58&c=1&pt1=291&pt2=291&er=7740&p1ca=reservation%2Fdetails&p1q=RestaurantID%3D7740%26Points%3D100%26PointsType%3DStandard%26SlotHash%3D2221649544%26SecurityID%3D0%26DateTime%3D04%252F22%252...; domain=opentable.com; path=/
+D, [2015-04-12T22:55:58.339418 #53827] DEBUG -- : Read 3641 bytes (3641 total)
+D, [2015-04-12T22:55:58.339499 #53827] DEBUG -- : gzip response
+D, [2015-04-12T22:55:58.340589 #53827] DEBUG -- : saved cookie: ftc=x=2015-04-13T08%3A55%3A58&c=1&pt1=291&pt2=291&er=7740&p1ca=reservation%2Fdetails&p1q=RestaurantID%3D7740%26Points%3D100%26PointsType%3DStandard%26SlotHash%3D2221649544%26SecurityID%3D0%26DateTime%3D04%252F22%252...
+I, [2015-04-12T22:55:58.342423 #53827]  INFO -- : form encoding: utf-8
+D, [2015-04-12T22:55:58.342804 #53827] DEBUG -- : query: "FirstName=George&LastName=Navas&Email=gannavas%40gmail.com&MetroId=4&PhoneNumber=7277769719&SpecialInstructions=&RestaurantName=Slanted+Door&FormattedDateTime=Wed+04%2F22%2F2015+5%3A45+PM&GuestText=%2B+1+guest%28s%29&OffersCsv=&ChosenOfferVersion=0&IsJustRegistered=False&IsForeignGuest=False&FormattedReservationDate=Wednesday%2C+April+22&FormattedReservationTimePartySize=+5%3A45+PM+for+2+people&FormattedReservationDate%3A=Wednesday%2C+Apr+22"
+I, [2015-04-12T22:55:58.344610 #53827]  INFO -- : Net::HTTP::Post: /reservation/details?RestaurantID=7740&Points=100&PointsType=Standard&SlotHash=2221649544&SecurityID=0&DateTime=04%2F22%2F2015%2017%3A45&PartySize=2&SlotLockID=377&OfferConfirmNumber=0&ChosenOfferId=0&IsMiddleSlot=True&ArePopPoints=False
+D, [2015-04-12T22:55:58.344669 #53827] DEBUG -- : request-header: accept-encoding => gzip,deflate,identity
+D, [2015-04-12T22:55:58.344690 #53827] DEBUG -- : request-header: accept => */*
+D, [2015-04-12T22:55:58.344708 #53827] DEBUG -- : request-header: user-agent => Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/534.51.22 (KHTML, like Gecko) Version/5.1.1 Safari/534.51.22
+D, [2015-04-12T22:55:58.344725 #53827] DEBUG -- : request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+D, [2015-04-12T22:55:58.344741 #53827] DEBUG -- : request-header: accept-language => en-us,en;q=0.5
+D, [2015-04-12T22:55:58.344757 #53827] DEBUG -- : request-header: cookie => ftc=x=2015-04-13T08%3A55%3A58&c=1&pt1=291&pt2=291&er=7740&p1ca=reservation%2Fdetails&p1q=RestaurantID%3D7740%26Points%3D100%26PointsType%3DStandard%26SlotHash%3D2221649544%26SecurityID%3D0%26DateTime%3D04%252F22%252...
+D, [2015-04-12T22:55:58.344773 #53827] DEBUG -- : request-header: host => m.opentable.com
+D, [2015-04-12T22:55:58.344795 #53827] DEBUG -- : request-header: referer => https://m.opentable.com/reservation/details?RestaurantID=7740&Points=100&PointsType=Standard&SlotHash=2221649544&SecurityID=0&DateTime=04%2F22%2F2015%2017%3A45&PartySize=2&SlotLockID=377&OfferConfirmNumber=0&ChosenOfferId=0&IsMiddleSlot=True&ArePopPoints=False
+D, [2015-04-12T22:55:58.344811 #53827] DEBUG -- : request-header: content-type => application/x-www-form-urlencoded
+D, [2015-04-12T22:55:58.344827 #53827] DEBUG -- : request-header: content-length => 445
+I, [2015-04-12T22:55:58.676535 #53827]  INFO -- : status: Net::HTTPOK 1.1 200 OK
+D, [2015-04-12T22:55:58.676623 #53827] DEBUG -- : response-header: cache-control => private
+D, [2015-04-12T22:55:58.676660 #53827] DEBUG -- : response-header: content-type => text/html; charset=utf-8
+D, [2015-04-12T22:55:58.676689 #53827] DEBUG -- : response-header: server => Microsoft-IIS/7.5
+D, [2015-04-12T22:55:58.676715 #53827] DEBUG -- : response-header: x-aspnetmvc-version => 4.0
+D, [2015-04-12T22:55:58.676741 #53827] DEBUG -- : response-header: x-aspnet-version => 4.0.30319
+D, [2015-04-12T22:55:58.676766 #53827] DEBUG -- : response-header: x-powered-by => ASP.NET
+D, [2015-04-12T22:55:58.676790 #53827] DEBUG -- : response-header: vary => Accept-Encoding
+D, [2015-04-12T22:55:58.676815 #53827] DEBUG -- : response-header: content-encoding => gzip
+D, [2015-04-12T22:55:58.676841 #53827] DEBUG -- : response-header: date => Mon, 13 Apr 2015 05:55:58 GMT
+D, [2015-04-12T22:55:58.676866 #53827] DEBUG -- : response-header: content-length => 3414
+D, [2015-04-12T22:55:58.676891 #53827] DEBUG -- : response-header: connection => keep-alive
+D, [2015-04-12T22:55:58.676916 #53827] DEBUG -- : response-header: set-cookie => mUcke=em=gannavas%40gmail.com&fn=George&ln=Navas&pn=7277769719&sfn=&sln=; domain=opentable.com; expires=Wed, 13-Apr-2016 05:55:58 GMT; path=/
+D, [2015-04-12T22:55:58.676999 #53827] DEBUG -- : Read 3414 bytes (3414 total)
+D, [2015-04-12T22:55:58.677111 #53827] DEBUG -- : gzip response
+D, [2015-04-12T22:55:58.678364 #53827] DEBUG -- : saved cookie: mUcke=em=gannavas%40gmail.com&fn=George&ln=Navas&pn=7277769719&sfn=&sln=
+I, [2015-04-12T22:56:23.250657 #53827]  INFO -- : Net::HTTP::Get: /reservation/details?RestaurantID=53860&Points=100&PointsType=Standard&SlotHash=2221649544&SecurityID=0&DateTime=04%2F22%2F2015%2017%3A45&PartySize=2&SlotLockID=377&OfferConfirmNumber=0&ChosenOfferId=0&IsMiddleSlot=True&ArePopPoints=False
+D, [2015-04-12T22:56:23.250725 #53827] DEBUG -- : request-header: accept-encoding => gzip,deflate,identity
+D, [2015-04-12T22:56:23.250747 #53827] DEBUG -- : request-header: accept => */*
+D, [2015-04-12T22:56:23.250765 #53827] DEBUG -- : request-header: user-agent => Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/534.51.22 (KHTML, like Gecko) Version/5.1.1 Safari/534.51.22
+D, [2015-04-12T22:56:23.250801 #53827] DEBUG -- : request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+D, [2015-04-12T22:56:23.250819 #53827] DEBUG -- : request-header: accept-language => en-us,en;q=0.5
+D, [2015-04-12T22:56:23.250834 #53827] DEBUG -- : request-header: host => m.opentable.com
+I, [2015-04-12T22:56:23.487784 #53827]  INFO -- : status: Net::HTTPOK 1.1 200 OK
+D, [2015-04-12T22:56:23.487876 #53827] DEBUG -- : response-header: cache-control => private
+D, [2015-04-12T22:56:23.487912 #53827] DEBUG -- : response-header: content-type => text/html; charset=utf-8
+D, [2015-04-12T22:56:23.487940 #53827] DEBUG -- : response-header: server => Microsoft-IIS/7.5
+D, [2015-04-12T22:56:23.487965 #53827] DEBUG -- : response-header: x-aspnetmvc-version => 4.0
+D, [2015-04-12T22:56:23.487991 #53827] DEBUG -- : response-header: x-aspnet-version => 4.0.30319
+D, [2015-04-12T22:56:23.488016 #53827] DEBUG -- : response-header: x-powered-by => ASP.NET
+D, [2015-04-12T22:56:23.488040 #53827] DEBUG -- : response-header: vary => Accept-Encoding
+D, [2015-04-12T22:56:23.488064 #53827] DEBUG -- : response-header: content-encoding => gzip
+D, [2015-04-12T22:56:23.488088 #53827] DEBUG -- : response-header: content-length => 3672
+D, [2015-04-12T22:56:23.488113 #53827] DEBUG -- : response-header: date => Mon, 13 Apr 2015 05:56:23 GMT
+D, [2015-04-12T22:56:23.488137 #53827] DEBUG -- : response-header: connection => keep-alive
+D, [2015-04-12T22:56:23.488161 #53827] DEBUG -- : response-header: set-cookie => ftc=x=2015-04-13T08%3A56%3A23&c=1&pt1=291&pt2=291&er=53860&p1ca=reservation%2Fdetails&p1q=RestaurantID%3D53860%26Points%3D100%26PointsType%3DStandard%26SlotHash%3D2221649544%26SecurityID%3D0%26DateTime%3D04%252F22%25...; domain=opentable.com; path=/
+D, [2015-04-12T22:56:23.488275 #53827] DEBUG -- : Read 3672 bytes (3672 total)
+D, [2015-04-12T22:56:23.488407 #53827] DEBUG -- : gzip response
+D, [2015-04-12T22:56:23.490021 #53827] DEBUG -- : saved cookie: ftc=x=2015-04-13T08%3A56%3A23&c=1&pt1=291&pt2=291&er=53860&p1ca=reservation%2Fdetails&p1q=RestaurantID%3D53860%26Points%3D100%26PointsType%3DStandard%26SlotHash%3D2221649544%26SecurityID%3D0%26DateTime%3D04%252F22%25...
+I, [2015-04-12T22:56:23.491828 #53827]  INFO -- : form encoding: utf-8
+D, [2015-04-12T22:56:23.492136 #53827] DEBUG -- : query: "FirstName=George&LastName=Navas&Email=gannavas%40gmail.com&MetroId=4&PhoneNumber=7277769719&SpecialInstructions=&RestaurantName=Limon+Rotisserie+%E2%80%93+Van+Ness&FormattedDateTime=Wed+04%2F22%2F2015+5%3A45+PM&GuestText=%2B+1+guest%28s%29&OffersCsv=&ChosenOfferVersion=0&IsJustRegistered=False&IsForeignGuest=False&FormattedReservationDate=Wednesday%2C+April+22&FormattedReservationTimePartySize=+5%3A45+PM+for+2+people&FormattedReservationDate%3A=Wednesday%2C+Apr+22"
+I, [2015-04-12T22:56:23.493888 #53827]  INFO -- : Net::HTTP::Post: /reservation/details?RestaurantID=53860&Points=100&PointsType=Standard&SlotHash=2221649544&SecurityID=0&DateTime=04%2F22%2F2015%2017%3A45&PartySize=2&SlotLockID=377&OfferConfirmNumber=0&ChosenOfferId=0&IsMiddleSlot=True&ArePopPoints=False
+D, [2015-04-12T22:56:23.493926 #53827] DEBUG -- : request-header: accept-encoding => gzip,deflate,identity
+D, [2015-04-12T22:56:23.493945 #53827] DEBUG -- : request-header: accept => */*
+D, [2015-04-12T22:56:23.493962 #53827] DEBUG -- : request-header: user-agent => Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/534.51.22 (KHTML, like Gecko) Version/5.1.1 Safari/534.51.22
+D, [2015-04-12T22:56:23.493979 #53827] DEBUG -- : request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+D, [2015-04-12T22:56:23.493994 #53827] DEBUG -- : request-header: accept-language => en-us,en;q=0.5
+D, [2015-04-12T22:56:23.494009 #53827] DEBUG -- : request-header: cookie => ftc=x=2015-04-13T08%3A56%3A23&c=1&pt1=291&pt2=291&er=53860&p1ca=reservation%2Fdetails&p1q=RestaurantID%3D53860%26Points%3D100%26PointsType%3DStandard%26SlotHash%3D2221649544%26SecurityID%3D0%26DateTime%3D04%252F22%25...
+D, [2015-04-12T22:56:23.494025 #53827] DEBUG -- : request-header: host => m.opentable.com
+D, [2015-04-12T22:56:23.494049 #53827] DEBUG -- : request-header: referer => https://m.opentable.com/reservation/details?RestaurantID=53860&Points=100&PointsType=Standard&SlotHash=2221649544&SecurityID=0&DateTime=04%2F22%2F2015%2017%3A45&PartySize=2&SlotLockID=377&OfferConfirmNumber=0&ChosenOfferId=0&IsMiddleSlot=True&ArePopPoints=False
+D, [2015-04-12T22:56:23.494101 #53827] DEBUG -- : request-header: content-type => application/x-www-form-urlencoded
+D, [2015-04-12T22:56:23.494129 #53827] DEBUG -- : request-header: content-length => 468
+I, [2015-04-12T22:56:24.069320 #53827]  INFO -- : status: Net::HTTPFound 1.1 302 Moved Temporarily
+D, [2015-04-12T22:56:24.069407 #53827] DEBUG -- : response-header: cache-control => private
+D, [2015-04-12T22:56:24.069441 #53827] DEBUG -- : response-header: content-type => text/html; charset=utf-8
+D, [2015-04-12T22:56:24.069471 #53827] DEBUG -- : response-header: location => /reservation/view?RestaurantID=53860&ConfirmationNumber=675426766&DateTime=04%2F22%2F2015%2017%3A45%3A00&PartySize=2&Points=100&UserName=George%20Navas&IsCreditCardEnabled=False&MakeMessage=Thank%20you%20for%20choosing%20Limon%20Rotisserie%20%E2%80%93%20Van%20Ness.%20%20Should%20your%20plans%20change%2C%20please%20let%20us%20know.%20We%20look%20forward%20to%20serving%20you.%20%20&OfferId=0&OfferConfirmNumber=0&Status=Make&IsJustRegistered=False&IsRestaurantReferralReservation=False
+D, [2015-04-12T22:56:24.069500 #53827] DEBUG -- : response-header: server => Microsoft-IIS/7.5
+D, [2015-04-12T22:56:24.069527 #53827] DEBUG -- : response-header: x-aspnetmvc-version => 4.0
+D, [2015-04-12T22:56:24.069553 #53827] DEBUG -- : response-header: x-aspnet-version => 4.0.30319
+D, [2015-04-12T22:56:24.069579 #53827] DEBUG -- : response-header: x-powered-by => ASP.NET
+D, [2015-04-12T22:56:24.069604 #53827] DEBUG -- : response-header: content-length => 651
+D, [2015-04-12T22:56:24.069630 #53827] DEBUG -- : response-header: date => Mon, 13 Apr 2015 05:56:23 GMT
+D, [2015-04-12T22:56:24.069656 #53827] DEBUG -- : response-header: connection => keep-alive
+D, [2015-04-12T22:56:24.069682 #53827] DEBUG -- : response-header: set-cookie => mUcke=em=gannavas%40gmail.com&fn=George&ln=Navas&pn=7277769719&sfn=&sln=; domain=opentable.com; expires=Wed, 13-Apr-2016 05:56:23 GMT; path=/
+D, [2015-04-12T22:56:24.069767 #53827] DEBUG -- : Read 651 bytes (651 total)
+D, [2015-04-12T22:56:24.070509 #53827] DEBUG -- : saved cookie: mUcke=em=gannavas%40gmail.com&fn=George&ln=Navas&pn=7277769719&sfn=&sln=
+I, [2015-04-12T22:56:24.070579 #53827]  INFO -- : follow redirect to: /reservation/view?RestaurantID=53860&ConfirmationNumber=675426766&DateTime=04%2F22%2F2015%2017%3A45%3A00&PartySize=2&Points=100&UserName=George%20Navas&IsCreditCardEnabled=False&MakeMessage=Thank%20you%20for%20choosing%20Limon%20Rotisserie%20%E2%80%93%20Van%20Ness.%20%20Should%20your%20plans%20change%2C%20please%20let%20us%20know.%20We%20look%20forward%20to%20serving%20you.%20%20&OfferId=0&OfferConfirmNumber=0&Status=Make&IsJustRegistered=False&IsRestaurantReferralReservation=False
+I, [2015-04-12T22:56:24.072549 #53827]  INFO -- : Net::HTTP::Get: /reservation/view?RestaurantID=53860&ConfirmationNumber=675426766&DateTime=04%2F22%2F2015%2017%3A45%3A00&PartySize=2&Points=100&UserName=George%20Navas&IsCreditCardEnabled=False&MakeMessage=Thank%20you%20for%20choosing%20Limon%20Rotisserie%20%E2%80%93%20Van%20Ness.%20%20Should%20your%20plans%20change%2C%20please%20let%20us%20know.%20We%20look%20forward%20to%20serving%20you.%20%20&OfferId=0&OfferConfirmNumber=0&Status=Make&IsJustRegistered=False&IsRestaurantReferralReservation=False
+D, [2015-04-12T22:56:24.072590 #53827] DEBUG -- : request-header: accept-encoding => gzip,deflate,identity
+D, [2015-04-12T22:56:24.072611 #53827] DEBUG -- : request-header: accept => */*
+D, [2015-04-12T22:56:24.072629 #53827] DEBUG -- : request-header: user-agent => Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/534.51.22 (KHTML, like Gecko) Version/5.1.1 Safari/534.51.22
+D, [2015-04-12T22:56:24.072646 #53827] DEBUG -- : request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+D, [2015-04-12T22:56:24.072681 #53827] DEBUG -- : request-header: accept-language => en-us,en;q=0.5
+D, [2015-04-12T22:56:24.072699 #53827] DEBUG -- : request-header: cookie => ftc=x=2015-04-13T08%3A56%3A23&c=1&pt1=291&pt2=291&er=53860&p1ca=reservation%2Fdetails&p1q=RestaurantID%3D53860%26Points%3D100%26PointsType%3DStandard%26SlotHash%3D2221649544%26SecurityID%3D0%26DateTime%3D04%252F22%25...; mUcke=em=gannavas%40gmail.com&fn=George&ln=Navas&pn=7277769719&sfn=&sln=
+D, [2015-04-12T22:56:24.072715 #53827] DEBUG -- : request-header: host => m.opentable.com
+D, [2015-04-12T22:56:24.072736 #53827] DEBUG -- : request-header: referer => https://m.opentable.com/reservation/details?RestaurantID=53860&Points=100&PointsType=Standard&SlotHash=2221649544&SecurityID=0&DateTime=04%2F22%2F2015%2017%3A45&PartySize=2&SlotLockID=377&OfferConfirmNumber=0&ChosenOfferId=0&IsMiddleSlot=True&ArePopPoints=False
+I, [2015-04-12T22:56:24.475623 #53827]  INFO -- : status: Net::HTTPOK 1.1 200 OK
+D, [2015-04-12T22:56:24.475755 #53827] DEBUG -- : response-header: cache-control => private
+D, [2015-04-12T22:56:24.475851 #53827] DEBUG -- : response-header: content-type => text/html; charset=utf-8
+D, [2015-04-12T22:56:24.475885 #53827] DEBUG -- : response-header: server => Microsoft-IIS/7.5
+D, [2015-04-12T22:56:24.475913 #53827] DEBUG -- : response-header: x-aspnetmvc-version => 4.0
+D, [2015-04-12T22:56:24.475947 #53827] DEBUG -- : response-header: x-aspnet-version => 4.0.30319
+D, [2015-04-12T22:56:24.475973 #53827] DEBUG -- : response-header: x-powered-by => ASP.NET
+D, [2015-04-12T22:56:24.475999 #53827] DEBUG -- : response-header: vary => Accept-Encoding
+D, [2015-04-12T22:56:24.476024 #53827] DEBUG -- : response-header: content-encoding => gzip
+D, [2015-04-12T22:56:24.476048 #53827] DEBUG -- : response-header: content-length => 6700
+D, [2015-04-12T22:56:24.476075 #53827] DEBUG -- : response-header: date => Mon, 13 Apr 2015 05:56:24 GMT
+D, [2015-04-12T22:56:24.476108 #53827] DEBUG -- : response-header: connection => keep-alive
+D, [2015-04-12T22:56:24.476174 #53827] DEBUG -- : response-header: set-cookie => mSLogcke=sc=0; domain=opentable.com; path=/, mUcke=em=gannavas%40gmail.com&fn=George&ln=Navas&pn=7277769719&sfn=&sln=; domain=opentable.com; expires=Wed, 13-Apr-2016 05:56:24 GMT; path=/, ftc=x=2015-04-13T08%3A56%3A24&c=1&pt1=291&pt2=291&er=53860&p1ca=reservation%2Fdetails&p1q=RestaurantID%3D53860%26Points%3D100%26PointsType%3DStandard%26SlotHash%3D2221649544%26SecurityID%3D0%26DateTime%3D04%252F22%25...; domain=opentable.com; path=/
+D, [2015-04-12T22:56:24.476312 #53827] DEBUG -- : Read 6700 bytes (6700 total)
+D, [2015-04-12T22:56:24.476431 #53827] DEBUG -- : gzip response
+D, [2015-04-12T22:56:24.478366 #53827] DEBUG -- : saved cookie: mSLogcke=sc=0
+D, [2015-04-12T22:56:24.478634 #53827] DEBUG -- : saved cookie: mUcke=em=gannavas%40gmail.com&fn=George&ln=Navas&pn=7277769719&sfn=&sln=
+D, [2015-04-12T22:56:24.478813 #53827] DEBUG -- : saved cookie: ftc=x=2015-04-13T08%3A56%3A24&c=1&pt1=291&pt2=291&er=53860&p1ca=reservation%2Fdetails&p1q=RestaurantID%3D53860%26Points%3D100%26PointsType%3DStandard%26SlotHash%3D2221649544%26SecurityID%3D0%26DateTime%3D04%252F22%25...
+I, [2015-04-13T09:01:49.053325 #70825]  INFO -- : Net::HTTP::Get: /reservation/details?RestaurantID=35785&Points=100&PointsType=Standard&SlotHash=2221649544&SecurityID=0&DateTime=04%2F22%2F2015%2017%3A45&PartySize=2&SlotLockID=377&OfferConfirmNumber=0&ChosenOfferId=0&IsMiddleSlot=True&ArePopPoints=False
+D, [2015-04-13T09:01:49.054720 #70825] DEBUG -- : request-header: accept-encoding => gzip,deflate,identity
+D, [2015-04-13T09:01:49.054775 #70825] DEBUG -- : request-header: accept => */*
+D, [2015-04-13T09:01:49.054801 #70825] DEBUG -- : request-header: user-agent => Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/534.51.22 (KHTML, like Gecko) Version/5.1.1 Safari/534.51.22
+D, [2015-04-13T09:01:49.054824 #70825] DEBUG -- : request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+D, [2015-04-13T09:01:49.054842 #70825] DEBUG -- : request-header: accept-language => en-us,en;q=0.5
+D, [2015-04-13T09:01:49.054873 #70825] DEBUG -- : request-header: host => m.opentable.com
+I, [2015-04-13T09:01:49.497749 #70825]  INFO -- : status: Net::HTTPOK 1.1 200 OK
+D, [2015-04-13T09:01:49.497851 #70825] DEBUG -- : response-header: cache-control => private
+D, [2015-04-13T09:01:49.497901 #70825] DEBUG -- : response-header: content-type => text/html; charset=utf-8
+D, [2015-04-13T09:01:49.497926 #70825] DEBUG -- : response-header: server => Microsoft-IIS/7.5
+D, [2015-04-13T09:01:49.497957 #70825] DEBUG -- : response-header: x-aspnetmvc-version => 4.0
+D, [2015-04-13T09:01:49.497980 #70825] DEBUG -- : response-header: x-aspnet-version => 4.0.30319
+D, [2015-04-13T09:01:49.497995 #70825] DEBUG -- : response-header: x-powered-by => ASP.NET
+D, [2015-04-13T09:01:49.498010 #70825] DEBUG -- : response-header: vary => Accept-Encoding
+D, [2015-04-13T09:01:49.498040 #70825] DEBUG -- : response-header: content-encoding => gzip
+D, [2015-04-13T09:01:49.498065 #70825] DEBUG -- : response-header: content-length => 3635
+D, [2015-04-13T09:01:49.498081 #70825] DEBUG -- : response-header: date => Mon, 13 Apr 2015 16:01:48 GMT
+D, [2015-04-13T09:01:49.498095 #70825] DEBUG -- : response-header: connection => keep-alive
+D, [2015-04-13T09:01:49.498110 #70825] DEBUG -- : response-header: set-cookie => ftc=x=2015-04-13T19%3A01%3A48&c=1&pt1=291&pt2=291&er=35785&p1ca=reservation%2Fdetails&p1q=RestaurantID%3D35785%26Points%3D100%26PointsType%3DStandard%26SlotHash%3D2221649544%26SecurityID%3D0%26DateTime%3D04%252F22%25...; domain=opentable.com; path=/
+D, [2015-04-13T09:01:49.498251 #70825] DEBUG -- : Read 3635 bytes (3635 total)
+D, [2015-04-13T09:01:49.498396 #70825] DEBUG -- : gzip response
+D, [2015-04-13T09:01:49.505828 #70825] DEBUG -- : saved cookie: ftc=x=2015-04-13T19%3A01%3A48&c=1&pt1=291&pt2=291&er=35785&p1ca=reservation%2Fdetails&p1q=RestaurantID%3D35785%26Points%3D100%26PointsType%3DStandard%26SlotHash%3D2221649544%26SecurityID%3D0%26DateTime%3D04%252F22%25...
+I, [2015-04-13T09:01:49.507999 #70825]  INFO -- : form encoding: utf-8
+D, [2015-04-13T09:01:49.508354 #70825] DEBUG -- : query: "FirstName=George&LastName=Navas&Email=gannavas%40gmail.com&MetroId=4&PhoneNumber=7277769719&SpecialInstructions=&RestaurantName=SPQR&FormattedDateTime=Wed+04%2F22%2F2015+5%3A45+PM&GuestText=%2B+1+guest%28s%29&OffersCsv=&ChosenOfferVersion=0&IsJustRegistered=False&IsForeignGuest=False&FormattedReservationDate=Wednesday%2C+April+22&FormattedReservationTimePartySize=+5%3A45+PM+for+2+people&FormattedReservationDate%3A=Wednesday%2C+Apr+22"
+I, [2015-04-13T09:01:49.510160 #70825]  INFO -- : Net::HTTP::Post: /reservation/details?RestaurantID=35785&Points=100&PointsType=Standard&SlotHash=2221649544&SecurityID=0&DateTime=04%2F22%2F2015%2017%3A45&PartySize=2&SlotLockID=377&OfferConfirmNumber=0&ChosenOfferId=0&IsMiddleSlot=True&ArePopPoints=False
+D, [2015-04-13T09:01:49.510215 #70825] DEBUG -- : request-header: accept-encoding => gzip,deflate,identity
+D, [2015-04-13T09:01:49.510238 #70825] DEBUG -- : request-header: accept => */*
+D, [2015-04-13T09:01:49.510258 #70825] DEBUG -- : request-header: user-agent => Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/534.51.22 (KHTML, like Gecko) Version/5.1.1 Safari/534.51.22
+D, [2015-04-13T09:01:49.510274 #70825] DEBUG -- : request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+D, [2015-04-13T09:01:49.510289 #70825] DEBUG -- : request-header: accept-language => en-us,en;q=0.5
+D, [2015-04-13T09:01:49.510306 #70825] DEBUG -- : request-header: cookie => ftc=x=2015-04-13T19%3A01%3A48&c=1&pt1=291&pt2=291&er=35785&p1ca=reservation%2Fdetails&p1q=RestaurantID%3D35785%26Points%3D100%26PointsType%3DStandard%26SlotHash%3D2221649544%26SecurityID%3D0%26DateTime%3D04%252F22%25...
+D, [2015-04-13T09:01:49.510322 #70825] DEBUG -- : request-header: host => m.opentable.com
+D, [2015-04-13T09:01:49.510346 #70825] DEBUG -- : request-header: referer => https://m.opentable.com/reservation/details?RestaurantID=35785&Points=100&PointsType=Standard&SlotHash=2221649544&SecurityID=0&DateTime=04%2F22%2F2015%2017%3A45&PartySize=2&SlotLockID=377&OfferConfirmNumber=0&ChosenOfferId=0&IsMiddleSlot=True&ArePopPoints=False
+D, [2015-04-13T09:01:49.510379 #70825] DEBUG -- : request-header: content-type => application/x-www-form-urlencoded
+D, [2015-04-13T09:01:49.510395 #70825] DEBUG -- : request-header: content-length => 437
+I, [2015-04-13T09:01:49.895254 #70825]  INFO -- : status: Net::HTTPOK 1.1 200 OK
+D, [2015-04-13T09:01:49.895311 #70825] DEBUG -- : response-header: cache-control => private
+D, [2015-04-13T09:01:49.895332 #70825] DEBUG -- : response-header: content-type => text/html; charset=utf-8
+D, [2015-04-13T09:01:49.895349 #70825] DEBUG -- : response-header: server => Microsoft-IIS/7.5
+D, [2015-04-13T09:01:49.895369 #70825] DEBUG -- : response-header: x-aspnetmvc-version => 4.0
+D, [2015-04-13T09:01:49.895385 #70825] DEBUG -- : response-header: x-aspnet-version => 4.0.30319
+D, [2015-04-13T09:01:49.895400 #70825] DEBUG -- : response-header: x-powered-by => ASP.NET
+D, [2015-04-13T09:01:49.895414 #70825] DEBUG -- : response-header: vary => Accept-Encoding
+D, [2015-04-13T09:01:49.895430 #70825] DEBUG -- : response-header: content-encoding => gzip
+D, [2015-04-13T09:01:49.895445 #70825] DEBUG -- : response-header: content-length => 3417
+D, [2015-04-13T09:01:49.895460 #70825] DEBUG -- : response-header: date => Mon, 13 Apr 2015 16:01:48 GMT
+D, [2015-04-13T09:01:49.895474 #70825] DEBUG -- : response-header: connection => keep-alive
+D, [2015-04-13T09:01:49.895492 #70825] DEBUG -- : response-header: set-cookie => mUcke=em=gannavas%40gmail.com&fn=George&ln=Navas&pn=7277769719&sfn=&sln=; domain=opentable.com; expires=Wed, 13-Apr-2016 16:01:48 GMT; path=/
+D, [2015-04-13T09:01:49.895553 #70825] DEBUG -- : Read 3417 bytes (3417 total)
+D, [2015-04-13T09:01:49.895629 #70825] DEBUG -- : gzip response
+D, [2015-04-13T09:01:49.897038 #70825] DEBUG -- : saved cookie: mUcke=em=gannavas%40gmail.com&fn=George&ln=Navas&pn=7277769719&sfn=&sln=
+I, [2015-04-13T09:14:10.252476 #72546]  INFO -- : Net::HTTP::Get: /reservation/details?RestaurantID=35785&Points=100&PointsType=Standard&SlotHash=2221649544&SecurityID=0&DateTime=04%2F22%2F2015%2017%3A45&PartySize=2&SlotLockID=377&OfferConfirmNumber=0&ChosenOfferId=0&IsMiddleSlot=True&ArePopPoints=False
+D, [2015-04-13T09:14:10.252553 #72546] DEBUG -- : request-header: accept-encoding => gzip,deflate,identity
+D, [2015-04-13T09:14:10.252575 #72546] DEBUG -- : request-header: accept => */*
+D, [2015-04-13T09:14:10.252593 #72546] DEBUG -- : request-header: user-agent => Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/534.51.22 (KHTML, like Gecko) Version/5.1.1 Safari/534.51.22
+D, [2015-04-13T09:14:10.252610 #72546] DEBUG -- : request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+D, [2015-04-13T09:14:10.252626 #72546] DEBUG -- : request-header: accept-language => en-us,en;q=0.5
+D, [2015-04-13T09:14:10.252641 #72546] DEBUG -- : request-header: host => m.opentable.com
+I, [2015-04-13T09:14:10.622641 #72546]  INFO -- : status: Net::HTTPOK 1.1 200 OK
+D, [2015-04-13T09:14:10.622737 #72546] DEBUG -- : response-header: cache-control => private
+D, [2015-04-13T09:14:10.622822 #72546] DEBUG -- : response-header: content-type => text/html; charset=utf-8
+D, [2015-04-13T09:14:10.622880 #72546] DEBUG -- : response-header: server => Microsoft-IIS/7.5
+D, [2015-04-13T09:14:10.622920 #72546] DEBUG -- : response-header: x-aspnetmvc-version => 4.0
+D, [2015-04-13T09:14:10.622950 #72546] DEBUG -- : response-header: x-aspnet-version => 4.0.30319
+D, [2015-04-13T09:14:10.622977 #72546] DEBUG -- : response-header: x-powered-by => ASP.NET
+D, [2015-04-13T09:14:10.623010 #72546] DEBUG -- : response-header: vary => Accept-Encoding
+D, [2015-04-13T09:14:10.623037 #72546] DEBUG -- : response-header: content-encoding => gzip
+D, [2015-04-13T09:14:10.623063 #72546] DEBUG -- : response-header: content-length => 3635
+D, [2015-04-13T09:14:10.623090 #72546] DEBUG -- : response-header: date => Mon, 13 Apr 2015 16:14:09 GMT
+D, [2015-04-13T09:14:10.623116 #72546] DEBUG -- : response-header: connection => keep-alive
+D, [2015-04-13T09:14:10.623143 #72546] DEBUG -- : response-header: set-cookie => ftc=x=2015-04-13T19%3A14%3A09&c=1&pt1=291&pt2=291&er=35785&p1ca=reservation%2Fdetails&p1q=RestaurantID%3D35785%26Points%3D100%26PointsType%3DStandard%26SlotHash%3D2221649544%26SecurityID%3D0%26DateTime%3D04%252F22%25...; domain=opentable.com; path=/
+D, [2015-04-13T09:14:10.623306 #72546] DEBUG -- : Read 3635 bytes (3635 total)
+D, [2015-04-13T09:14:10.623456 #72546] DEBUG -- : gzip response
+D, [2015-04-13T09:14:10.628533 #72546] DEBUG -- : saved cookie: ftc=x=2015-04-13T19%3A14%3A09&c=1&pt1=291&pt2=291&er=35785&p1ca=reservation%2Fdetails&p1q=RestaurantID%3D35785%26Points%3D100%26PointsType%3DStandard%26SlotHash%3D2221649544%26SecurityID%3D0%26DateTime%3D04%252F22%25...
+I, [2015-04-13T09:14:10.630605 #72546]  INFO -- : form encoding: utf-8
+D, [2015-04-13T09:14:10.630962 #72546] DEBUG -- : query: "FirstName=George&LastName=Navas&Email=gannavas%40gmail.com&MetroId=4&PhoneNumber=7277769719&SpecialInstructions=&RestaurantName=SPQR&FormattedDateTime=Wed+04%2F22%2F2015+5%3A45+PM&GuestText=%2B+1+guest%28s%29&OffersCsv=&ChosenOfferVersion=0&IsJustRegistered=False&IsForeignGuest=False&FormattedReservationDate=Wednesday%2C+April+22&FormattedReservationTimePartySize=+5%3A45+PM+for+2+people&FormattedReservationDate%3A=Wednesday%2C+Apr+22"
+I, [2015-04-13T09:14:10.633668 #72546]  INFO -- : Net::HTTP::Post: /reservation/details?RestaurantID=35785&Points=100&PointsType=Standard&SlotHash=2221649544&SecurityID=0&DateTime=04%2F22%2F2015%2017%3A45&PartySize=2&SlotLockID=377&OfferConfirmNumber=0&ChosenOfferId=0&IsMiddleSlot=True&ArePopPoints=False
+D, [2015-04-13T09:14:10.633751 #72546] DEBUG -- : request-header: accept-encoding => gzip,deflate,identity
+D, [2015-04-13T09:14:10.633788 #72546] DEBUG -- : request-header: accept => */*
+D, [2015-04-13T09:14:10.633819 #72546] DEBUG -- : request-header: user-agent => Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/534.51.22 (KHTML, like Gecko) Version/5.1.1 Safari/534.51.22
+D, [2015-04-13T09:14:10.633848 #72546] DEBUG -- : request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+D, [2015-04-13T09:14:10.633875 #72546] DEBUG -- : request-header: accept-language => en-us,en;q=0.5
+D, [2015-04-13T09:14:10.633903 #72546] DEBUG -- : request-header: cookie => ftc=x=2015-04-13T19%3A14%3A09&c=1&pt1=291&pt2=291&er=35785&p1ca=reservation%2Fdetails&p1q=RestaurantID%3D35785%26Points%3D100%26PointsType%3DStandard%26SlotHash%3D2221649544%26SecurityID%3D0%26DateTime%3D04%252F22%25...
+D, [2015-04-13T09:14:10.633930 #72546] DEBUG -- : request-header: host => m.opentable.com
+D, [2015-04-13T09:14:10.633969 #72546] DEBUG -- : request-header: referer => https://m.opentable.com/reservation/details?RestaurantID=35785&Points=100&PointsType=Standard&SlotHash=2221649544&SecurityID=0&DateTime=04%2F22%2F2015%2017%3A45&PartySize=2&SlotLockID=377&OfferConfirmNumber=0&ChosenOfferId=0&IsMiddleSlot=True&ArePopPoints=False
+D, [2015-04-13T09:14:10.633998 #72546] DEBUG -- : request-header: content-type => application/x-www-form-urlencoded
+D, [2015-04-13T09:14:10.634025 #72546] DEBUG -- : request-header: content-length => 437
+I, [2015-04-13T09:14:11.120520 #72546]  INFO -- : status: Net::HTTPOK 1.1 200 OK
+D, [2015-04-13T09:14:11.120613 #72546] DEBUG -- : response-header: cache-control => private
+D, [2015-04-13T09:14:11.120650 #72546] DEBUG -- : response-header: content-type => text/html; charset=utf-8
+D, [2015-04-13T09:14:11.120679 #72546] DEBUG -- : response-header: server => Microsoft-IIS/7.5
+D, [2015-04-13T09:14:11.120706 #72546] DEBUG -- : response-header: x-aspnetmvc-version => 4.0
+D, [2015-04-13T09:14:11.120734 #72546] DEBUG -- : response-header: x-aspnet-version => 4.0.30319
+D, [2015-04-13T09:14:11.120760 #72546] DEBUG -- : response-header: x-powered-by => ASP.NET
+D, [2015-04-13T09:14:11.120786 #72546] DEBUG -- : response-header: vary => Accept-Encoding
+D, [2015-04-13T09:14:11.120811 #72546] DEBUG -- : response-header: content-encoding => gzip
+D, [2015-04-13T09:14:11.120837 #72546] DEBUG -- : response-header: content-length => 3417
+D, [2015-04-13T09:14:11.120863 #72546] DEBUG -- : response-header: date => Mon, 13 Apr 2015 16:14:10 GMT
+D, [2015-04-13T09:14:11.120930 #72546] DEBUG -- : response-header: connection => keep-alive
+D, [2015-04-13T09:14:11.120963 #72546] DEBUG -- : response-header: set-cookie => mUcke=em=gannavas%40gmail.com&fn=George&ln=Navas&pn=7277769719&sfn=&sln=; domain=opentable.com; expires=Wed, 13-Apr-2016 16:14:09 GMT; path=/
+D, [2015-04-13T09:14:11.121171 #72546] DEBUG -- : Read 3417 bytes (3417 total)
+D, [2015-04-13T09:14:11.121358 #72546] DEBUG -- : gzip response
+D, [2015-04-13T09:14:11.123659 #72546] DEBUG -- : saved cookie: mUcke=em=gannavas%40gmail.com&fn=George&ln=Navas&pn=7277769719&sfn=&sln=
+I, [2015-04-13T10:23:30.956537 #73965]  INFO -- : Net::HTTP::Get: /reservation/details?RestaurantID=35785&Points=100&PointsType=Standard&SlotHash=2221649544&SecurityID=0&DateTime=04%2F22%2F2015%2017%3A45&PartySize=2&SlotLockID=377&OfferConfirmNumber=0&ChosenOfferId=0&IsMiddleSlot=True&ArePopPoints=False
+D, [2015-04-13T10:23:30.956625 #73965] DEBUG -- : request-header: accept-encoding => gzip,deflate,identity
+D, [2015-04-13T10:23:30.956673 #73965] DEBUG -- : request-header: accept => */*
+D, [2015-04-13T10:23:30.956733 #73965] DEBUG -- : request-header: user-agent => Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/534.51.22 (KHTML, like Gecko) Version/5.1.1 Safari/534.51.22
+D, [2015-04-13T10:23:30.956768 #73965] DEBUG -- : request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+D, [2015-04-13T10:23:30.956797 #73965] DEBUG -- : request-header: accept-language => en-us,en;q=0.5
+D, [2015-04-13T10:23:30.956825 #73965] DEBUG -- : request-header: host => m.opentable.com
+I, [2015-04-13T10:23:31.237425 #73965]  INFO -- : status: Net::HTTPOK 1.1 200 OK
+D, [2015-04-13T10:23:31.237523 #73965] DEBUG -- : response-header: cache-control => private
+D, [2015-04-13T10:23:31.237563 #73965] DEBUG -- : response-header: content-type => text/html; charset=utf-8
+D, [2015-04-13T10:23:31.237594 #73965] DEBUG -- : response-header: server => Microsoft-IIS/7.5
+D, [2015-04-13T10:23:31.237623 #73965] DEBUG -- : response-header: x-aspnetmvc-version => 4.0
+D, [2015-04-13T10:23:31.237650 #73965] DEBUG -- : response-header: x-aspnet-version => 4.0.30319
+D, [2015-04-13T10:23:31.237677 #73965] DEBUG -- : response-header: x-powered-by => ASP.NET
+D, [2015-04-13T10:23:31.237704 #73965] DEBUG -- : response-header: vary => Accept-Encoding
+D, [2015-04-13T10:23:31.237731 #73965] DEBUG -- : response-header: content-encoding => gzip
+D, [2015-04-13T10:23:31.237774 #73965] DEBUG -- : response-header: date => Mon, 13 Apr 2015 17:23:31 GMT
+D, [2015-04-13T10:23:31.237821 #73965] DEBUG -- : response-header: content-length => 3635
+D, [2015-04-13T10:23:31.237868 #73965] DEBUG -- : response-header: connection => keep-alive
+D, [2015-04-13T10:23:31.237917 #73965] DEBUG -- : response-header: set-cookie => ftc=x=2015-04-13T20%3A23%3A31&c=1&pt1=291&pt2=291&er=35785&p1ca=reservation%2Fdetails&p1q=RestaurantID%3D35785%26Points%3D100%26PointsType%3DStandard%26SlotHash%3D2221649544%26SecurityID%3D0%26DateTime%3D04%252F22%25...; domain=opentable.com; path=/
+D, [2015-04-13T10:23:31.238093 #73965] DEBUG -- : Read 3635 bytes (3635 total)
+D, [2015-04-13T10:23:31.238257 #73965] DEBUG -- : gzip response
+D, [2015-04-13T10:23:31.243076 #73965] DEBUG -- : saved cookie: ftc=x=2015-04-13T20%3A23%3A31&c=1&pt1=291&pt2=291&er=35785&p1ca=reservation%2Fdetails&p1q=RestaurantID%3D35785%26Points%3D100%26PointsType%3DStandard%26SlotHash%3D2221649544%26SecurityID%3D0%26DateTime%3D04%252F22%25...
+I, [2015-04-13T10:23:31.245809 #73965]  INFO -- : form encoding: utf-8
+D, [2015-04-13T10:23:31.246411 #73965] DEBUG -- : query: "FirstName=George&LastName=Navas&Email=gannavas%40gmail.com&MetroId=4&PhoneNumber=7277769719&SpecialInstructions=&RestaurantName=SPQR&FormattedDateTime=Wed+04%2F22%2F2015+5%3A45+PM&GuestText=%2B+1+guest%28s%29&OffersCsv=&ChosenOfferVersion=0&IsJustRegistered=False&IsForeignGuest=False&FormattedReservationDate=Wednesday%2C+April+22&FormattedReservationTimePartySize=+5%3A45+PM+for+2+people&FormattedReservationDate%3A=Wednesday%2C+Apr+22"
+I, [2015-04-13T10:23:31.249154 #73965]  INFO -- : Net::HTTP::Post: /reservation/details?RestaurantID=35785&Points=100&PointsType=Standard&SlotHash=2221649544&SecurityID=0&DateTime=04%2F22%2F2015%2017%3A45&PartySize=2&SlotLockID=377&OfferConfirmNumber=0&ChosenOfferId=0&IsMiddleSlot=True&ArePopPoints=False
+D, [2015-04-13T10:23:31.249198 #73965] DEBUG -- : request-header: accept-encoding => gzip,deflate,identity
+D, [2015-04-13T10:23:31.249220 #73965] DEBUG -- : request-header: accept => */*
+D, [2015-04-13T10:23:31.249237 #73965] DEBUG -- : request-header: user-agent => Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/534.51.22 (KHTML, like Gecko) Version/5.1.1 Safari/534.51.22
+D, [2015-04-13T10:23:31.249255 #73965] DEBUG -- : request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+D, [2015-04-13T10:23:31.249271 #73965] DEBUG -- : request-header: accept-language => en-us,en;q=0.5
+D, [2015-04-13T10:23:31.249288 #73965] DEBUG -- : request-header: cookie => ftc=x=2015-04-13T20%3A23%3A31&c=1&pt1=291&pt2=291&er=35785&p1ca=reservation%2Fdetails&p1q=RestaurantID%3D35785%26Points%3D100%26PointsType%3DStandard%26SlotHash%3D2221649544%26SecurityID%3D0%26DateTime%3D04%252F22%25...
+D, [2015-04-13T10:23:31.249304 #73965] DEBUG -- : request-header: host => m.opentable.com
+D, [2015-04-13T10:23:31.249327 #73965] DEBUG -- : request-header: referer => https://m.opentable.com/reservation/details?RestaurantID=35785&Points=100&PointsType=Standard&SlotHash=2221649544&SecurityID=0&DateTime=04%2F22%2F2015%2017%3A45&PartySize=2&SlotLockID=377&OfferConfirmNumber=0&ChosenOfferId=0&IsMiddleSlot=True&ArePopPoints=False
+D, [2015-04-13T10:23:31.249344 #73965] DEBUG -- : request-header: content-type => application/x-www-form-urlencoded
+D, [2015-04-13T10:23:31.249359 #73965] DEBUG -- : request-header: content-length => 437
+I, [2015-04-13T10:23:31.538503 #73965]  INFO -- : status: Net::HTTPOK 1.1 200 OK
+D, [2015-04-13T10:23:31.538665 #73965] DEBUG -- : response-header: cache-control => private
+D, [2015-04-13T10:23:31.538716 #73965] DEBUG -- : response-header: content-type => text/html; charset=utf-8
+D, [2015-04-13T10:23:31.538748 #73965] DEBUG -- : response-header: server => Microsoft-IIS/7.5
+D, [2015-04-13T10:23:31.538776 #73965] DEBUG -- : response-header: x-aspnetmvc-version => 4.0
+D, [2015-04-13T10:23:31.538803 #73965] DEBUG -- : response-header: x-aspnet-version => 4.0.30319
+D, [2015-04-13T10:23:31.538829 #73965] DEBUG -- : response-header: x-powered-by => ASP.NET
+D, [2015-04-13T10:23:31.538855 #73965] DEBUG -- : response-header: vary => Accept-Encoding
+D, [2015-04-13T10:23:31.538881 #73965] DEBUG -- : response-header: content-encoding => gzip
+D, [2015-04-13T10:23:31.538907 #73965] DEBUG -- : response-header: date => Mon, 13 Apr 2015 17:23:31 GMT
+D, [2015-04-13T10:23:31.538933 #73965] DEBUG -- : response-header: content-length => 3417
+D, [2015-04-13T10:23:31.538958 #73965] DEBUG -- : response-header: connection => keep-alive
+D, [2015-04-13T10:23:31.538983 #73965] DEBUG -- : response-header: set-cookie => mUcke=em=gannavas%40gmail.com&fn=George&ln=Navas&pn=7277769719&sfn=&sln=; domain=opentable.com; expires=Wed, 13-Apr-2016 17:23:31 GMT; path=/
+D, [2015-04-13T10:23:31.539081 #73965] DEBUG -- : Read 3417 bytes (3417 total)
+D, [2015-04-13T10:23:31.539204 #73965] DEBUG -- : gzip response
+D, [2015-04-13T10:23:31.540991 #73965] DEBUG -- : saved cookie: mUcke=em=gannavas%40gmail.com&fn=George&ln=Navas&pn=7277769719&sfn=&sln=
+I, [2015-04-13T10:25:32.242462 #73965]  INFO -- : Net::HTTP::Get: /reservation/details?RestaurantID=53860&Points=100&PointsType=Standard&SlotHash=2221649544&SecurityID=0&DateTime=04%2F22%2F2015%2017%3A00&PartySize=2&SlotLockID=377&OfferConfirmNumber=0&ChosenOfferId=0&IsMiddleSlot=True&ArePopPoints=False
+D, [2015-04-13T10:25:32.242556 #73965] DEBUG -- : request-header: accept-encoding => gzip,deflate,identity
+D, [2015-04-13T10:25:32.242587 #73965] DEBUG -- : request-header: accept => */*
+D, [2015-04-13T10:25:32.242615 #73965] DEBUG -- : request-header: user-agent => Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/534.51.22 (KHTML, like Gecko) Version/5.1.1 Safari/534.51.22
+D, [2015-04-13T10:25:32.242664 #73965] DEBUG -- : request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+D, [2015-04-13T10:25:32.242690 #73965] DEBUG -- : request-header: accept-language => en-us,en;q=0.5
+D, [2015-04-13T10:25:32.242714 #73965] DEBUG -- : request-header: host => m.opentable.com
+I, [2015-04-13T10:25:32.595024 #73965]  INFO -- : status: Net::HTTPOK 1.1 200 OK
+D, [2015-04-13T10:25:32.595115 #73965] DEBUG -- : response-header: cache-control => private
+D, [2015-04-13T10:25:32.595153 #73965] DEBUG -- : response-header: content-type => text/html; charset=utf-8
+D, [2015-04-13T10:25:32.595182 #73965] DEBUG -- : response-header: server => Microsoft-IIS/7.5
+D, [2015-04-13T10:25:32.595210 #73965] DEBUG -- : response-header: x-aspnetmvc-version => 4.0
+D, [2015-04-13T10:25:32.595236 #73965] DEBUG -- : response-header: x-aspnet-version => 4.0.30319
+D, [2015-04-13T10:25:32.595262 #73965] DEBUG -- : response-header: x-powered-by => ASP.NET
+D, [2015-04-13T10:25:32.595288 #73965] DEBUG -- : response-header: vary => Accept-Encoding
+D, [2015-04-13T10:25:32.595314 #73965] DEBUG -- : response-header: content-encoding => gzip
+D, [2015-04-13T10:25:32.595340 #73965] DEBUG -- : response-header: content-length => 3666
+D, [2015-04-13T10:25:32.595366 #73965] DEBUG -- : response-header: date => Mon, 13 Apr 2015 17:25:32 GMT
+D, [2015-04-13T10:25:32.595392 #73965] DEBUG -- : response-header: connection => keep-alive
+D, [2015-04-13T10:25:32.595418 #73965] DEBUG -- : response-header: set-cookie => ftc=x=2015-04-13T20%3A25%3A32&c=1&pt1=291&pt2=291&er=53860&p1ca=reservation%2Fdetails&p1q=RestaurantID%3D53860%26Points%3D100%26PointsType%3DStandard%26SlotHash%3D2221649544%26SecurityID%3D0%26DateTime%3D04%252F22%25...; domain=opentable.com; path=/
+D, [2015-04-13T10:25:32.595534 #73965] DEBUG -- : Read 3666 bytes (3666 total)
+D, [2015-04-13T10:25:32.595666 #73965] DEBUG -- : gzip response
+D, [2015-04-13T10:25:32.596993 #73965] DEBUG -- : saved cookie: ftc=x=2015-04-13T20%3A25%3A32&c=1&pt1=291&pt2=291&er=53860&p1ca=reservation%2Fdetails&p1q=RestaurantID%3D53860%26Points%3D100%26PointsType%3DStandard%26SlotHash%3D2221649544%26SecurityID%3D0%26DateTime%3D04%252F22%25...
+I, [2015-04-13T10:25:32.598940 #73965]  INFO -- : form encoding: utf-8
+D, [2015-04-13T10:25:32.599294 #73965] DEBUG -- : query: "FirstName=George&LastName=Navas&Email=gannavas%40gmail.com&MetroId=4&PhoneNumber=7277769719&SpecialInstructions=&RestaurantName=Limon+Rotisserie+%E2%80%93+Van+Ness&FormattedDateTime=Wed+04%2F22%2F2015+5%3A00+PM&GuestText=%2B+1+guest%28s%29&OffersCsv=&ChosenOfferVersion=0&IsJustRegistered=False&IsForeignGuest=False&FormattedReservationDate=Wednesday%2C+April+22&FormattedReservationTimePartySize=+5%3A00+PM+for+2+people&FormattedReservationDate%3A=Wednesday%2C+Apr+22"
+I, [2015-04-13T10:25:32.601180 #73965]  INFO -- : Net::HTTP::Post: /reservation/details?RestaurantID=53860&Points=100&PointsType=Standard&SlotHash=2221649544&SecurityID=0&DateTime=04%2F22%2F2015%2017%3A00&PartySize=2&SlotLockID=377&OfferConfirmNumber=0&ChosenOfferId=0&IsMiddleSlot=True&ArePopPoints=False
+D, [2015-04-13T10:25:32.601225 #73965] DEBUG -- : request-header: accept-encoding => gzip,deflate,identity
+D, [2015-04-13T10:25:32.601245 #73965] DEBUG -- : request-header: accept => */*
+D, [2015-04-13T10:25:32.601263 #73965] DEBUG -- : request-header: user-agent => Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/534.51.22 (KHTML, like Gecko) Version/5.1.1 Safari/534.51.22
+D, [2015-04-13T10:25:32.601280 #73965] DEBUG -- : request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+D, [2015-04-13T10:25:32.601296 #73965] DEBUG -- : request-header: accept-language => en-us,en;q=0.5
+D, [2015-04-13T10:25:32.601312 #73965] DEBUG -- : request-header: cookie => ftc=x=2015-04-13T20%3A25%3A32&c=1&pt1=291&pt2=291&er=53860&p1ca=reservation%2Fdetails&p1q=RestaurantID%3D53860%26Points%3D100%26PointsType%3DStandard%26SlotHash%3D2221649544%26SecurityID%3D0%26DateTime%3D04%252F22%25...
+D, [2015-04-13T10:25:32.601328 #73965] DEBUG -- : request-header: host => m.opentable.com
+D, [2015-04-13T10:25:32.601369 #73965] DEBUG -- : request-header: referer => https://m.opentable.com/reservation/details?RestaurantID=53860&Points=100&PointsType=Standard&SlotHash=2221649544&SecurityID=0&DateTime=04%2F22%2F2015%2017%3A00&PartySize=2&SlotLockID=377&OfferConfirmNumber=0&ChosenOfferId=0&IsMiddleSlot=True&ArePopPoints=False
+D, [2015-04-13T10:25:32.601387 #73965] DEBUG -- : request-header: content-type => application/x-www-form-urlencoded
+D, [2015-04-13T10:25:32.601403 #73965] DEBUG -- : request-header: content-length => 468
+I, [2015-04-13T10:25:33.698443 #73965]  INFO -- : status: Net::HTTPFound 1.1 302 Moved Temporarily
+D, [2015-04-13T10:25:33.698548 #73965] DEBUG -- : response-header: cache-control => private
+D, [2015-04-13T10:25:33.698589 #73965] DEBUG -- : response-header: content-type => text/html; charset=utf-8
+D, [2015-04-13T10:25:33.698622 #73965] DEBUG -- : response-header: location => /reservation/view?RestaurantID=53860&ConfirmationNumber=822227409&DateTime=04%2F22%2F2015%2017%3A00%3A00&PartySize=2&Points=100&UserName=George%20Navas&IsCreditCardEnabled=False&MakeMessage=Thank%20you%20for%20choosing%20Limon%20Rotisserie%20%E2%80%93%20Van%20Ness.%20%20Should%20your%20plans%20change%2C%20please%20let%20us%20know.%20We%20look%20forward%20to%20serving%20you.%20%20&OfferId=0&OfferConfirmNumber=0&Status=Make&IsJustRegistered=False&IsRestaurantReferralReservation=False
+D, [2015-04-13T10:25:33.698652 #73965] DEBUG -- : response-header: server => Microsoft-IIS/7.5
+D, [2015-04-13T10:25:33.698680 #73965] DEBUG -- : response-header: x-aspnetmvc-version => 4.0
+D, [2015-04-13T10:25:33.698709 #73965] DEBUG -- : response-header: x-aspnet-version => 4.0.30319
+D, [2015-04-13T10:25:33.698736 #73965] DEBUG -- : response-header: x-powered-by => ASP.NET
+D, [2015-04-13T10:25:33.698764 #73965] DEBUG -- : response-header: content-length => 651
+D, [2015-04-13T10:25:33.698792 #73965] DEBUG -- : response-header: date => Mon, 13 Apr 2015 17:25:33 GMT
+D, [2015-04-13T10:25:33.698820 #73965] DEBUG -- : response-header: connection => keep-alive
+D, [2015-04-13T10:25:33.698848 #73965] DEBUG -- : response-header: set-cookie => mUcke=em=gannavas%40gmail.com&fn=George&ln=Navas&pn=7277769719&sfn=&sln=; domain=opentable.com; expires=Wed, 13-Apr-2016 17:25:32 GMT; path=/
+D, [2015-04-13T10:25:33.698941 #73965] DEBUG -- : Read 651 bytes (651 total)
+D, [2015-04-13T10:25:33.699512 #73965] DEBUG -- : saved cookie: mUcke=em=gannavas%40gmail.com&fn=George&ln=Navas&pn=7277769719&sfn=&sln=
+I, [2015-04-13T10:25:33.699584 #73965]  INFO -- : follow redirect to: /reservation/view?RestaurantID=53860&ConfirmationNumber=822227409&DateTime=04%2F22%2F2015%2017%3A00%3A00&PartySize=2&Points=100&UserName=George%20Navas&IsCreditCardEnabled=False&MakeMessage=Thank%20you%20for%20choosing%20Limon%20Rotisserie%20%E2%80%93%20Van%20Ness.%20%20Should%20your%20plans%20change%2C%20please%20let%20us%20know.%20We%20look%20forward%20to%20serving%20you.%20%20&OfferId=0&OfferConfirmNumber=0&Status=Make&IsJustRegistered=False&IsRestaurantReferralReservation=False
+I, [2015-04-13T10:25:33.701744 #73965]  INFO -- : Net::HTTP::Get: /reservation/view?RestaurantID=53860&ConfirmationNumber=822227409&DateTime=04%2F22%2F2015%2017%3A00%3A00&PartySize=2&Points=100&UserName=George%20Navas&IsCreditCardEnabled=False&MakeMessage=Thank%20you%20for%20choosing%20Limon%20Rotisserie%20%E2%80%93%20Van%20Ness.%20%20Should%20your%20plans%20change%2C%20please%20let%20us%20know.%20We%20look%20forward%20to%20serving%20you.%20%20&OfferId=0&OfferConfirmNumber=0&Status=Make&IsJustRegistered=False&IsRestaurantReferralReservation=False
+D, [2015-04-13T10:25:33.701788 #73965] DEBUG -- : request-header: accept-encoding => gzip,deflate,identity
+D, [2015-04-13T10:25:33.701808 #73965] DEBUG -- : request-header: accept => */*
+D, [2015-04-13T10:25:33.701825 #73965] DEBUG -- : request-header: user-agent => Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/534.51.22 (KHTML, like Gecko) Version/5.1.1 Safari/534.51.22
+D, [2015-04-13T10:25:33.701842 #73965] DEBUG -- : request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+D, [2015-04-13T10:25:33.701876 #73965] DEBUG -- : request-header: accept-language => en-us,en;q=0.5
+D, [2015-04-13T10:25:33.701893 #73965] DEBUG -- : request-header: cookie => ftc=x=2015-04-13T20%3A25%3A32&c=1&pt1=291&pt2=291&er=53860&p1ca=reservation%2Fdetails&p1q=RestaurantID%3D53860%26Points%3D100%26PointsType%3DStandard%26SlotHash%3D2221649544%26SecurityID%3D0%26DateTime%3D04%252F22%25...; mUcke=em=gannavas%40gmail.com&fn=George&ln=Navas&pn=7277769719&sfn=&sln=
+D, [2015-04-13T10:25:33.701908 #73965] DEBUG -- : request-header: host => m.opentable.com
+D, [2015-04-13T10:25:33.701928 #73965] DEBUG -- : request-header: referer => https://m.opentable.com/reservation/details?RestaurantID=53860&Points=100&PointsType=Standard&SlotHash=2221649544&SecurityID=0&DateTime=04%2F22%2F2015%2017%3A00&PartySize=2&SlotLockID=377&OfferConfirmNumber=0&ChosenOfferId=0&IsMiddleSlot=True&ArePopPoints=False
+I, [2015-04-13T10:25:34.017498 #73965]  INFO -- : status: Net::HTTPOK 1.1 200 OK
+D, [2015-04-13T10:25:34.017585 #73965] DEBUG -- : response-header: cache-control => private
+D, [2015-04-13T10:25:34.017621 #73965] DEBUG -- : response-header: content-type => text/html; charset=utf-8
+D, [2015-04-13T10:25:34.017651 #73965] DEBUG -- : response-header: server => Microsoft-IIS/7.5
+D, [2015-04-13T10:25:34.017678 #73965] DEBUG -- : response-header: x-aspnetmvc-version => 4.0
+D, [2015-04-13T10:25:34.017704 #73965] DEBUG -- : response-header: x-aspnet-version => 4.0.30319
+D, [2015-04-13T10:25:34.017730 #73965] DEBUG -- : response-header: x-powered-by => ASP.NET
+D, [2015-04-13T10:25:34.017756 #73965] DEBUG -- : response-header: vary => Accept-Encoding
+D, [2015-04-13T10:25:34.017781 #73965] DEBUG -- : response-header: content-encoding => gzip
+D, [2015-04-13T10:25:34.017806 #73965] DEBUG -- : response-header: content-length => 6693
+D, [2015-04-13T10:25:34.017832 #73965] DEBUG -- : response-header: date => Mon, 13 Apr 2015 17:25:33 GMT
+D, [2015-04-13T10:25:34.017858 #73965] DEBUG -- : response-header: connection => keep-alive
+D, [2015-04-13T10:25:34.017885 #73965] DEBUG -- : response-header: set-cookie => mSLogcke=sc=0; domain=opentable.com; path=/, mUcke=em=gannavas%40gmail.com&fn=George&ln=Navas&pn=7277769719&sfn=&sln=; domain=opentable.com; expires=Wed, 13-Apr-2016 17:25:33 GMT; path=/, ftc=x=2015-04-13T20%3A25%3A33&c=1&pt1=291&pt2=291&er=53860&p1ca=reservation%2Fdetails&p1q=RestaurantID%3D53860%26Points%3D100%26PointsType%3DStandard%26SlotHash%3D2221649544%26SecurityID%3D0%26DateTime%3D04%252F22%25...; domain=opentable.com; path=/
+D, [2015-04-13T10:25:34.017973 #73965] DEBUG -- : Read 6693 bytes (6693 total)
+D, [2015-04-13T10:25:34.018087 #73965] DEBUG -- : gzip response
+D, [2015-04-13T10:25:34.020633 #73965] DEBUG -- : saved cookie: mSLogcke=sc=0
+D, [2015-04-13T10:25:34.021195 #73965] DEBUG -- : saved cookie: mUcke=em=gannavas%40gmail.com&fn=George&ln=Navas&pn=7277769719&sfn=&sln=
+D, [2015-04-13T10:25:34.021387 #73965] DEBUG -- : saved cookie: ftc=x=2015-04-13T20%3A25%3A33&c=1&pt1=291&pt2=291&er=53860&p1ca=reservation%2Fdetails&p1q=RestaurantID%3D53860%26Points%3D100%26PointsType%3DStandard%26SlotHash%3D2221649544%26SecurityID%3D0%26DateTime%3D04%252F22%25...

@@ -77,6 +77,18 @@ class QueuesController < ApplicationController
     redirect_to cue_path @cue
   end
 
+  def remove_reservation
+    binding.pry
+    user = User.find(session[:user_id])
+    cue_id = params[:cue_id]
+    @cue = Cue.find(cue_id)
+    binding.pry
+    reservation = user.reservations.where(cue_id: cue_id)
+    Bot.cancel_reservation reservation[0].reservation_url, cue_id, user.id
+    reservation[0].destroy
+    redirect_to cue_path @cue
+  end
+
   def destroy
     @user = User.find session[:user_id]
     @cue = Cue.find(params[:id])
