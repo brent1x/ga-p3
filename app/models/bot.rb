@@ -2,7 +2,6 @@ class Bot < ActiveRecord::Base
 require 'rubygems'
 require 'mechanize'
 require 'logger'
-require 'pry'
 require 'watir'
 require 'watir-webdriver'
 
