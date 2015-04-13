@@ -61,7 +61,6 @@ class QueuesController < ApplicationController
     @cue_res = CueRestaurant.new rest_params
     if @cue_res.save
       puts "Saved successfully"
-      Crawler.first_crawl @cue_res
       redirect_to cue_path @cue
     else
       puts "not saved"
