@@ -59,23 +59,17 @@ require 'watir-webdriver'
   end
 
   def self.cancel_reservation url, cue_id, user_id
-    binding.pry
     browser = Watir::Browser.new :phantomjs
     browser.goto url
     browser.link(:id, "CancelButton").when_present.click
-    puts "hello"
     browser.button(:id, "dynamicDialogYes").when_present.click
-    puts "fin"
     Reservation.remove_reservation url, cue_id, user_id
-
   end
 
   def self.optable_url url
-    binding.pry
     browser = Watir::Browser.new :phantomjs
     browser.goto url
     browser.link(:id, "btnCancel").when_present.click
-    puts "fin"
     browser.url
   end
 

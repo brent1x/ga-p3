@@ -34,6 +34,13 @@
        <%= f.submit "Check reservation availability #{@cue.name}",:class => "not-selected-item text-center expand-width" %>
      <% end %>
      </div>
+
+    <div class="text-left">
+      <%= simple_form_for @cue, :url => "/queues/#{@cue.id}/remove_reservation", method: :delete do |f|%>
+        <h4>Choose  restaurant</h4>
+       <%= f.submit "Remove Existing Reservation #{@cue.name}",:class => "not-selected-item text-center expand-width" %>
+     <% end %>
+     </div>
     <!-- Need to add a button on this page to check availability - this will kick off the crawler just for that cue -->
   <br><br> <br><br><br><br><br><br><br>
   </div>
@@ -59,3 +66,4 @@
     <div class="settings"></div>
     </a>
     </div>
+
