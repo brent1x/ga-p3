@@ -11,7 +11,9 @@
           <!-- For loop for Q goes here -->
           <div class="col-xs-12 text-center">
             <!-- Restaurant name -->
-            <h4><%= restaurant.name%></h4>
+            <h4><%= restaurant.name%> - Rank: <%= CueRestaurant.where(restaurant_id:restaurant.id).where(cue_id:@cue.id)[0].rank %></h4>
+
+
             <h4><span class="not-selected-item delete-width"><%= link_to "Delete", destroy_cue_restaurant_path(@cue.id, restaurant.id), method:"Delete" %></span></h4>
           </div>
         <% end %>
