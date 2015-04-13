@@ -15,9 +15,9 @@
         <h4>Select a date for your Queue</h4>
        <%= f.input :start_date, input_html: { class: 'input-class time-inputs' }  %>
         <h4>Select a start time for your Reservation</h4>
-       <%= f.input :start_time, input_html: { class: 'input-class time-inputs' }  %>
+       <%= f.input :start_time, input_html: { class: 'input-class time-inputs' }, :minute_step => 15  %>
         <h4>Select an end time for your Reservation</h4>
-       <%= f.input :end_time, input_html: { class: 'input-class time-inputs' }  %>
+       <%= f.input :end_time, input_html: { class: 'input-class time-inputs' }, :minute_step => 15  %>
        <%= f.submit "Create queue",:class => "not-selected-item text-center expand-width" %>
      <% end %>
      </div>
