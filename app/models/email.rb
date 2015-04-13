@@ -19,7 +19,7 @@ mandrill = Mandrill::API.new ENV["MANDRIL_APIKEY"]
        If errors persists, please delete this restaurant from your queue: #{Cue.find(cue_id).name}.</h4>
       <h2>Thanks - The RezQ Team </h2>
        </html>",
-       :from_email=>"gannavas@gmail.com"
+       :from_email=>"rezqnoreply@gmail.com"
       }
     sending = m.messages.send message
     puts sending
