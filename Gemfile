@@ -1,7 +1,5 @@
 source 'https://rubygems.org'
 ruby "2.2.0"
-#test
-
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
@@ -44,12 +42,15 @@ gem 'logger'
 gem 'watir'
 gem 'watir-webdriver', '~> 0.7.0'
 gem 'mandrill-api'
-gem 'pry-rails'
+gem 'thin'
+gem 'poltergeist'
+gem 'phantomjs', :require => 'phantomjs/poltergeist'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'pry-rails'
   gem 'byebug'
   gem 'better_errors'
   # Access an IRB console on exception pages or by using <%= console %> in views
@@ -63,4 +64,3 @@ group :production do
 end
 
 
-# ruby "2.0.0"

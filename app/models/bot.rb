@@ -49,18 +49,18 @@ require 'watir-webdriver'
 
         Reservation.user_reservation agent.page.uri.to_s.split("Points")[0][0...-1], cue.user.id, cue.id, restaurant_id, cue_restaurant_rank
     else
-      rest_url = optable_url agent.page.uri.to_s
+      r .uri.to_s
 
       Email.error_email form_info, cue.id, rest_url
     end
   end
 
   def self.cancel_reservation url, cue_id, user_id
-    browser = Watir::Browser.new :phantomjs
-    browser.goto url
-    browser.link(:id, "CancelButton").when_present.click
-    browser.button(:id, "dynamicDialogYes").when_present.click
-    Reservation.remove_reservation url, cue_id, user_id
+      browser = Watir::Browser.new :phantomjs
+      browser.goto url
+      browser.link(:id, "CancelButton").when_present.click
+      browser.button(:id, "dynamicDialogYes").when_present.click
+      Reservation.remove_reservation url, cue_id, user_id
   end
 
   def self.optable_url url

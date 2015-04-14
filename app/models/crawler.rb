@@ -158,7 +158,6 @@ class Crawler < ActiveRecord::Base
 
 	# Below method used to check reservation availability for a given cure upon request by user
 	def self.cue_reservation_check rest_list
-
 		beginning_time = Time.now
 		rest_list.sort_by { |hsh| hsh[:rank] }.each do |row|
 

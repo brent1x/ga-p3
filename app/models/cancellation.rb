@@ -11,25 +11,25 @@
 ## SECOND BUTTON ON MOBILE WEB FOR CANCELLATION – ON MODAL ITSELF
 # <button ng-repeat="btn in buttons" id="dynamicDialogYes" ng-click="close(btn.result)" class="btn btn-default ng-scope ng-binding btn-primary" ng-class="btn.cssClass">Yes</button>
 
-require 'rubygems'
-require 'mechanize'
-require 'logger'
+# require 'rubygems'
+# require 'mechanize'
+# require 'logger'
 
-agent = Mechanize.new
-agent.log = Logger.new "mech.log"
-agent.user_agent_alias = 'Mac Safari'
+# agent = Mechanize.new
+# agent.log = Logger.new "mech.log"
+# agent.user_agent_alias = 'Mac Safari'
 
-page = agent.get "https://m.opentable.com/reservation/view?RestaurantID=47881&ConfirmationNumber=1820467707"
+# page = agent.get "https://m.opentable.com/reservation/view?RestaurantID=47881&ConfirmationNumber=1820467707"
 
-link1 = page.link_with(:class => 'btn btn-default btn-block font-color-primary watch-for-touch-toggle')
-page = link1.click
-
-
-sleep 2
+# link1 = page.link_with(:class => 'btn btn-default btn-block font-color-primary watch-for-touch-toggle')
+# page = link1.click
 
 
-link2 = page.button_with(:class => "btn btn-default ng-scope ng-binding btn-primary")
+# sleep 2
 
 
-page = link2.click_button
+# link2 = page.button_with(:class => "btn btn-default ng-scope ng-binding btn-primary")
+
+
+# page = link2.click_button
 

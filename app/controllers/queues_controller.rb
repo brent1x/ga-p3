@@ -84,8 +84,10 @@ class QueuesController < ApplicationController
     cue_id = params[:cue_id]
     @cue = Cue.find(cue_id)
     reservation = user.reservations.where(cue_id: cue_id)
-    Bot.cancel_reservation reservation[0].reservation_url, cue_id, user.id
-    reservation[0].destroy
+    unless reservation[0].nil?
+      Bot.cancel_reservation reservation[0].reservation_url, cue_id, user.id
+      reservation[0].destroy
+    end
     redirect_to cue_path @cue
   end
 
