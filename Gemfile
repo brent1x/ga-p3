@@ -44,12 +44,12 @@ gem 'logger'
 gem 'watir'
 gem 'watir-webdriver', '~> 0.7.0'
 gem 'mandrill-api'
-gem 'pry-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'pry-rails'
   gem 'byebug'
   gem 'better_errors'
   # Access an IRB console on exception pages or by using <%= console %> in views
