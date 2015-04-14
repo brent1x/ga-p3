@@ -2,12 +2,10 @@ class Bot < ActiveRecord::Base
 require 'rubygems'
 require 'mechanize'
 require 'logger'
-require 'pry'
 require 'watir'
 require 'watir-webdriver'
 
   def self.previous_reservation_check form_info, cue
-    binding.pry
     restaurant_id = Restaurant.where(name:form_info["restaurant_name"])[0].id
     cue_restaurant_rank = CueRestaurant.where(cue_id:cue.id).where(restaurant_id:restaurant_id)[0].rank
     if User.find(cue.user.id).reservations.where(cue_id:cue.id) == []
@@ -21,7 +19,6 @@ require 'watir-webdriver'
   end
 
   def self.book_reservation form_info, cue, restaurant_id, cue_restaurant_rank
-    binding.pry
     agent = Mechanize.new
     agent.log = Logger.new "mech.log"
     agent.user_agent_alias = 'Mac Safari'
@@ -52,18 +49,18 @@ require 'watir-webdriver'
 
         Reservation.user_reservation agent.page.uri.to_s.split("Points")[0][0...-1], cue.user.id, cue.id, restaurant_id, cue_restaurant_rank
     else
-      rest_url = optable_url agent.page.uri.to_s
+      r .uri.to_s
 
       Email.error_email form_info, cue.id, rest_url
     end
   end
 
   def self.cancel_reservation url, cue_id, user_id
-    browser = Watir::Browser.new :phantomjs
-    browser.goto url
-    browser.link(:id, "CancelButton").when_present.click
-    browser.button(:id, "dynamicDialogYes").when_present.click
-    Reservation.remove_reservation url, cue_id, user_id
+      browser = Watir::Browser.new :phantomjs
+      browser.goto url
+      browser.link(:id, "CancelButton").when_present.click
+      browser.button(:id, "dynamicDialogYes").when_present.click
+      Reservation.remove_reservation url, cue_id, user_id
   end
 
   def self.optable_url url

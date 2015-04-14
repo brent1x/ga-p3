@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+ruby "2.2.0"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
@@ -18,7 +18,6 @@ gem 'typhoeus'
 gem 'figaro'
 gem 'simple_form'
 gem 'json'
-gem 'rails_12factor', group: :production
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -43,13 +42,16 @@ gem 'logger'
 gem 'watir'
 gem 'watir-webdriver', '~> 0.7.0'
 gem 'mandrill-api'
+gem 'thin'
+gem 'poltergeist'
+gem 'phantomjs', :require => 'phantomjs/poltergeist'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
   gem 'pry-rails'
+  gem 'byebug'
   gem 'better_errors'
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
@@ -57,4 +59,8 @@ group :development, :test do
   gem 'spring'
 end
 
-# ruby "2.0.0"
+group :production do
+  gem 'rails_12factor'
+end
+
+

@@ -11,11 +11,15 @@
           <!-- For loop for Q goes here -->
           <div class="col-xs-6 text-center">
             <!-- Restaurant name -->
-            <h4 class="party-padding"><%= restaurant.name%> - Rank: <%= CueRestaurant.where(restaurant_id:restaurant.id).where(cue_id:@cue.id)[0].rank %></h4>
-          </div>
-            <div class="col-xs-6 text-center">
-            <%= link_to "Delete", destroy_cue_restaurant_path(@cue.id, restaurant.id), method:"Delete",class:"not-selected-item delete-width" %>
-            </div>
+            <h4><%= restaurant.name%> - Rank: <%= CueRestaurant.where(restaurant_id:restaurant.id).where(cue_id:@cue.id)[0].rank %></h4>
+
+            <% if @user.reservations[0].restaurant_id == restaurant.id %>
+                  <% binding.pry %>
+                  I'm here bitch!
+            <% else %>
+                I'm not here bitch!
+            <% end %>
+            <h4><span class="not-selected-item delete-width"><%= link_to "Delete", destroy_cue_restaurant_path(@cue.id, restaurant.id), method:"Delete" %></span></h4>
           </div>
         <% end %>
       

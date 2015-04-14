@@ -1,0 +1,422 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+/* line 17, /Users/georgenavas/Desktop/gaMaster/week12/rezq/app/assets/stylesheets/application.css.scss.erb */
+body {
+  font-family: Helvetica;
+  background-color: crimson;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 23, /Users/georgenavas/Desktop/gaMaster/week12/rezq/app/assets/stylesheets/application.css.scss.erb */
+h2 {
+  font-size: 38px;
+}
+
+/* line 26, /Users/georgenavas/Desktop/gaMaster/week12/rezq/app/assets/stylesheets/application.css.scss.erb */
+h3 {
+  font-size: 4em;
+}
+
+/* line 29, /Users/georgenavas/Desktop/gaMaster/week12/rezq/app/assets/stylesheets/application.css.scss.erb */
+h4 {
+  font-size: 1.7em;
+  font-weight: 200;
+}
+
+/* line 33, /Users/georgenavas/Desktop/gaMaster/week12/rezq/app/assets/stylesheets/application.css.scss.erb */
+h3 > small {
+  color: white;
+  font-size: 24px;
+  font-weight: 200;
+}
+
+/* line 38, /Users/georgenavas/Desktop/gaMaster/week12/rezq/app/assets/stylesheets/application.css.scss.erb */
+#crimson {
+  background-color: crimson;
+  height: 100%;
+  width: 100%;
+}
+
+/* line 43, /Users/georgenavas/Desktop/gaMaster/week12/rezq/app/assets/stylesheets/application.css.scss.erb */
+.smaller {
+  font-weight: 200;
+}
+
+/* line 46, /Users/georgenavas/Desktop/gaMaster/week12/rezq/app/assets/stylesheets/application.css.scss.erb */
+label {
+  display: none;
+}
+
+/* line 49, /Users/georgenavas/Desktop/gaMaster/week12/rezq/app/assets/stylesheets/application.css.scss.erb */
+::-webkit-input-placeholder {
+  color: white;
+}
+
+/* line 53, /Users/georgenavas/Desktop/gaMaster/week12/rezq/app/assets/stylesheets/application.css.scss.erb */
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: white;
+}
+
+/* line 57, /Users/georgenavas/Desktop/gaMaster/week12/rezq/app/assets/stylesheets/application.css.scss.erb */
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: white;
+}
+
+/* line 61, /Users/georgenavas/Desktop/gaMaster/week12/rezq/app/assets/stylesheets/application.css.scss.erb */
+:-ms-input-placeholder {
+  color: white;
+}
+
+/* line 64, /Users/georgenavas/Desktop/gaMaster/week12/rezq/app/assets/stylesheets/application.css.scss.erb */
+#food-background {
+  background: url("/assets/food3-a24c45910877224e3b9c2affb23a4169.jpg") 50% 50% no-repeat fixed;
+  background-size: cover;
+  min-height: 100%;
+  min-width: 1024px;
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+  /* Set up positioning */
+  /*position: fixed;*/
+  top: 0;
+  left: 0;
+}
+
+/* line 79, /Users/georgenavas/Desktop/gaMaster/week12/rezq/app/assets/stylesheets/application.css.scss.erb */
+#food-background2 {
+  background: url("/assets/food5-282430cec3437a84c0aa812fc3ccc63f.jpg") 50% 50% no-repeat fixed;
+  background-size: cover;
+  /* Set rules to fill background */
+  min-height: 100%;
+  min-width: 1024px;
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+  /* Set up positioning */
+  /*position: fixed;*/
+  top: 0;
+  left: 0;
+}
+
+/* line 95, /Users/georgenavas/Desktop/gaMaster/week12/rezq/app/assets/stylesheets/application.css.scss.erb */
+.overflow-hidden {
+  overflow: hidden;
+}
+
+/* line 98, /Users/georgenavas/Desktop/gaMaster/week12/rezq/app/assets/stylesheets/application.css.scss.erb */
+.logo-image {
+  height: 15em;
+  margin-top: 100px;
+  margin-bottom: 10%;
+}
+
+/* line 103, /Users/georgenavas/Desktop/gaMaster/week12/rezq/app/assets/stylesheets/application.css.scss.erb */
+.logo-image-sm {
+  height: 200px;
+  margin-top: 80px;
+  margin-bottom: 40px;
+}
+
+/* line 108, /Users/georgenavas/Desktop/gaMaster/week12/rezq/app/assets/stylesheets/application.css.scss.erb */
+#user_email, #user_password, #user_first_name, #user_last_name, #user_phone_number, .btn {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 2px solid;
+  border-color: rgba(255, 255, 255, 0.85);
+  height: 2em;
+  color: white;
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 40px;
+  font-weight: 300;
+}
+
+/* line 123, /Users/georgenavas/Desktop/gaMaster/week12/rezq/app/assets/stylesheets/application.css.scss.erb */
+.input-class {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 70px;
+  background-color: transparent;
+  border: 2px solid;
+  border-color: white;
+  margin-bottom: 40px;
+  font-size: 2em;
+}
+
+/* line 134, /Users/georgenavas/Desktop/gaMaster/week12/rezq/app/assets/stylesheets/application.css.scss.erb */
+a {
+  color: white;
+}
+
+/* line 137, /Users/georgenavas/Desktop/gaMaster/week12/rezq/app/assets/stylesheets/application.css.scss.erb */
+a:hover {
+  color: gray;
+  text-decoration: none;
+}
+
+/* line 142, /Users/georgenavas/Desktop/gaMaster/week12/rezq/app/assets/stylesheets/application.css.scss.erb */
+.btn {
+  width: 50%;
+  margin-left: 0px !important;
+}
+
+/* line 146, /Users/georgenavas/Desktop/gaMaster/week12/rezq/app/assets/stylesheets/application.css.scss.erb */
+.signup-button {
+  padding-top: 10px;
+  background-color: white;
+}
+
+/* line 150, /Users/georgenavas/Desktop/gaMaster/week12/rezq/app/assets/stylesheets/application.css.scss.erb */
+.signup-button > a {
+  color: gray;
+}
+
+/* line 154, /Users/georgenavas/Desktop/gaMaster/week12/rezq/app/assets/stylesheets/application.css.scss.erb */
+.navbar {
+  position: fixed;
+  background-color: transparent;
+  border: none;
+}
+
+/* line 159, /Users/georgenavas/Desktop/gaMaster/week12/rezq/app/assets/stylesheets/application.css.scss.erb */
+.navbar-defult {
+  border-color: transparent;
+}
+
+/* line 162, /Users/georgenavas/Desktop/gaMaster/week12/rezq/app/assets/stylesheets/application.css.scss.erb */
+.collapsed:hover {
+  background-color: red;
+}
+
+/* line 165, /Users/georgenavas/Desktop/gaMaster/week12/rezq/app/assets/stylesheets/application.css.scss.erb */
+.navbar-toggle {
+  border: none;
+}
+
+/* line 168, /Users/georgenavas/Desktop/gaMaster/week12/rezq/app/assets/stylesheets/application.css.scss.erb */
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+  background-color: transparent;
+}
+
+/* line 171, /Users/georgenavas/Desktop/gaMaster/week12/rezq/app/assets/stylesheets/application.css.scss.erb */
+.icon-bar {
+  background-color: white !important;
+}
+
+/* line 174, /Users/georgenavas/Desktop/gaMaster/week12/rezq/app/assets/stylesheets/application.css.scss.erb */
+.text-white {
+  color: white;
+}
+
+/* line 177, /Users/georgenavas/Desktop/gaMaster/week12/rezq/app/assets/stylesheets/application.css.scss.erb */
+.border-line {
+  border-bottom: 2px solid;
+  padding-bottom: 30px;
+  margin-bottom: 20px;
+}
+
+/* line 182, /Users/georgenavas/Desktop/gaMaster/week12/rezq/app/assets/stylesheets/application.css.scss.erb */
+.selected-item {
+  background-color: white;
+  color: crimson;
+  width: 45%;
+  height: 50px;
+  text-align: center;
+  padding-top: 14px;
+  font-size: 22px;
+  font-weight: 200;
+}
+
+/* line 192, /Users/georgenavas/Desktop/gaMaster/week12/rezq/app/assets/stylesheets/application.css.scss.erb */
+.not-selected-item {
+  width: 45%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  font-size: 2.5em;
+  background-color: transparent;
+  border: 2px white solid;
+  font-weight: 200;
+}
+
+/* line 202, /Users/georgenavas/Desktop/gaMaster/week12/rezq/app/assets/stylesheets/application.css.scss.erb */
+.not-selected-item:hover {
+  background-color: white;
+  border: crimson;
+  color: crimson;
+}
+
+/* line 208, /Users/georgenavas/Desktop/gaMaster/week12/rezq/app/assets/stylesheets/application.css.scss.erb */
+.end-line {
+  border-top: 2px solid white;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+/* line 213, /Users/georgenavas/Desktop/gaMaster/week12/rezq/app/assets/stylesheets/application.css.scss.erb */
+.expand-width {
+  width: 100%;
+}
+
+/* line 216, /Users/georgenavas/Desktop/gaMaster/week12/rezq/app/assets/stylesheets/application.css.scss.erb */
+.delete-width {
+  display: inline-block;
+  width: 60%;
+  margin-top: 7%;
+}
+
+/* line 222, /Users/georgenavas/Desktop/gaMaster/week12/rezq/app/assets/stylesheets/application.css.scss.erb */
+.party-padding {
+  padding-top: 25px;
+}
+
+/* line 225, /Users/georgenavas/Desktop/gaMaster/week12/rezq/app/assets/stylesheets/application.css.scss.erb */
+.row {
+  margin-top: 3%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* line 230, /Users/georgenavas/Desktop/gaMaster/week12/rezq/app/assets/stylesheets/application.css.scss.erb */
+.time-inputs {
+  width: 20%;
+}
+
+/* line 233, /Users/georgenavas/Desktop/gaMaster/week12/rezq/app/assets/stylesheets/application.css.scss.erb */
+.new-nav {
+  width: 100%;
+  height: 12%;
+  background-color: rgba(255, 255, 255, 0.9);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding-top: 30px;
+}
+
+/* line 242, /Users/georgenavas/Desktop/gaMaster/week12/rezq/app/assets/stylesheets/application.css.scss.erb */
+.nav-row {
+  margin-top: 0;
+}
+
+/* line 246, /Users/georgenavas/Desktop/gaMaster/week12/rezq/app/assets/stylesheets/application.css.scss.erb */
+.home, .add-rest, .your-queue, .settings, .info {
+  height: 50px;
+  background-size: 50px 50px !important;
+}
+
+/* line 250, /Users/georgenavas/Desktop/gaMaster/week12/rezq/app/assets/stylesheets/application.css.scss.erb */
+.home {
+  background: url("/assets/queue-01-05de1419d268d6f3ac38268ad8ef73c1.png") 50% 50% no-repeat;
+}
+
+/* line 253, /Users/georgenavas/Desktop/gaMaster/week12/rezq/app/assets/stylesheets/application.css.scss.erb */
+.add-rest {
+  background: url("/assets/restuarant-01-d9424525791cc7e8497d1b5f127fe9b8.png") 50% 50% no-repeat;
+}
+
+/* line 256, /Users/georgenavas/Desktop/gaMaster/week12/rezq/app/assets/stylesheets/application.css.scss.erb */
+.your-queue {
+  background: url("/assets/add-queue-01-01-103e9f6b04b1daaa7dcd4e9c5016ac1f.png") 50% 50% no-repeat;
+}
+
+/* line 260, /Users/georgenavas/Desktop/gaMaster/week12/rezq/app/assets/stylesheets/application.css.scss.erb */
+.settings {
+  background: url("/assets/settings-01-2042cd3a15212991a205844a274de20d.png") 50% 50% no-repeat;
+}
+
+/* line 263, /Users/georgenavas/Desktop/gaMaster/week12/rezq/app/assets/stylesheets/application.css.scss.erb */
+.info {
+  background: url("/assets/info-01-57474bb3da57e98b2a74c661615d6ef7.png") 50% 50% no-repeat;
+}
+
+/* line 266, /Users/georgenavas/Desktop/gaMaster/week12/rezq/app/assets/stylesheets/application.css.scss.erb */
+.profile-img {
+  height: 200px;
+  width: 200px;
+  border-radius: 100px;
+  margin: 0 auto;
+}
+
+/* line 272, /Users/georgenavas/Desktop/gaMaster/week12/rezq/app/assets/stylesheets/application.css.scss.erb */
+.colin {
+  background: url("/assets/colin-25922599c34b2b6d396bc0eead3a4903.jpg") 50% 50% no-repeat;
+}
+
+/* line 275, /Users/georgenavas/Desktop/gaMaster/week12/rezq/app/assets/stylesheets/application.css.scss.erb */
+.brent {
+  background: url("/assets/brent-69b10632e8293e4367b5335a67375ab8.jpg") 50% 50% no-repeat;
+}
+
+/* line 278, /Users/georgenavas/Desktop/gaMaster/week12/rezq/app/assets/stylesheets/application.css.scss.erb */
+.george {
+  background: url("/assets/george-1b1c60218cb5ccdb4a265ceed62aff2c.jpg") 50% 50% no-repeat;
+}
+
+/* line 281, /Users/georgenavas/Desktop/gaMaster/week12/rezq/app/assets/stylesheets/application.css.scss.erb */
+.bigger-body-text {
+  font-size: 22px;
+}
+
+/* line 284, /Users/georgenavas/Desktop/gaMaster/week12/rezq/app/assets/stylesheets/application.css.scss.erb */
+.col-xs-6 > h2 {
+  padding-top: 30px;
+}
+
+/* line 287, /Users/georgenavas/Desktop/gaMaster/week12/rezq/app/assets/stylesheets/application.css.scss.erb */
+a > .not-selected-item:hover {
+  color: crimson;
+  border: white 2px solid;
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+  /* line 293, /Users/georgenavas/Desktop/gaMaster/week12/rezq/app/assets/stylesheets/application.css.scss.erb */
+  #user_email, #user_password, #user_first_name, #user_last_name, #user_phone_number, .btn {
+    width: 100%;
+    height: 4em;
+  }
+
+  /* line 297, /Users/georgenavas/Desktop/gaMaster/week12/rezq/app/assets/stylesheets/application.css.scss.erb */
+  .logo-image {
+    height: 22em;
+  }
+
+  /* line 300, /Users/georgenavas/Desktop/gaMaster/week12/rezq/app/assets/stylesheets/application.css.scss.erb */
+  .signup-button {
+    padding-top: 40px;
+  }
+
+  /* line 303, /Users/georgenavas/Desktop/gaMaster/week12/rezq/app/assets/stylesheets/application.css.scss.erb */
+  .home, .add-rest, .your-queue, .settings, .info {
+    height: 150px;
+    background-size: 120px 120px !important;
+  }
+
+  /* line 307, /Users/georgenavas/Desktop/gaMaster/week12/rezq/app/assets/stylesheets/application.css.scss.erb */
+  .new-nav {
+    background-color: white;
+  }
+
+  /* line 310, /Users/georgenavas/Desktop/gaMaster/week12/rezq/app/assets/stylesheets/application.css.scss.erb */
+  #food-background2, #food-background {
+    position: fixed;
+  }
+}

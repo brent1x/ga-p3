@@ -48,7 +48,7 @@ class QueuesController < ApplicationController
   end
 
   def update
-    
+
     @cue = Cue.find(params[:id])
     user = User.find session[:user_id]
     rest_params = {}
@@ -73,7 +73,6 @@ class QueuesController < ApplicationController
   end
 
   def check_availability
-    binding.pry
     @cue = Cue.find(params[:cue_id])
     rest_list = CueRestaurant.where(cue_id:params[:cue_id])
     Crawler.cue_reservation_check rest_list
@@ -81,14 +80,14 @@ class QueuesController < ApplicationController
   end
 
   def remove_reservation
-    binding.pry
     user = User.find(session[:user_id])
     cue_id = params[:cue_id]
     @cue = Cue.find(cue_id)
-    binding.pry
     reservation = user.reservations.where(cue_id: cue_id)
-    Bot.cancel_reservation reservation[0].reservation_url, cue_id, user.id
-    reservation[0].destroy
+    unless reservation[0].nil?
+      Bot.cancel_reservation reservation[0].reservation_url, cue_id, user.id
+      reservation[0].destroy
+    end
     redirect_to cue_path @cue
   end
 
