@@ -7,18 +7,18 @@
       <h2 class="border-line"><%= @cue.name %></h2>
       <div class="text-left">
       <% @cue.restaurants.each do |restaurant| %>
-      <% binding.pry %>
         <div class="row">
           <!-- For loop for Q goes here -->
-          <div class="col-xs-12 text-center">
+          <div class="col-xs-6 text-center">
             <!-- Restaurant name -->
-            <h4><%= restaurant.name%> - Rank: <%= CueRestaurant.where(restaurant_id:restaurant.id).where(cue_id:@cue.id)[0].rank %></h4>
-
-
-            <h4><span class="not-selected-item delete-width"><%= link_to "Delete", destroy_cue_restaurant_path(@cue.id, restaurant.id), method:"Delete" %></span></h4>
+            <h4 class="party-padding"><%= restaurant.name%> - Rank: <%= CueRestaurant.where(restaurant_id:restaurant.id).where(cue_id:@cue.id)[0].rank %></h4>
+          </div>
+            <div class="col-xs-6 text-center">
+            <%= link_to "Delete", destroy_cue_restaurant_path(@cue.id, restaurant.id), method:"Delete",class:"not-selected-item delete-width" %>
+            </div>
           </div>
         <% end %>
-      </div>
+      
 <!-- Need to add two things above: 1) Show Restaurant Rank and 2) Highlight indicate the restaurants currently booked -->
 
       <!-- End Loop -->
@@ -30,18 +30,18 @@
        <%= f.submit "Add Restaurant to #{@cue.name}",:class => "not-selected-item text-center expand-width" %>
      <% end %>
      </div>
-     <% binding.pry %>
+
 
      <div class="text-left">
       <%= simple_form_for @cue, :url => "/queues/#{@cue.id}/check" do |f|%>
-        <h4>Choose  restaurant</h4>
+        <h4>Check Reservation Availability</h4>
        <%= f.submit "Check reservation availability #{@cue.name}",:class => "not-selected-item text-center expand-width" %>
      <% end %>
      </div>
 
     <div class="text-left">
       <%= simple_form_for @cue, :url => "/queues/#{@cue.id}/remove_reservation", method: :delete do |f|%>
-        <h4>Choose  restaurant</h4>
+        <h4>Cancel Reservation</h4>
        <%= f.submit "Remove Existing Reservation #{@cue.name}",:class => "not-selected-item text-center expand-width" %>
      <% end %>
      </div>
