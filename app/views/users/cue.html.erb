@@ -15,11 +15,14 @@
 
             <% if @user.reservations[0].restaurant_id == restaurant.id %>
                   <% binding.pry %>
-                  I'm here bitch!
+                  You have a reservation here!
             <% else %>
-                I'm not here bitch!
+                <!-- You do not have a reservation here, click check availability button below. -->
             <% end %>
-            <h4><span class="not-selected-item delete-width"><%= link_to "Delete", destroy_cue_restaurant_path(@cue.id, restaurant.id), method:"Delete" %></span></h4>
+            </div>
+            <div class="col-xs-6 text-center">
+             <%= link_to "Delete", destroy_cue_restaurant_path(@cue.id, restaurant.id), midethod:"Delete",class:"not-selected-item delete-width" %>
+            </div>
           </div>
         <% end %>
       
