@@ -42,6 +42,7 @@ gem 'logger'
 gem 'watir'
 gem 'watir-webdriver', '~> 0.7.0'
 gem 'mandrill-api'
+gem 'thin'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
