@@ -43,6 +43,8 @@ gem 'watir'
 gem 'watir-webdriver', '~> 0.7.0'
 gem 'mandrill-api'
 gem 'thin'
+gem 'poltergeist'
+gem 'phantomjs', :require => 'phantomjs/poltergeist'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
