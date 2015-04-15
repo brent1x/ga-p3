@@ -21,7 +21,17 @@
             <% end %>
             </div>
             <div class="col-xs-6 text-center">
-             <%= link_to "Delete", destroy_cue_restaurant_path(@cue.id, restaurant.id), midethod:"Delete",class:"not-selected-item delete-width" %>
+            <% if@user.reservations.any? == true %>
+              <% if @user.reservations[0].restaurant_id == restaurant.id %>
+              <%= simple_form_for @cue, :url => "/queues/#{@cue.id}/remove_reservation", method: :delete do |f|%>
+                <%= f.submit "Cancel Reservation",:class => "not-selected-item text-center expand-width" %>
+                <% end %>
+              <% else %>
+              <%= link_to "Delete", destroy_cue_restaurant_path(@cue.id, restaurant.id), midethod:"Delete",class:"not-selected-item delete-width" %>
+              <% end %>
+              <% else %>
+              <%= link_to "Delete", destroy_cue_restaurant_path(@cue.id, restaurant.id), midethod:"Delete",class:"not-selected-item delete-width" %>
+             <% end %>
             </div>
           </div>
         <% end %>
@@ -43,13 +53,6 @@
       <%= simple_form_for @cue, :url => "/queues/#{@cue.id}/check" do |f|%>
         <h4>Check Reservation Availability</h4>
        <%= f.submit "Check reservation availability #{@cue.name}",:class => "not-selected-item text-center expand-width" %>
-     <% end %>
-     </div>
-
-    <div class="text-left">
-      <%= simple_form_for @cue, :url => "/queues/#{@cue.id}/remove_reservation", method: :delete do |f|%>
-        <h4>Cancel Reservation</h4>
-       <%= f.submit "Remove Existing Reservation #{@cue.name}",:class => "not-selected-item text-center expand-width" %>
      <% end %>
      </div>
     <!-- Need to add a button on this page to check availability - this will kick off the crawler just for that cue -->
