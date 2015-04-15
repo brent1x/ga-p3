@@ -49,8 +49,7 @@ require 'watir-webdriver'
 
         Reservation.user_reservation agent.page.uri.to_s.split("Points")[0][0...-1], cue.user.id, cue.id, restaurant_id, cue_restaurant_rank
     else
-      r .uri.to_s
-
+      rest_url = optable_url form_info["final_url"]
       Email.error_email form_info, cue.id, rest_url
     end
   end
