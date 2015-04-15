@@ -14,7 +14,6 @@
             <h4><%= restaurant.name%> - Rank: <%= CueRestaurant.where(restaurant_id:restaurant.id).where(cue_id:@cue.id)[0].rank %></h4>
 
             <% if @user.reservations[0].restaurant_id == restaurant.id %>
-                  <% binding.pry %>
                   You have a reservation here!
             <% else %>
                 <!-- You do not have a reservation here, click check availability button below. -->
@@ -25,7 +24,7 @@
             </div>
           </div>
         <% end %>
-      
+
 <!-- Need to add two things above: 1) Show Restaurant Rank and 2) Highlight indicate the restaurants currently booked -->
 
       <!-- End Loop -->

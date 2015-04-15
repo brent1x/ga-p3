@@ -257,7 +257,6 @@ class Crawler < ActiveRecord::Base
 						second_string = "&SlotLockID=377&OfferConfirmNumber=0&ChosenOfferId=0&IsMiddleSlot=True&ArePopPoints=False"
 						covers= Cue.find(user_join_table_row.first.cue_id).covers.to_s
 						form_info["final_url"] = base_url + "RestaurantID=" + Restaurant.find(restaurant.restaurant_id).open_table_id.to_s + first_string + month + seperator + day + seperator + year + "%20" + hour + "%3A" + minute + "&PartySize=" + covers + second_string
-						binding.pry
 						Bot.previous_reservation_check form_info, Cue.find(user_join_table_row.first.cue_id)
 					end
 				end # closes user_join_table.each do
