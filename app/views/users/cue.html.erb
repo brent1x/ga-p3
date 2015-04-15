@@ -27,10 +27,10 @@
                 <%= f.submit "Cancel Reservation",:class => "not-selected-item text-center expand-width" %>
                 <% end %>
               <% else %>
-              <%= link_to "Delete", destroy_cue_restaurant_path(@cue.id, restaurant.id), midethod:"Delete",class:"not-selected-item delete-width" %>
+              <%= link_to "Delete", destroy_cue_restaurant_path(@cue.id, restaurant.id), method:"Delete",class:"not-selected-item delete-width" %>
               <% end %>
               <% else %>
-              <%= link_to "Delete", destroy_cue_restaurant_path(@cue.id, restaurant.id), midethod:"Delete",class:"not-selected-item delete-width" %>
+              <%= link_to "Delete", destroy_cue_restaurant_path(@cue.id, restaurant.id), method:"Delete",class:"not-selected-item delete-width" %>
              <% end %>
             </div>
           </div>
