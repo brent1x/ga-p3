@@ -50,92 +50,78 @@ class Crawler < ActiveRecord::Base
 				r_hash = {}
 				cue.shift
 				cue[0].sort_by { |hsh| hsh[:rank] }.each do |row|
-					url_arr = []
-					@restaurant = Restaurant.find(row.restaurant_id)
-					@user = User.find(row.user_id)
-					base_url = @restaurant.url.split("?")[0]
-					time_arr = []
-					i = row.start_date
-					x = row.start_time.hour
-					covers = row.covers
-					while(x<=row.end_time.hour) do
-						time_arr.push(x)
-						x+= 1
-					end
-					while(i<=row.start_date) do
+					if User.find(row.user_id).reservations.where(cue_id:row.cue_id)[0].nil? || row.rank < User.find(row.user_id).reservations.where(cue_id:row.cue_id)[0].rank
+						url_arr = []
+						user_rest_hash = {}
+						my_hash = {};
+						r_hash = {}
+						@restaurant = Restaurant.find(row.restaurant_id)
+						@user = User.find(row.user_id)
+						base_url = @restaurant.url.split("?")[0]
+						time_arr = []
+						x = row.start_time.hour
+						covers = row.covers
+						while(x<=row.end_time.hour) do
+							time_arr.push(x)
+							x+= 1
+						end
 						time_arr.each do |time|
-							url_arr.push("#{base_url}?DateTime=#{i.to_s}%#{time}#{time+1}&Covers=#{covers}")
-							i+= 1
-							end
-					end
-					final_url_arr = url_arr
-					final_url_arr.each do |rest_url|
-						url = rest_url
-						doc = Nokogiri::HTML(open(url))
-						# y = doc.css("a.dtp-button.button").text.split(" PM")
-						y = doc.xpath('//*[@id="dtp-results"]/div/ul/li/a').text.split(" PM")
-						key = rest_url.split("=")[1].split("%")[0]
-						my_hash.merge!("#{key}" => y)
-					end
-					r_hash[@restaurant.name] =  my_hash
-					# if user_rest_hash[@user].nil?
-					user_rest_hash[@user.id] = r_hash
-					# else
-					# user_rest_hash[@user].push()
-					# end
-					puts user_rest_hash
-					end_time = Time.now
-					puts "Time elapsed #{(end_time - beginning_time)*1000} milliseconds"
-				end
-				# final_hash = {}
-				user_rest_hash.each do |user_ids, rest_hash|
-					final_hash = {}
-					rest_hash.each do |restaurant, value|
-						rest_id = Restaurant.find_by(name: restaurant).id
-						start_time = CueRestaurant.find_by(restaurant_id:rest_id).start_time.hour
-						end_time = CueRestaurant.find_by(restaurant_id:rest_id).end_time.hour
-						value.each do |date, times|
-							if date <=  value.keys.first.to_s
-								times.each do |time|
-									if start_time.to_i <= (time.to_i + 12) && (time.to_i + 12) <= end_time.to_i
-										puts "Hello World"
-										if final_hash[restaurant].nil?
-											final_hash[restaurant] = {"#{date}" => [time]}
-										else
-											unless final_hash[restaurant][date].nil?
-												final_hash[restaurant][date].push(time)
-											else
-												final_hash[restaurant][date] = [time]
+							url_arr.push("#{base_url}?DateTime=#{row.start_date.to_s}%#{time}#{time+1}&Covers=#{covers}")
+						end
+						final_url_arr = url_arr
+						final_url_arr.each do |rest_url|
+							url = rest_url
+							doc = Nokogiri::HTML(open(url))
+							y = doc.xpath('//*[@id="dtp-results"]/div/ul/li/a').text.split(" PM")
+							key = rest_url.split("=")[1].split("%")[0]
+							my_hash.merge!("#{key}" => y)
+						end
+						r_hash[@restaurant.name] =  my_hash
+						user_rest_hash[@user.id] = r_hash
+						puts user_rest_hash
+						end_time = Time.now
+						puts "Time elapsed #{(end_time - beginning_time)*1000} milliseconds"
+						user_rest_hash.each do |user_ids, rest_hash|
+							final_hash = {}
+							rest_hash.each do |restaurant, value|
+								rest_id = Restaurant.find_by(name: restaurant).id
+								start_time = CueRestaurant.find_by(restaurant_id:rest_id).start_time.hour
+								end_time = CueRestaurant.find_by(restaurant_id:rest_id).end_time.hour
+								value.each do |date, times|
+									if date <=  value.keys.first.to_s
+										times.each do |time|
+											if start_time.to_i <= (time.to_i + 12) && (time.to_i + 12) <= end_time.to_i
+												puts "Hello World"
+												if final_hash[restaurant].nil?
+													final_hash[restaurant] = {"#{date}" => [time]}
+												else
+													unless final_hash[restaurant][date].nil?
+														final_hash[restaurant][date].push(time)
+													else
+														final_hash[restaurant][date] = [time]
+													end
+												end
 											end
 										end
 									end
 								end
 							end
-						end
-					end
-					puts final_hash
-					puts @user
-					user_join_table = join_table[0].group_by{|row| row.cue_id}
-					cue_total = user_join_table.length
-					counter = 1
-					user_join_table.each do |user_join_table_row|
-						user_join_table_row.shift
-						user_join_table_row = user_join_table_row[0].sort_by { |hsh| hsh[:rank] }
-						user_join_table_row.each do |restaurant|
-							if final_hash.keys.include? Restaurant.find(restaurant.restaurant_id).name
-								available_date = final_hash[Restaurant.find(restaurant.restaurant_id).name].keys.first
-								available_time = final_hash[Restaurant.find(restaurant.restaurant_id).name][available_date].first
+							puts final_hash
+							puts @user
+							if final_hash.keys.include? Restaurant.find(row.restaurant_id).name
+								available_date = final_hash[Restaurant.find(row.restaurant_id).name].keys.first
+								available_time = final_hash[Restaurant.find(row.restaurant_id).name][available_date].first
 								form_info = {}
 								form_info["first_name"] = @user.first_name
 								form_info["last_name"] = @user.last_name
 								form_info["email"] = @user.email
-								form_info["metro_id"] = Metroid.find_by(city: Restaurant.find(restaurant.restaurant_id).city).metro_id.to_s
+								form_info["metro_id"] = Metroid.find_by(city: Restaurant.find(row.restaurant_id).city).metro_id.to_s
 								form_info["phone_number"] = @user.phone_number
-								form_info["restaurant_name"] = Restaurant.find(restaurant.restaurant_id).name
-								form_info["first_date"] =Cue.find(user_join_table_row.first.cue_id).start_date.strftime('%a %m/%e/%Y') + final_hash[Restaurant.find(restaurant.restaurant_id).name][available_date].first.to_time.strftime('%l:%M')+" PM"
-								form_info["covers"] = Cue.find(user_join_table_row.first.cue_id).covers.to_s
-								form_info["second_date"] = restaurant.start_date.strftime('%A, %b %d')
-								form_info["third_date"] = final_hash[Restaurant.find(restaurant.restaurant_id).name][available_date].first.to_time.strftime('%l:%M')+" PM"  + " for" + " #{form_info["covers"]}" + " people"
+								form_info["restaurant_name"] = Restaurant.find(row.restaurant_id).name
+								form_info["first_date"] =Cue.find(row.cue_id).start_date.strftime('%a %m/%e/%Y') + final_hash[Restaurant.find(row.restaurant_id).name][available_date].first.to_time.strftime('%l:%M')+" PM"
+								form_info["covers"] = Cue.find(row.cue_id).covers.to_s
+								form_info["second_date"] = row.start_date.strftime('%A, %b %d')
+								form_info["third_date"] = final_hash[Restaurant.find(row.restaurant_id).name][available_date].first.to_time.strftime('%l:%M')+" PM"  + " for" + " #{form_info["covers"]}" + " people"
 								month = form_info["first_date"].split(" ")[1].split("/")[0]
 								day = form_info["first_date"].split(" ")[1].split("/")[1]
 								year = form_info["first_date"].split(" ")[1].split("/")[2]
@@ -145,9 +131,9 @@ class Crawler < ActiveRecord::Base
 								base_url = "https://m.opentable.com/reservation/details?"
 								first_string = "&Points=100&PointsType=Standard&SlotHash=2221649544&SecurityID=0&DateTime="
 								second_string = "&SlotLockID=377&OfferConfirmNumber=0&ChosenOfferId=0&IsMiddleSlot=True&ArePopPoints=False"
-								covers= Cue.find(user_join_table_row.first.cue_id).covers.to_s
-								form_info["final_url"] = base_url + "RestaurantID=" + Restaurant.find(restaurant.restaurant_id).open_table_id.to_s + first_string + month + seperator + day + seperator + year + "%20" + hour + "%3A" + minute + "&PartySize=" + covers + second_string
-								Bot.previous_reservation_check form_info, Cue.find(user_join_table_row.first.cue_id)
+								covers= Cue.find(row.cue_id).covers.to_s
+								form_info["final_url"] = base_url + "RestaurantID=" + Restaurant.find(row.restaurant_id).open_table_id.to_s + first_string + month + seperator + day + seperator + year + "%20" + hour + "%3A" + minute + "&PartySize=" + covers + second_string
+								Bot.previous_reservation_check form_info, Cue.find(row.cue_id)
 							end
 						end
 					end
@@ -179,7 +165,6 @@ class Crawler < ActiveRecord::Base
 			end
 
 			if(i == row.start_date)
-
 				time_arr.each do |time|
 				url_arr.push("#{base_url}?DateTime=#{i.to_s}%#{time}#{time+1}&Covers=#{covers}")
 				i+= 1
